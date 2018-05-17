@@ -7,7 +7,7 @@
 
 /* Handle */::-webkit-scrollbar-thumb{border-radius:10px;background:#343434;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.5)}::-webkit-scrollbar-thumb:window-inactive{background:gray}
 
-/* common styles across sections on home page */.section-title{color:#000;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:30px}.section-content{text-align:center;color:#fff}.caption{font-family:Pacifico,serif;text-align:center;padding-bottom:25px}.card{-webkit-box-shadow:-3px 3px 110px -17px rgba(0,0,0,.1);box-shadow:-3px 3px 110px -17px rgba(0,0,0,.1)}
+/* common styles across sections on home page */.section-title{color:#000;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:75px}.section-content{text-align:center;color:#fff}.caption{font-family:Pacifico,serif;text-align:center;padding-bottom:25px}.card{-webkit-box-shadow:-3px 3px 110px -17px rgba(0,0,0,.1);box-shadow:-3px 3px 110px -17px rgba(0,0,0,.1)}
 
 /* buttons */button{border-radius:50px!important;padding:5px 15px;background-color:transparent;text-transform:uppercase!important;text-align:center;font-family:Work Sans,sans-serif}button:hover{cursor:pointer}@media only screen and (min-width:1200px){.card:hover{-webkit-box-shadow:-3px 3px 110px -17px rgba(0,0,0,.8);box-shadow:-3px 3px 110px -17px rgba(0,0,0,.8)}}
 
