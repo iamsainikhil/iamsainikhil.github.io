@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */:active,:focus,:hover{outline:none!important}
 
+/* svg images */.svg-image{display:block;background-size:contain;background-repeat:no-repeat;background-position:50%;width:100%;height:100%;min-height:60vh}
+
 /* scrollbar */
 
 /* Track */::-webkit-scrollbar{width:6px;height:0
-    /*to hide x-axis scroll bar since overflow is visible*/}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.6);border-radius:10px}
+    /*to hide x-axis scroll bar since overflow is visible*/}::-webkit-scrollbar-track{box-shadow:inset 0 0 6px rgba(0,0,0,.6);-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.6);border-radius:10px}
 
-/* Handle */::-webkit-scrollbar-thumb{border-radius:10px;background:#343434;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.5)}::-webkit-scrollbar-thumb:window-inactive{background:gray}
+/* Handle */::-webkit-scrollbar-thumb{border-radius:10px;background:#343434;box-shadow:inset 0 0 6px rgba(0,0,0,.5);-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.5)}::-webkit-scrollbar-thumb:window-inactive{background:gray}
 
 /* common styles across sections on home page */.section-title{color:#000;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:75px}.section-content{text-align:center;color:#fff}.caption{font-family:Pacifico,serif;text-align:center;padding-bottom:25px}.card{-webkit-box-shadow:-3px 3px 110px -17px rgba(0,0,0,.1);box-shadow:-3px 3px 110px -17px rgba(0,0,0,.1)}
 
