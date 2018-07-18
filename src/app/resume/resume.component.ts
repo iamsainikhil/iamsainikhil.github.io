@@ -17,6 +17,11 @@ export class ResumeComponent implements OnInit {
   ngOnInit() {
   }
 
+  viewResume() {
+    this.gaService.emitEvent(`view-resume-pdf`, 'resume-pdf-button', 'button');
+    console.log('resume viewed');
+  }
+
   backClick() {
     this.gaService.emitEvent(`back-to-home-on-resume`, 'back-button', 'button');
     this.router.navigateByUrl('/');
