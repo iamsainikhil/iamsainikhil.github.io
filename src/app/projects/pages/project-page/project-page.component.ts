@@ -11,7 +11,6 @@ import { ProjectsService } from './../../../shared/services/projects.service';
 })
 export class ProjectPageComponent implements OnInit, OnDestroy {
 
-  page = 'projects';
   showLoader = true;
   /**
    * data

@@ -3,10 +3,10 @@
         <div class="desktop-logo" routerLink="/"></div>
         <!-- desktop menu -->
         <div class="desktop-items-container">
-            <a routerLink="/about" (click)="desktopLinksClick('about')" [ngClass]="{'active': (page === 'about')}">About</a>
-            <a routerLink="/skills" (click)="desktopLinksClick('skills')" [ngClass]="{'active': (page === 'skills')}">Skills</a>
-            <a routerLink="/projects" (click)="desktopLinksClick('projects')" [ngClass]="{'active': (page === 'projects')}">Projects</a>
-            <a routerLink="/achievements" (click)="desktopLinksClick('achievements')" [ngClass]="{'active': (page === 'achievements')}">Achievements</a>
+            <a routerLink="/about" routerLinkActive="active" (click)="desktopLinksClick('about')">About</a>
+            <a routerLink="/skills" routerLinkActive="active" (click)="desktopLinksClick('skills')">Skills</a>
+            <a routerLink="/projects" routerLinkActive="active" (click)="desktopLinksClick('projects')">Projects</a>
+            <a routerLink="/achievements" routerLinkActive="active" (click)="desktopLinksClick('achievements')">Achievements</a>
         </div>
     </div>
     <!-- desktop menuend -->
@@ -24,10 +24,10 @@
         </div>
         <div class="nav-items-wrapper" *ngIf="!menuIcon">
             <div class="nav-links">
-                <a routerLink="/about" (click)="mobileLinksClick('about')" class="btn btn-link" [ngClass]="{'active': (page === 'about')}">About</a>
-                <a routerLink="/skills" (click)="mobileLinksClick('skills')" class="btn btn-link" [ngClass]="{'active': (page === 'skills')}">Skills</a>
-                <a routerLink="/projects" (click)="mobileLinksClick('projects')" class="btn btn-link" [ngClass]="{'active': (page === 'projects')}">Projects</a>
-                <a routerLink="/achievements" (click)="mobileLinksClick('achievements')" class="btn btn-link" [ngClass]="{'active': (page === 'achievements')}">Achievements</a>
+                <a routerLink="/about" routerLinkActive="active" (click)="mobileLinksClick('about')" class="btn btn-link">About</a>
+                <a routerLink="/skills" routerLinkActive="active" (click)="mobileLinksClick('skills')" class="btn btn-link">Skills</a>
+                <a routerLink="/projects" routerLinkActive="active" (click)="mobileLinksClick('projects')" class="btn btn-link">Projects</a>
+                <a routerLink="/achievements" routerLinkActive="active" (click)="mobileLinksClick('achievements')" class="btn btn-link">Achievements</a>
             </div>
         </div>
     </div>

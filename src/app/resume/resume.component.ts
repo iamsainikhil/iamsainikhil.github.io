@@ -18,8 +18,7 @@ export class ResumeComponent implements OnInit {
   }
 
   viewResume() {
-    this.gaService.emitEvent(`view-resume-pdf`, 'resume-pdf-button', 'button');
-    console.log('resume viewed');
+    this.gaService.emitEvent(`download-resume`, 'download-resume-button', 'button');
   }
 
   backClick() {
