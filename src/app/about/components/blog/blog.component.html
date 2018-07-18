@@ -1,0 +1,30 @@
+<h3 class="a-title">My own platform to share my thoughts with the world</h3>
+<p class="a-subtitle">"Collection of Articles, Coding Tutorials, Gists, and Fun , etc."</p>
+<div *ngIf="!showLoader">
+    <div class="blog-wrapper">
+        <div *ngFor="let data of blogData | async">
+            <a (click)="openModal(data.id)">
+                <div class="panel">
+                    <div class="content">
+                        <div class="header">
+                            <h2 class="title">{{data.data.shortTitle}}</h2>
+                        </div>
+                        <div class="tags">
+                            <span class="chip" *ngFor="let tag of data.data.tags">{{tag}}</span>
+                        </div>
+                        <div class="footer">
+                            <p><i class="far fa-calendar"></i>&nbsp;{{data.data.date | date: 'd MMM, y'}}</p>
+                            <p><i class="far fa-clock"></i>&nbsp;{{data.data.time}} min read</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<app-site-loader *ngIf="showLoader"></app-site-loader>
+
+<div *ngIf="showModal">
+    <app-site-modal [docId]="docId" [name]="'blog-post'"></app-site-modal>
+</div>

@@ -1,0 +1,53 @@
+<app-site-loader *ngIf="showLoader"></app-site-loader>
+
+<div class="close" (click)="closePost()"></div>
+<div class="wrapper" *ngIf="postData | async as data">
+    <div class="side-content">
+        <div class="author fade-in-bottom">
+            <div class="header">
+                <div class="image">
+                    <div class="author-image"></div>
+                </div>
+                <h5 class="author-title">Sai Nikhil</h5>
+            </div>
+            <div class="body">
+                <p><i class="far fa-calendar"></i>&nbsp;{{data.data.date | date: 'd MMM, y'}}</p>
+                <p><i class="far fa-clock"></i>&nbsp;{{data.data.time}} min read</p>
+            </div>
+            <div class="footer">
+                <p class="likes">
+                    <app-likes [docId]="data.id" [collectionName]="'blogs'"></app-likes>
+                </p>
+                <p *ngIf="data.data.comments === 1"><span class="number">{{data.data.comments}}</span>&nbsp;Comment</p>
+                <p *ngIf="data.data.comments > 1 || data.data.comments === 0"><span class="number">{{data.data.comments}}</span>&nbsp;Comments</p>
+            </div>
+        </div>
+    </div>
+    <div class="main-content fade-in-bottom">
+        <h2 class="title">{{data.data.title}}</h2>
+        <div class="tags">
+            <span class="chip" *ngFor="let tag of data.data.tags">{{tag}}</span>
+        </div>
+        <div *ngIf="postSubCollectionDocumentData | async as content" [ngClass]="{'content-code' : content.code, 'content': !content.code}">
+            <app-site-loader *ngIf="postContentLoader"></app-site-loader>
+            <div *ngIf="!postContentLoader">
+                <!-- blog article with code -->
+                <div *ngIf="content.code">
+                    <app-gist [htmlData]="content.data"></app-gist>
+
+                </div>
+                <!-- blog articles without code and plain HTML -->
+                <div *ngIf="!content.code">
+                    <div class="article" [innerHTML]="getSanitizedHtml(content.data)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comment-form">
+            <app-comment-form [docId]="data.id" [collectionName]="'blogs'"></app-comment-form>
+        </div>
+        <div class="comments">
+            <app-comments [docId]="data.id" [collectionName]="'blogs'"></app-comments>
+        </div>
+    </div>
+</div>

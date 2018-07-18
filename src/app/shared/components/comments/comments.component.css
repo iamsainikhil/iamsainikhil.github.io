@@ -1,0 +1,59 @@
+.title {
+    font-family: 'Pacifico', cursive;
+    padding: 20px;
+    color: #808080;
+}
+
+.tile-title {
+    color: #808080;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.second-row {
+    margin-top: -15px;
+}
+
+.message {
+    font-size: 18px;
+}
+
+.date {
+    color: #000;
+    font-size: 16px;
+}
+
+.chip,
+.message,
+.date {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+figure img {
+    background: #808080;
+}
+
+.selected-chip {
+    color: #f5f5f5;
+    background: #808080;
+}
+
+.chip:hover {
+    color: #f5f5f5;
+    background: #808080;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    .comments {
+        padding: 0px 10px;
+    }
+    .first-row {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+}

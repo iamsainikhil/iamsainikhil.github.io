@@ -1,0 +1,28 @@
+<div class="home-wrapper">
+    <app-home-header></app-home-header>
+
+    <!-- about section -->
+    <section id="about">
+        <app-about></app-about>
+    </section>
+
+    <!-- skills section -->
+    <section id="skills">
+        <app-skills></app-skills>
+    </section>
+
+    <!-- projects section -->
+    <section id="projects">
+        <app-projects [projectsData]="projectsData" [showLoader]="showLoader" [page]="page"></app-projects>
+    </section>
+
+    <!-- achievememts section -->
+    <section id="achievements">
+        <app-achievements [achievementsData]="achievementsData" [showLoader]="showLoader" [page]="page"></app-achievements>
+    </section>
+
+    <!-- contact section -->
+    <section id="contact">
+        <app-contact></app-contact>
+    </section>
+</div>

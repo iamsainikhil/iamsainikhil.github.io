@@ -1,0 +1,10 @@
+<div class="overlay">
+    <div class="popup">
+        <div *ngIf="name === 'photo'">
+            <app-photo [docId]="docId"></app-photo>
+        </div>
+        <div *ngIf="name === 'blog-post'">
+            <app-blog-post [docId]="docId"></app-blog-post>
+        </div>
+    </div>
+</div>
