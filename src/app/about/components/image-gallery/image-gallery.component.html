@@ -1,0 +1,22 @@
+<h3 class="a-title">Welcome to my gallery of beautiful photos</h3>
+<p class="a-subtitle">"Most of the photos were taken by me while some are royality free images collected from various sources on the web."</p>
+<div class="gallery-wrapper" appScrollable (scrollPosition)="scrollHandler($event)">
+    <div class="panel wow fade-in-bottom" *ngFor="let image of page.data | async">
+        <div class="content effects" [ngStyle]="{'background-image': 'url(' + image.url + ')'}">
+            <div class="mask">
+                <h2>{{image.title}}</h2>
+                <p>{{image.date | date: 'MMM d, y'}}</p>
+                <a class="info" (click)="openModal(image.id)">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="done-text" *ngIf="page.done | async">You have reached the end of Gallery!</p>
+<app-site-loader *ngIf="page.loading | async"></app-site-loader>
+<!-- <div class="button">
+                        <button class="load-more" (click)="loadMoreImages()">Load more</button>
+                    </div>
+                -->
+<div *ngIf="showModal">
+    <app-site-modal [docId]="docId" [name]="'photo'"></app-site-modal>
+</div>

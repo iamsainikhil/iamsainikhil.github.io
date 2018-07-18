@@ -1,0 +1,80 @@
+.photo-wrapper {
+    text-align: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.close {
+    right: 10px;
+}
+
+.image {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.title {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px 20px 10px 5px;
+}
+
+.sub-title {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+@media only screen and (max-width: 991px) {
+    .image {
+        background-size: contain;
+    }
+    .fa-times {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .fa-times {
+        font-size: 24px;
+    }
+    .image {
+        background-size: cover;
+    }
+    .mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    .sub-title {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+    }
+    .sub-title p {
+        padding: 20px;
+    }
+}

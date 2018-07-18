@@ -1,0 +1,6 @@
+<div class="filter">
+    <h4 class="title">Filter By&nbsp;:</h4>
+    <p class="filter-items">
+        <span class="chip" *ngFor="let chip of chipData; let i = index;" [ngClass]="{'selected-chip': chip.selected, 'project-chips': page === 'projects', 'achievement-chips': page === 'achievements'}" (click)="chipSelect(i)">{{chip.name}}</span>
+    </p>
+</div>
