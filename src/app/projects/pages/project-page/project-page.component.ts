@@ -1,0 +1,52 @@
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, UrlSegment } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { ProjectsService } from './../../../shared/services/projects.service';
+
+
+@Component({
+  selector: 'app-project-page',
+  templateUrl: './project-page.component.html',
+  styleUrls: ['./project-page.component.css']
+})
+export class ProjectPageComponent implements OnInit, OnDestroy {
+
+  page = 'projects';
+  showLoader = true;
+  /**
+   * data
+   */
+  projectData: any;
+
+  /**
+   * Gets the companyId from the current route
+   * @return {string}
+   */
+  get projectId(): string {
+    const segments: UrlSegment[] = this.route.snapshot.url;
+    return segments[1].path;
+  }
+
+  private subscription: Subscription;
+
+  constructor(
+    private route: ActivatedRoute,
+    private projectsService: ProjectsService
+  ) { }
+
+  ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
+    this.subscription = this.projectsService.getProjectData(this.projectId).subscribe(() => {
+      this.projectData = this.projectsService.getProjectData(this.projectId);
+      this.showLoader = false;
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+}

@@ -1,0 +1,46 @@
+/* font */
+
+@font-face {
+    font-family: "Silkscreen";
+    src: url("../../../../assets/fonts/slkscr.ttf");
+}
+
+.error-text {
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    color: #808080;
+    text-align: center;
+}
+
+.pnf-image {
+    background-image: url('../../../../assets/icons/404_error.svg');
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.line-1 {
+    margin-bottom: -85px;
+}
+
+.line-2 {
+    margin-top: -85px;
+}
+
+@media only screen and (max-width: 599px) {
+    .error-text {
+        font-size: 24px;
+    }
+    .line-1 {
+        margin-bottom: -50px;
+    }
+    .line-2 {
+        margin-top: -50px;
+    }
+}

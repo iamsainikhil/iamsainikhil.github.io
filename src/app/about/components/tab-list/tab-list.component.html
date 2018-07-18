@@ -1,0 +1,30 @@
+<ul class="tab tab-block">
+    <li class="tab-item" [ngClass]="{'active': bioActive}">
+        <a (click)="bioClick()">Biography</a>
+    </li>
+    <li class="tab-item" [ngClass]="{'active': blogActive}">
+        <a (click)="blogClick()">Blog</a>
+    </li>
+    <li class="tab-item" [ngClass]="{'active': photoActive}">
+        <a (click)="photoClick()">Photos</a>
+    </li>
+    <li class="tab-item" [ngClass]="{'active': videoActive}">
+        <a (click)="videoClick()">Videos</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div *ngIf="bioActive">
+        <app-timeline></app-timeline>
+    </div>
+    <div *ngIf="blogActive">
+        <app-blog></app-blog>
+    </div>
+    <div *ngIf="photoActive">
+        <app-image-gallery></app-image-gallery>
+    </div>
+    <div *ngIf="videoActive">
+        <p class="text-center">Video section under progress...</p>
+        <div class="svg-image puc-image"></div>
+    </div>
+</div>

@@ -1,0 +1,152 @@
+/* achievements section */
+
+.gradient {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background: #4988CF;
+}
+
+
+/* card */
+
+.card-header {
+    color: #000;
+}
+
+.card-body {
+    color: #808080;
+}
+
+.img-responsive {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+.card-footer {
+    padding: 20px;
+}
+
+.achievement-button {
+    border: 1px solid #4988CF;
+    color: #4988CF;
+    width: 100px;
+}
+
+.achievement-button:hover {
+    background-color: #4988CF;
+    color: #fff;
+}
+
+.explore-button {
+    padding-top: 50px;
+}
+
+.explore-button button {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.explore-button button:hover {
+    background-color: #fff;
+    color: #4988CF;
+}
+
+@media only screen and (max-width: 766px) {
+    .element {
+        -webkit-clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% calc(100% - 4vw), 0 100%);
+        clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% calc(100% - 4vw), 0 100%);
+    }
+    .a-element {
+        -webkit-clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% 100%, 0 100%);
+    }
+    .a-content {
+        padding: 50px 20px;
+    }
+    .achievements {
+        display: grid;
+        grid-template-columns: 0.85fr;
+        grid-template-rows: auto;
+        grid-gap: 20px;
+        justify-content: center;
+    }
+}
+
+
+/* ipad only */
+
+@media only screen and (min-width: 767px) and (max-width: 1279px) {
+    .element {
+        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
+        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
+    }
+    .a-element {
+        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
+    }
+    .a-content {
+        padding: 150px 20px;
+    }
+    .card-image img {
+        height: 250px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .achievements {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
+    .card-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 50px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
+    .achievements {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
+    .card-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 50px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .element {
+        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 2vw), 0 100%);
+        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 2vw), 0 100%);
+    }
+    .a-element {
+        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
+    }
+    .a-content {
+        padding: 150px 100px;
+    }
+    .achievements {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-gap: 20px;
+    }
+    .card-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px 75px;
+    }
+    .card-image img {
+        height: 250px;
+        width: 100%;
+    }
+}

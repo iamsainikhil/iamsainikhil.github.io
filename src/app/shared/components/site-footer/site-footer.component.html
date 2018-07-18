@@ -1,0 +1,88 @@
+<section class="footer">
+    <div class="first-row">
+        <ul class="first-column">
+            <li>
+                <a routerLink="/terms-and-conditions" (click)="footerLinksClick('terms')">Terms</a>
+            </li>
+            <li>
+                <a routerLink="/privacy-policy" (click)="footerLinksClick('privacy')">Privacy Policy</a>
+            </li>
+            <li>
+                <a routerLink="/disclaimer" (click)="footerLinksClick('disclaimer')">Disclaimer</a>
+            </li>
+            <li>
+                <a href="https://iamsainikhil.github.io/old-portfolio" target="_blank" (click)="footerLinksClick('old-portfolio')">Old Portfolio</a>
+            </li>
+        </ul>
+        <ul class="second-column">
+            <li>
+                <a routerLink="/resume" (click)="footerLinksClick('resume')">Resume</a>
+            </li>
+            <li>
+                <a routerLink="/skills" (click)="footerLinksClick('skills')">Skills</a>
+            </li>
+            <li>
+                <a routerLink="/projects" (click)="footerLinksClick('projects')">Projects</a>
+            </li>
+            <li>
+                <a routerLink="/achievements" (click)="footerLinksClick('achievements')">Achievements</a>
+            </li>
+            <!-- <li>
+                <a routerLink="/contact" (click)="footerLinksClick('contact')">Contact</a>
+            </li> -->
+        </ul>
+        <ul class="third-column">
+            <li>
+                <a routerLink="/about" (click)="footerLinksClick('about')">About</a>
+            </li>
+            <li>
+                <a routerLink="/about/blog" (click)="footerLinksClick('blog')">Blog</a>
+            </li>
+            <li>
+                <a routerLink="/about/photos" (click)="footerLinksClick('photos')">Photos</a>
+            </li>
+            <li>
+                <a routerLink="/about/videos" (click)="footerLinksClick('videos')">Videos</a>
+            </li>
+        </ul>
+    </div>
+    <div class="second-row">
+        <div>
+            <!-- empty -->
+        </div>
+        <div class="social-icons">
+            <a href="https://www.behance.net/techgeek124a93/appreciated" target="_blank" (click)="footerLinksClick('behance')">
+                <p class="image behance"></p>
+            </a>
+
+            <a href="https://codepen.io/iamsainikhil" target="_blank" (click)="footerLinksClick('codepen')">
+                <p class="image codepen"></p>
+            </a>
+
+            <a href="https://github.com/iamsainikhil" target="_blank" (click)="footerLinksClick('github')">
+                <p class="image github"></p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/iamsainikhil" target="_blank" (click)="footerLinksClick('linkedin')">
+                <p class="image linkedin"></p>
+            </a>
+
+            <a href="https://stackoverflow.com/story/iamsainikhil" target="_blank" (click)="footerLinksClick('stack-overflow')">
+                <p class="image stack"></p>
+            </a>
+        </div>
+        <div>
+            <!-- empty -->
+        </div>
+    </div>
+    <p class="notes">
+        Website built with
+        <span class="icon-svg love"></span> using
+        <span class="icon-svg angular"></span>
+        <span class="icon-svg firebase"></span>
+        <span class="icon-svg vcs"></span>&nbsp; and hosted on
+        <span class="icon-svg github-svg"></span>
+    </p>
+    <!-- <p class="notes">Website last updated on {{date | date}}</p> -->
+    <p class="copyrights">&copy;&nbsp;2017-{{date | date:'y'}}&nbsp;<a routerLink="/">Sai&nbsp;Nikhil&nbsp;Bheemanathini</a></p>
+</section>
