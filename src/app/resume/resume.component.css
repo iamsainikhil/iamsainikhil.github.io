@@ -1,0 +1,23 @@
+.resume-content {
+    padding-bottom: 50px;
+}
+
+.buttons-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.resume-button {
+    border: 1px solid #2DBCAD;
+    color: #2DBCAD;
+    padding: 5px 10px;
+}
+
+.resume-button:hover {
+    border-color: #2DBCAD;
+    background-color: #2DBCAD;
+    color: #fff;
+    cursor: pointer;
+}

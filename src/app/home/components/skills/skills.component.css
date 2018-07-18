@@ -1,0 +1,142 @@
+/* skills section */
+
+.section-title {
+    padding-top: 100px;
+}
+
+.skills-content {
+    padding: 100px 25px 150px 25px;
+}
+
+.gradient {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background: #ed4101;
+}
+
+
+/* specialities */
+
+.speciality-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* categories */
+
+.category-images {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.category-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 75px;
+}
+
+.speciality-title,
+.sub-title,
+.category-title {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+.web-design .category-image {
+    height: 100px;
+}
+
+.web-design .category-images,
+.ui-ux-design .category-images {
+    justify-content: center;
+}
+
+.explore-button {
+    padding-top: 50px;
+}
+
+.explore-button button {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.explore-button button:hover {
+    background-color: #fff;
+    color: #ed4101;
+}
+
+@media only screen and (max-width: 767px) {
+    .element {
+        -webkit-clip-path: polygon(0 0, 100% calc(2% - 1vw), 100% calc(100% - 4vw), 0 100%);
+        clip-path: polygon(0 0, 100% calc(2% - 1vw), 100% calc(100% - 4vw), 0 100%);
+    }
+    .skills-content {
+        text-align: left;
+    }
+    .skills-caption {
+        font-size: 24px;
+    }
+    /* specialities */
+    .specialities {
+        display: grid;
+        justify-items: center;
+    }
+    .speciality-image {
+        width: 200px;
+        height: 200px;
+    }
+    .speciality-title {
+        margin-top: -20px;
+        text-align: center;
+    }
+    /* categories */
+    .sub-title {
+        font-size: 24px;
+    }
+    .category-title {
+        font-size: 22px;
+    }
+    .categories {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .element {
+        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
+        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
+    }
+    .skills-caption {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /* specialities */
+    .specialities {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-around;
+    }
+    .speciality-image {
+        width: 250px;
+        height: 250px;
+    }
+    .speciality-title {
+        margin-top: -30px;
+    }
+    /* categories */
+    .sub-title {
+        padding: 10px;
+    }
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        justify-content: center;
+        grid-gap: 20px;
+    }
+}

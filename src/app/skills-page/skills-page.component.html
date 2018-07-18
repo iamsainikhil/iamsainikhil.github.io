@@ -1,0 +1,24 @@
+<app-site-header [page]="'skills'"></app-site-header>
+
+<app-site-loader *ngIf="showLoader"></app-site-loader>
+
+<div class="skills-wrapper" *ngIf="!showLoader">
+    <div class="chart wow fade" *ngIf="technicalSkillsData | async as techSkills">
+        <h2 class="title">technical skills</h2>
+        <canvas baseChart [datasets]="techSkills.chartData" [labels]="techSkills.chartLabels" [chartType]="techSkills.chartType"></canvas>
+    </div>
+
+    <div class="chart wow fade" data-wow-delay="1s" data-wow-duration="1s" *ngIf="applicationSkillsData | async as appSkills">
+        <h2 class="title">application skills</h2>
+        <canvas baseChart [datasets]="appSkills.chartData" [labels]="appSkills.chartLabels" [chartType]="appSkills.chartType"></canvas>
+    </div>
+
+    <div class="chart wow fade" data-wow-duration="1s" *ngIf="softSkillsData | async as softSkills">
+        <h2 class="title">soft skills</h2>
+        <canvas baseChart [data]="softSkills.chartData" [labels]="softSkills.chartLabels" [chartType]="softSkills.chartType"></canvas>
+    </div>
+</div>
+
+<div class="mobile-skills wow fade-in-bottom">
+    <div class="bg-error text-center">If charts are not visible clearly on your mobile device, Please view them clearly by selecting request desktop site option in your mobile browser!</div>
+</div>

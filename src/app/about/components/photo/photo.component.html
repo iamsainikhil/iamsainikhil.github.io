@@ -1,0 +1,19 @@
+<app-site-loader *ngIf="showLoader"></app-site-loader>
+
+<div class="photo-wrapper" *ngIf="!showLoader">
+    <div class="close" (click)="closeModal()"></div>
+    <div *ngIf="photoData | async as data">
+        <div class="image" [ngStyle]="{'background-image': 'url('+ data.data.url +')'}"></div>
+        <div class="mask">
+        </div>
+        <div class="title">
+            <h2>{{data.data.title}}</h2>
+        </div>
+        <div class="sub-title">
+            <p><i class="far fa-calendar"></i>&nbsp;{{data.data.date | date: 'MMM d, y'}}</p>
+            <p><i class="fas fa-map-marker-alt"></i>&nbsp;{{data.data.city}}, {{data.data.state}}, {{data.data.country}}
+            </p>
+            <p><i class="far fa-copyright"></i>&nbsp;Sai Nikhil Bheemanathini</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div *ngFor="let data of likesData | async">
+    <div class="love-group zoomIn" *ngIf="showIncrementIcon">
+        <p class="tip">
+            <span class="love-icon-empty" (click)="loveIncrementClick(data.data.count, data.id)"></span>
+            <span class="message">Like this {{collectionName | sliceString}}</span>
+        </p>
+        <p class="chip number">{{data.data.count}}</p>
+    </div>
+    <div class="love-group" *ngIf="!showIncrementIcon">
+        <p class="tip">
+            <span class="love-icon-filled pulsate-fwd" (click)="loveDecrementClick(data.data.count, data.id)"></span>
+            <span class="message">You already liked this {{collectionName | sliceString}}</span>
+        </p>
+        <p class="chip number">{{data.data.count}}</p>
+    </div>
+</div>
