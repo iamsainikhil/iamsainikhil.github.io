@@ -29,9 +29,22 @@ img {
     pointer-events: none;
 }
 
+#print {
+    display: none;
+}
+
 @media only screen and (max-width: 767px) {
     .back-home {
         margin-top: 15px;
         margin-left: -3px;
+    }
+}
+
+@media print {
+    #noprint {
+        display: none;
+    }
+    #print {
+        display: block;
     }
 }
