@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve" width="512px" height="512px" class=""><g><g>
+	<g>
+		<g>
+			<path d="M92.688,0L48,44.688V80H0v112h48v128H0v64h48v112h448V0H92.688z M16,176V96h96v80H16z M16,368v-32h96v32H16z M480,480H64     v-96h64v-24h16v-16h-16v-24H64V192h64v-16h16v-16h-16v-48h16V96h-16V80H64V51.312L99.312,16H480V480z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<path d="M304,448h112v-16h16v-16h-16v-16h16v-16h-16v-16h16v-16h-16v-16h16v-16h-16v-16h16v-16h-16v-16h16v-16h-16v-16h16v-16     h-16v-16h16v-16h-16v-16h16v-16h-16v-16h16v-16h-16v-16h16V96h-16V80h16V64h-16V48H304v16h-16v16h16v16h-16v16h16v16h-16v16h16     v16h-16v16h16v16h-16v16h16v16h-16v16h16v16h-16v16h16v16h-16v16h16v16h-16v16h16v16h-16v16h16v16h-16v16h16v16h-16v16h16V448z      M320,64h80v368h-80V64z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<circle cx="360" cy="88" r="8" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<path d="M256,64h-64v48h64V64z M240,96h-32V80h32V96z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<path d="M256,144h-64v48h64V144z M240,176h-32v-16h32V176z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<path d="M144,216v16h-16v-16h-16v16H96v48h16v16h16v-16h16v16h16v-16h16v16h16v-16h16v-48h-16v-16h-16v16h-16v-16H144z M192,248     v16h-80v-16H192z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<path d="M112,400c-17.648,0-32,14.352-32,32s14.352,32,32,32s32-14.352,32-32S129.648,400,112,400z M112,448     c-8.824,0-16-7.176-16-16c0-8.824,7.176-16,16-16c8.816,0,16,7.176,16,16C128,440.824,120.816,448,112,448z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<path d="M192,400c-17.648,0-32,14.352-32,32s14.352,32,32,32s32-14.352,32-32S209.648,400,192,400z M192,448     c-8.824,0-16-7.176-16-16c0-8.824,7.176-16,16-16c8.816,0,16,7.176,16,16C208,440.824,200.816,448,192,448z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<rect x="176" y="336" width="16" height="32" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<rect x="208" y="336" width="16" height="32" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<rect x="240" y="336" width="16" height="32" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+			<circle cx="96" cy="48" r="8" data-original="#000000" class="active-path" data-old_color="#000000" fill="#227B18"/>
+		</g>
+	</g>
+</g></g> </svg>
