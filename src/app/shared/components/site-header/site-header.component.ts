@@ -8,7 +8,6 @@ import { GAService } from './../../services/ga.service';
 })
 export class SiteHeaderComponent implements OnInit {
 
-  @Input() page: string;
   menuIcon = true;
   showHeader = true; // to hide/show header while user scrolls
   animateHeader = false;

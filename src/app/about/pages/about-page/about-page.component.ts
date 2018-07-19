@@ -12,7 +12,6 @@ import { ModalService } from './../../../shared/services/modal.service';
 })
 export class AboutPageComponent implements OnInit, OnDestroy {
 
-  page = 'about'; // for site-header
   aboutCardData: any;
   showLoader = true;
 

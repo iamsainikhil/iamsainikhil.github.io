@@ -104,16 +104,16 @@
 }
 
 .nav-links {
-    margin-top: 100px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .nav-links a {
     color: #808080;
     font-family: 'Pacifico', sans-serif;
     font-size: 32px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     text-transform: capitalize;
     padding-top: 100px;
 }
