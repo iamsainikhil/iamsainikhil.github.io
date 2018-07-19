@@ -1,28 +1,29 @@
 .options {
     padding: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
 }
 
 .options .label {
-    padding: 10px;
     background: transparent;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
+    padding-right: 10px;
 }
 
-.dot {
-    border: 1px solid #808080;
-    border-radius: 50%;
-    padding: 2px 13px;
+.options i {
+    font-size: 24px;
+    margin-top: -1px;
 }
 
-.icon-check {
-    margin-top: -6px;
-    margin-left: -21px;
-}
-
-.dot:hover,
-.icon-check:hover {
+.options i:hover {
     cursor: pointer;
+}
+
+.radio-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .avatars {
@@ -40,13 +41,4 @@ figure {
 figure img:hover {
     cursor: pointer;
     background: #808080 !important;
-}
-
-@media only screen and (max-width: 410px) {
-    .options {
-        max-width: 200px;
-        width: 100%;
-        margin-left: 75px;
-        padding: 0px !important;
-    }
 }

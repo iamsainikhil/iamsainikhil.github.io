@@ -19,8 +19,19 @@ export class AvatarComponent implements OnInit {
   /**
    * check conditions for male/female avatars
    */
-  maleCheck = true;
-  femaleCheck = false;
+  maleAvatar = true;
+  femaleAvatar = false;
+
+  genderRadio = [
+    {
+      label: 'Male',
+      check: true
+    },
+    {
+      label: 'Female',
+      check: false
+    }
+  ];
 
   constructor(private avatarService: AvatarService) { }
 
@@ -28,22 +39,38 @@ export class AvatarComponent implements OnInit {
     this.avatarData = this.avatarService.getAvatarData();
   }
 
-  maleClick() {
-    this.maleCheck = true;
-    this.femaleCheck = false;
+  radioClick(i) {
+    // random number and undefined data to force user select avatar after radioClick
+    this.imageId = 99;
+    this.gender.emit(undefined);
+    this.avatarUrl.emit(undefined);
+
+    this.genderRadio.forEach((v, index) => {
+      if (index === i) {
+        v.check = true;
+        this.showAvatar(v.label);
+      } else {
+        v.check = false;
+      }
+    });
   }
 
-  femaleClick() {
-    this.maleCheck = false;
-    this.femaleCheck = true;
+  showAvatar(name: string) {
+    if (name === 'Male') {
+      this.maleAvatar = true;
+      this.femaleAvatar = false;
+    } else {
+      this.maleAvatar = false;
+      this.femaleAvatar = true;
+    }
   }
 
   avatarClick(url, i) {
-    if (this.maleCheck === true) {
-      this.gender.emit('male');
-    } else {
-      this.gender.emit('female');
-    }
+    this.genderRadio.forEach((v) => {
+      if (v.check === true) {
+        this.gender.emit(v.label);
+      }
+    });
     this.imageId = i;
     this.avatarUrl.emit(url);
   }

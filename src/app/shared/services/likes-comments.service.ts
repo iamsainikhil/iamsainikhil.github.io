@@ -203,7 +203,7 @@ export class LikesCommentsService {
             }
         }
 
-        return 'Posted ' + message + ' ago';
+        return `Posted ${message} ago`;
     }
 
 }

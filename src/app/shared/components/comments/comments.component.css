@@ -9,7 +9,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .second-row {
@@ -17,12 +17,12 @@
 }
 
 .message {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .date {
     color: #000;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .chip,
@@ -47,7 +47,7 @@ figure img {
     cursor: pointer;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
     .comments {
         padding: 0px 10px;
     }
