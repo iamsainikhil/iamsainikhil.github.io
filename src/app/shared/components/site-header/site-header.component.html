@@ -1,0 +1,35 @@
+<div appScrollable (scrollDirection)="getPosition($event)" [ngClass]="{'sticky': !showHeader}">
+    <div class="desktop-menu" [ngClass]="{'non-sticky slide-bottom': animateHeader}">
+        <div class="desktop-logo" routerLink="/"></div>
+        <!-- desktop menu -->
+        <div class="desktop-items-container">
+            <a routerLink="/about" routerLinkActive="active" (click)="desktopLinksClick('about')">About</a>
+            <a routerLink="/skills" routerLinkActive="active" (click)="desktopLinksClick('skills')">Skills</a>
+            <a routerLink="/projects" routerLinkActive="active" (click)="desktopLinksClick('projects')">Projects</a>
+            <a routerLink="/achievements" routerLinkActive="active" (click)="desktopLinksClick('achievements')">Achievements</a>
+        </div>
+    </div>
+    <!-- desktop menuend -->
+
+    <!-- mobile menu -->
+    <div class="mobile-menu" [ngClass]="{'non-sticky slide-bottom': animateHeader}">
+        <div class="mobile-logo" routerLink="/"></div>
+        <div class="mobile-icon">
+            <div class="menu-icon menu-icon-cross" [ngClass]="{'isOpen' : !menuIcon}" (click)="menuIconClick()">
+                <span></span>
+                <svg x="0" y="0" width="54px" height="54px" viewbox="0 0 54 54">
+                                <circle cx="27" cy="27" r="26"></circle>
+                            </svg>
+            </div>
+        </div>
+        <div class="nav-items-wrapper" *ngIf="!menuIcon">
+            <div class="nav-links">
+                <a routerLink="/about" routerLinkActive="active" (click)="mobileLinksClick('about')" class="btn btn-link">About</a>
+                <a routerLink="/skills" routerLinkActive="active" (click)="mobileLinksClick('skills')" class="btn btn-link">Skills</a>
+                <a routerLink="/projects" routerLinkActive="active" (click)="mobileLinksClick('projects')" class="btn btn-link">Projects</a>
+                <a routerLink="/achievements" routerLinkActive="active" (click)="mobileLinksClick('achievements')" class="btn btn-link">Achievements</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu end -->
+</div>

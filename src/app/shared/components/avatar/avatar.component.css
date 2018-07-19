@@ -1,0 +1,44 @@
+.options {
+    padding: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.options .label {
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    padding-right: 10px;
+}
+
+.options i {
+    font-size: 24px;
+    margin-top: -1px;
+}
+
+.options i:hover {
+    cursor: pointer;
+}
+
+.radio-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.avatars {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+figure {
+    background: #f5f5f5;
+}
+
+figure img:hover {
+    cursor: pointer;
+    background: #808080 !important;
+}

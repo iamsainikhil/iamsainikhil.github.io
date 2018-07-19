@@ -1,0 +1,30 @@
+<h2 class="text-center title">Comments</h2>
+<p class="filter text-right">Filter By&nbsp;:
+    <span class="chip" [ngClass]="{'selected-chip': latestChip}" (click)="getLatestCommentsData()">Latest</span>
+    <span class="chip" [ngClass]="{'selected-chip': oldestChip}" (click)="getOldestCommentsData()">Oldest</span>
+</p>
+<div class="comments">
+    <div *ngIf="commentsLoader">
+        <app-site-loader></app-site-loader>
+    </div>
+    <div *ngFor="let comment of commentsData | async">
+        <div *ngIf="!commentsLoader">
+            <div class="tile">
+                <div class="tile-icon">
+                    <figure class="avatar avatar-xl">
+                        <img [src]="comment.data.avatarUrl" alt="avatar">
+                    </figure>
+                </div>
+                <div class="tile-content">
+                    <div class="first-row">
+                        <h4 class="tile-title">{{comment.data.name}}</h4>
+                        <p class="date">{{comment.data.dateAdded}}</p>
+                    </div>
+                    <div class="second-row">
+                        <p class="message">{{comment.data.message}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

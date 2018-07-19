@@ -1,0 +1,21 @@
+<h3 class="a-title">Timeline of main events in my life</h3>
+<p class="a-subtitle">"Event timeline gives a grasp of my career quickly instead of plain storytelling."</p>
+<app-site-loader *ngIf="showLoader"></app-site-loader>
+<div class="timeline-wrapper" *ngIf="!showLoader">
+    <div class="main-timeline">
+        <div class="timeline" *ngFor="let data of timelineData | async">
+            <div class="timeline-icon">
+                <div class="icon-image" [ngStyle]="{'background-image': 'url(' + data.data.icon + ')'}"></div>
+            </div>
+            <span class="year" *ngIf="data.data.status === undefined">{{data.data.year}}</span>
+            <span class="year" *ngIf="data.data.status !== undefined">
+                {{data.data.year}}&nbsp;-&nbsp;{{data.data.status}}</span>
+            <div class="timeline-content">
+                <h5 class="title">{{data.data.title}}</h5>
+                <p class="description">
+                    {{data.data.details}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

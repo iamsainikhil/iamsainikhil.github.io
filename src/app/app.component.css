@@ -1,0 +1,124 @@
+/* offline message */
+
+.main {
+    margin: 10% auto;
+}
+
+.text {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.loader {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    margin: 30% 20%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.loader svg {
+    width: 60%;
+    height: auto;
+}
+
+.loader:before {
+    display: none;
+}
+
+.drawit {
+    fill: transparent;
+    stroke: #000;
+    stroke-width: 2px;
+    stroke-dasharray: 300;
+    stroke-dashoffset: -300;
+    animation: dash 5s linear .5s infinite alternate;
+}
+
+.letters {
+    stroke: #343434;
+    fill: #f5f7f7;
+}
+
+
+/* Keyframes */
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: -300;
+    }
+    30% {
+        stroke-dashoffset: 0;
+    }
+    60% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -300;
+    }
+}
+
+.scroll-top-icon {
+    display: block;
+    background-image: url('../assets/icons/up-flat.svg');
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 20px;
+    position: fixed;
+    z-index: 999;
+}
+
+.scroll-top-icon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+}
+
+
+/* wrapper */
+
+@supports (display: grid) {
+    .wrapper {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 100%;
+    }
+}
+
+
+/* for IE 10, 11 or later versions */
+
+@supports not (display: grid) {
+    .wrapper {
+        display: -ms-grid;
+        overflow-x: hidden;
+        min-height: 100vh;
+        -ms-grid-rows: 2fr 1fr;
+        -ms-grid-columns: 100%;
+    }
+}
+
+main {
+    padding-top: 70px;
+}
+
+@media only screen and (max-width: 767px) {
+    .scroll-top-icon {
+        display: none;
+    }
+}

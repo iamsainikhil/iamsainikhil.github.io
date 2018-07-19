@@ -1,0 +1,50 @@
+.resume-content {
+    padding-bottom: 50px;
+}
+
+.buttons-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.resume-button {
+    border: 1px solid #2DBCAD;
+    color: #2DBCAD;
+    padding: 5px 15px;
+}
+
+.resume-button:hover {
+    background-color: #2DBCAD;
+    color: #fff;
+    cursor: pointer;
+}
+
+.back-home {
+    margin-left: 20px;
+}
+
+img {
+    pointer-events: none;
+}
+
+#print {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .back-home {
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+}
+
+@media print {
+    #noprint {
+        display: none;
+    }
+    #print {
+        display: block;
+    }
+}

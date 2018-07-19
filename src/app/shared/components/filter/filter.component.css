@@ -1,0 +1,69 @@
+.filter-items {
+    padding-left: 10px;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    padding-right: 10px;
+}
+
+.selected-chip {
+    background: #fff !important;
+}
+
+.chip {
+    padding: 15px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.chip:hover {
+    background: #fff;
+    cursor: pointer;
+}
+
+
+/* page specific styling */
+
+.project-chips.selected-chip {
+    color: #6a5acd !important;
+}
+
+.project-chips:hover {
+    color: #6a5acd;
+}
+
+.achievement-chips.selected-chip {
+    color: #4988CF !important;
+}
+
+.achievement-chips:hover {
+    color: #4988CF;
+}
+
+@media only screen and (max-width: 767px) {
+    .title {
+        text-align: center;
+    }
+    .filter-items {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .filter {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        padding: 20px;
+    }
+    .filter-items span {
+        margin-left: 10px;
+    }
+}

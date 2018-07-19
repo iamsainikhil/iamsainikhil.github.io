@@ -1,0 +1,27 @@
+<div class="options text-center fade-in-bottom">
+    <span class="label">Select your Gender</span>
+    <!-- gender -->
+    <div class="radio-wrapper" *ngFor="let radio of genderRadio; let i =index">
+        <p><i class="far fa-circle" (click)="radioClick(i)" *ngIf="!radio.check"></i></p>
+        <p><i class="far fa-check-circle" *ngIf="radio.check"></i></p>
+        <p class="label">{{radio.label}}</p>
+    </div>
+</div>
+
+<div *ngFor="let data of avatarData | async">
+    <p class="text-center fade-in-bottom"><span class="chip">Choose an Avatar</span></p>
+    <div class="avatars fade-in-bottom" *ngIf="maleAvatar">
+        <div *ngFor="let icon of data.man; let i = index">
+            <figure class="avatar avatar-xl">
+                <img [src]="icon" alt="avatar" [ngStyle]="{'background-color': (i === imageId) ? '#808080' : 'transparent'}" (click)="avatarClick(icon, i)">
+            </figure>
+        </div>
+    </div>
+    <div class="avatars fade-in-bottom" *ngIf="femaleAvatar">
+        <div *ngFor="let icon of data.women; let i = index">
+            <figure class="avatar avatar-xl">
+                <img [src]="icon" alt="avatar" [ngStyle]="{'background-color': (i === imageId) ? '#808080' : 'transparent'}" (click)="avatarClick(icon, i)">
+            </figure>
+        </div>
+    </div>
+</div>
