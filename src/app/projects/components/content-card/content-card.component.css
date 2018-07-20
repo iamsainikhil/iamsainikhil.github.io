@@ -6,6 +6,31 @@
     margin-top: -75px;
 }
 
+.content-wrapper::before,
+.content-wrapper::after {
+    content: '';
+    background-image: url('../../../../assets/icons/quote.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.content-wrapper::before {
+    margin-right: 5px;
+    margin-bottom: -50px;
+}
+
+.content-wrapper::after {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-top: -45px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
 .title {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
@@ -25,26 +50,6 @@
     font-size: 18px;
 }
 
-.quote {
-    background-image: url('../../../../assets/icons/quote.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-}
-
-.top {
-    margin-top: -40px;
-}
-
-.bottom {
-    right: 0;
-    margin-right: 10px;
-    margin-top: -50px;
-    transform: rotate(180deg);
-}
-
 .timeline-icon::before {
     border: 1px solid #808080 !important;
 }
@@ -57,5 +62,5 @@
 /* error */
 
 .ndf-image {
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/iamsainikhil-portfolio.appspot.com/o/errors%2F404_no_data.svg?alt=media&token=ac11262e-4f9d-41ec-ae6d-8979425f29ae');
+    background-image: url('../../../../assets/icons/404_no_data.svg');
 }

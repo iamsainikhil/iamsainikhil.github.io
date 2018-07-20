@@ -16,7 +16,7 @@
                         </div>
                         <div *ngIf="!showLoader">
                             <div class="wow fade-in-bottom" *ngFor="let about of aboutData | async">
-                                <h2 class="about-caption caption">{{about.caption}}</h2>
+                                <h2 class="about-caption caption" [innerHTML]=about.caption></h2>
                                 <p>{{about.education}} and {{about.job}}</p>
                                 <div class="buttons-group">
                                     <button class="about-button wow zoomIn" routerLink="/resume" (click)="buttonClick('resume')">VIEW MY RESUME</button>
