@@ -17,6 +17,11 @@
     color: #808080;
 }
 
+.contact-caption::before,
+.contact-caption::after {
+    background-image: url('../../../../assets/icons/quote.svg');
+}
+
 .form-label {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
