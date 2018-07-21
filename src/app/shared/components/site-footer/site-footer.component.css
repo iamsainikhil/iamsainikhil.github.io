@@ -30,6 +30,12 @@
      font-family: 'Poppins', sans-serif;
  }
  
+ .notes {
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: center;
+ }
+ 
  .social-icons {
      display: grid;
      grid-template-columns: repeat(5, 1fr);
@@ -75,6 +81,7 @@
      background-repeat: no-repeat;
      width: 20px;
      height: 20px;
+     margin-left: 5px;
  }
  
  .love {
@@ -88,8 +95,8 @@
  .firebase {
      background-image: url('../../../../assets/icons/skills/firebase.svg');
      width: 34px;
-     height: 27px;
-     margin-bottom: -3px;
+     height: 28px;
+     margin-top: -5px;
  }
  
  .vcs {
@@ -109,7 +116,12 @@
          justify-content: center;
          text-align: left;
      }
+     .notes p {
+         margin-bottom: 2px;
+     }
      .copyrights {
+         padding-top: 5px;
+         margin-bottom: 0px;
          margin-left: -8px;
      }
  }

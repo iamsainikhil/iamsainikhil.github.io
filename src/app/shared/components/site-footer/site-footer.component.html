@@ -52,37 +52,47 @@
         </div>
         <div class="social-icons">
             <a href="https://www.behance.net/techgeek124a93/appreciated" target="_blank" (click)="footerLinksClick('behance')">
-                <p class="image behance"></p>
+                <p class="image behance tip">
+                    <span class="message">Behance</span>
+                </p>
             </a>
 
             <a href="https://codepen.io/iamsainikhil" target="_blank" (click)="footerLinksClick('codepen')">
-                <p class="image codepen"></p>
+                <p class="image codepen tip">
+                    <span class="message">codepen</span>
+                </p>
             </a>
 
             <a href="https://github.com/iamsainikhil" target="_blank" (click)="footerLinksClick('github')">
-                <p class="image github"></p>
+                <p class="image github tip">
+                    <span class="message">Github</span>
+                </p>
             </a>
 
             <a href="https://www.linkedin.com/in/iamsainikhil" target="_blank" (click)="footerLinksClick('linkedin')">
-                <p class="image linkedin"></p>
+                <p class="image linkedin tip">
+                    <span class="message">LinkedIn</span>
+                </p>
             </a>
 
             <a href="https://stackoverflow.com/story/iamsainikhil" target="_blank" (click)="footerLinksClick('stack-overflow')">
-                <p class="image stack"></p>
+                <p class="image stack tip">
+                    <span class="message">Stack Overflow</span>
+                </p>
             </a>
         </div>
         <div>
             <!-- empty -->
         </div>
     </div>
-    <p class="notes">
-        Website built with
-        <span class="icon-svg love"></span> using
-        <span class="icon-svg angular" title="Angular"></span>
-        <span class="icon-svg firebase" title="Firebase"></span>
-        <span class="icon-svg vcs" title="Visual Studio Code"></span>&nbsp; and hosted on
-        <span class="icon-svg github-svg" title="Github"></span>
-    </p>
-    <!-- <p class="notes">Website last updated on {{date | date}}</p> -->
+    <div class="notes">
+        <p>Website built with</p>
+        <p class="icon-svg love"></p>&nbsp;using
+        <p class="icon-svg angular tip"><span class="message">Angular</span></p>
+        <p class="icon-svg firebase tip"><span class="message">Firebase</span></p>
+        <p class="icon-svg vcs tip"><span class="message">Visual Studio Code</span></p>
+        <p>&nbsp; and hosted on</p>
+        <p class="icon-svg github-svg tip"><span class="message">GitHub</span></p>
+    </div>
     <p class="copyrights">&copy;&nbsp;2017&nbsp;-&nbsp;{{date | date:'y'}}&nbsp;<a routerLink="/">Sai&nbsp;Nikhil&nbsp;Bheemanathini</a></p>
 </section>
