@@ -62,13 +62,14 @@
     text-transform: capitalize;
 }
 
-.web-design .category-image {
+
+/* .web-design .category-image {
     height: 75px;
 }
 
 .ui-ux-design .category-image {
     height: 55px;
-}
+} */
 
 .web-design .category-images,
 .ui-ux-design .category-images {
