@@ -10,10 +10,6 @@
 
 /* card */
 
-.card-image {
-    padding-top: 20px !important;
-}
-
 .card-header {
     color: #000;
 }
@@ -66,6 +62,9 @@
         grid-gap: 20px;
         justify-content: center;
     }
+    .card {
+        padding: 35px 10px 20px 10px;
+    }
 }
 
 
@@ -90,18 +89,21 @@
         grid-gap: 30px;
         justify-content: center !important;
     }
+    .card {
+        padding: 40px 10px 30px 10px;
+    }
     .card-content {
         display: grid;
         grid-template-columns: none;
-        grid-template-rows: 100px 200px 100px;
+        grid-template-rows: 100px 225px 75px;
     }
     .card-body {
         display: grid;
         grid-template-columns: none;
-        grid-template-rows: repeat(2, 100px);
+        grid-template-rows: 150px 75px;
     }
     .card-footer {
-        margin-top: -15px;
+        margin-top: 15px;
     }
 }
 
@@ -123,6 +125,9 @@
         grid-template-rows: 1fr;
         grid-gap: 30px;
         justify-content: center !important;
+    }
+    .card {
+        padding: 50px 10px 30px 10px;
     }
     .card-content {
         display: grid;
