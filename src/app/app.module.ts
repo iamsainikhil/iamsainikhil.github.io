@@ -65,6 +65,7 @@ import { SkillsService } from './shared/services/skills.service';
 import { TermsComponent } from './terms/terms.component';
 import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { SliceStringPipe } from './shared/pipes/slice-string.pipe';
+import { UrlNameExtractPipe } from './shared/pipes/url-name-extract.pipe';
 
 
 @NgModule({
@@ -111,7 +112,8 @@ import { SliceStringPipe } from './shared/pipes/slice-string.pipe';
     FaqComponent,
     FilterComponent,
     SkillsPageComponent,
-    SliceStringPipe
+    SliceStringPipe,
+    UrlNameExtractPipe
   ],
   imports: [
     BrowserModule,

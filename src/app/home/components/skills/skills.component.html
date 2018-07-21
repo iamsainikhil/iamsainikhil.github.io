@@ -29,7 +29,9 @@
                                     <h3 class="category-title">{{skill.webDesign.title}}</h3>
                                     <div class="category-images">
                                         <div *ngFor="let image of skill.webDesign.images">
-                                            <p class="category-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></p>
+                                            <p class="category-image tip" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                                                <span class="message">{{image | urlNameExtract}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -37,7 +39,9 @@
                                     <h3 class="category-title">{{skill.uiDesign.title}}</h3>
                                     <div class="category-images">
                                         <div *ngFor="let image of skill.uiDesign.images">
-                                            <p class="category-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></p>
+                                            <p class="category-image tip" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                                                <span class="message">{{image | urlNameExtract}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -45,7 +49,9 @@
                                     <h3 class="category-title">{{skill.frontEnd.title}}</h3>
                                     <div class="category-images">
                                         <div *ngFor="let image of skill.frontEnd.images">
-                                            <p class="category-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></p>
+                                            <p class="category-image tip" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                                                <span class="message">{{image | urlNameExtract}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +59,9 @@
                                     <h3 class="category-title">{{skill.backEnd.title}}</h3>
                                     <div class="category-images">
                                         <div *ngFor="let image of skill.backEnd.images">
-                                            <p class="category-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></p>
+                                            <p class="category-image tip" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                                                <span class="message">{{image | urlNameExtract}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

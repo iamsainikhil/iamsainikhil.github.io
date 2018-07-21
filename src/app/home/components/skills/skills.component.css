@@ -53,6 +53,10 @@
     height: 65px;
 }
 
+.category-image .message {
+    text-transform: capitalize;
+}
+
 .web-design .category-image {
     height: 75px;
 }
