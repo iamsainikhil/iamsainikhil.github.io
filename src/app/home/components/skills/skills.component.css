@@ -26,6 +26,19 @@
 
 /* categories */
 
+.category {
+    color: #000;
+    background-color: #fff;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 10px 25px 25px;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
 .category-images {
     display: flex;
     flex-direction: row !important;
@@ -46,7 +59,6 @@
 
 .ui-ux-design .category-image {
     height: 55px;
-    margin-left: 10px;
 }
 
 .web-design .category-images,
@@ -101,14 +113,21 @@
     }
     /* categories */
     .sub-title {
-        font-size: 24px;
+        font-size: 22px;
     }
     .category-title {
-        font-size: 22px;
+        font-size: 24px;
     }
     .categories {
         text-align: center;
         padding: 20px 10px;
+    }
+    .category {
+        margin: 20px auto;
+    }
+    .ui-ux-design .category-images,
+    .front-end .category-images {
+        margin-left: 10px;
     }
 }
 
