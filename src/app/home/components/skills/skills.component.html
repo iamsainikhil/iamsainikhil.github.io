@@ -6,7 +6,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="skills-section container-fluid">
     <div class="columns">
         <div class="column">
             <div class="element gradient">
@@ -25,35 +25,43 @@
                             </div>
                             <h2 class="sub-title text-center">{{skill.subTitle}}</h2>
                             <div class="categories">
-                                <div class="web-design wow fade-in-bottom">
+                                <div class="web-design category wow fade-in-bottom">
                                     <h3 class="category-title">{{skill.webDesign.title}}</h3>
                                     <div class="category-images">
                                         <div *ngFor="let image of skill.webDesign.images">
-                                            <p class="category-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></p>
+                                            <p class="category-image tip" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                                                <span class="message">{{image | urlNameExtract}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="ui-ux-design wow fade-in-bottom">
+                                <div class="ui-ux-design category wow fade-in-bottom">
                                     <h3 class="category-title">{{skill.uiDesign.title}}</h3>
                                     <div class="category-images">
                                         <div *ngFor="let image of skill.uiDesign.images">
-                                            <p class="category-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></p>
+                                            <p class="category-image tip" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                                                <span class="message">{{image | urlNameExtract}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="front-end wow fade-in-bottom">
+                                <div class="front-end category wow fade-in-bottom">
                                     <h3 class="category-title">{{skill.frontEnd.title}}</h3>
                                     <div class="category-images">
                                         <div *ngFor="let image of skill.frontEnd.images">
-                                            <p class="category-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></p>
+                                            <p class="category-image tip" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                                                <span class="message">{{image | urlNameExtract}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="back-end wow fade-in-bottom">
+                                <div class="back-end category wow fade-in-bottom">
                                     <h3 class="category-title">{{skill.backEnd.title}}</h3>
                                     <div class="category-images">
                                         <div *ngFor="let image of skill.backEnd.images">
-                                            <p class="category-image" [ngStyle]="{'background-image': 'url(' + image + ')'}"></p>
+                                            <p class="category-image tip" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                                                <span class="message">{{image | urlNameExtract}}</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
