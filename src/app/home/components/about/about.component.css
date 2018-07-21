@@ -9,7 +9,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        background: #008080;
+        background-color: #008080;
     }
     
     .buttons-group a:hover,

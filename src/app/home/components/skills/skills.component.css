@@ -37,7 +37,21 @@
     background-size: contain;
     background-repeat: no-repeat;
     width: 100px;
+    height: 65px;
+}
+
+.web-design .category-image {
     height: 75px;
+}
+
+.ui-ux-design .category-image {
+    height: 55px;
+    margin-left: 10px;
+}
+
+.web-design .category-images,
+.ui-ux-design .category-images {
+    justify-content: center;
 }
 
 .speciality-title,
@@ -45,15 +59,6 @@
 .category-title {
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
-}
-
-.web-design .category-image {
-    height: 100px;
-}
-
-.web-design .category-images,
-.ui-ux-design .category-images {
-    justify-content: center;
 }
 
 .explore-button {
@@ -103,6 +108,7 @@
     }
     .categories {
         text-align: center;
+        padding: 20px 10px;
     }
 }
 
@@ -137,6 +143,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         justify-content: center;
-        grid-gap: 20px;
+        grid-gap: 25px;
+        padding: 20px;
     }
 }
