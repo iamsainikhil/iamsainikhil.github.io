@@ -55,8 +55,9 @@
      cursor: pointer;
  }
  
- .behance {
-     background-image: url('../../../../assets/icons/social-icons/behance.svg');
+ .sololearn {
+     background-image: url('../../../../assets/icons/social-icons/sololearn.png');
+     border-radius: 15px;
  }
  
  .codepen {
