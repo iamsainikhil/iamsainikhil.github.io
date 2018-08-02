@@ -163,6 +163,7 @@ body {
     letter-spacing: 1px;
     font-size: 16px !important;
     background-color: #dcdcdc !important;
+    color: #353839 !important;
 }
 
 .chip:hover {
