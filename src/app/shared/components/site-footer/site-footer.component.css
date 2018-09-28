@@ -36,13 +36,6 @@
      justify-content: center;
  }
  
- .social-icons {
-     display: grid;
-     grid-template-columns: repeat(5, 1fr);
-     grid-template-rows: none;
-     grid-column-gap: 20px;
- }
- 
  .image {
      background-size: contain;
      background-repeat: no-repeat;
@@ -57,6 +50,14 @@
  
  .sololearn {
      background-image: url('../../../../assets/icons/social-icons/sololearn.png');
+ }
+ 
+ .hackerrank {
+     background-image: url('../../../../assets/icons/social-icons/hacker-rank.svg');
+ }
+ 
+ .hackerearth {
+     background-image: url('../../../../assets/icons/social-icons/hacker-earth.jpeg');
      border-radius: 15px;
  }
  
@@ -110,12 +111,15 @@
  /* media queries */
  
  @media only screen and (max-width: 767px) {
-     .first-row,
-     .second-row {
+     .social-icons {
          display: flex;
-         flex-flow: row nowrap;
-         justify-content: center;
-         text-align: left;
+         flex-flow: row wrap;
+         justify-content: space-around;
+         align-items: center;
+     }
+     .social-icons a p.image {
+         width: 35px;
+         height: 35px;
      }
      .notes p {
          margin-bottom: 2px;
@@ -127,7 +131,21 @@
      }
  }
  
+ @media only screen and (max-width: 399px) {
+     .first-row {
+         display: flex;
+         flex-direction: column;
+         padding-left: 30%;
+     }
+ }
+ 
  @media only screen and (min-width: 400px) and (max-width: 767px) {
+     .first-row {
+         display: flex;
+         flex-flow: row nowrap;
+         justify-content: center;
+         text-align: left;
+     }
      .first-row .second-column {
          padding-right: 15px;
      }
@@ -143,6 +161,12 @@
      }
      .first-row .second-column {
          margin-left: -20px;
+     }
+     .social-icons {
+         display: grid;
+         grid-template-columns: repeat(7, 1fr);
+         grid-template-rows: none;
+         grid-column-gap: 20px;
      }
  }
  /* modal popups */

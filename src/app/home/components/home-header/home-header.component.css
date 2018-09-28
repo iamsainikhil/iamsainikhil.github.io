@@ -11,6 +11,7 @@
  
  .non-sticky .desktop-items-container a {
      color: #808080;
+     background-color: #f5f5f5 !important;
  }
  
  .non-sticky .desktop-items-container a:hover {
@@ -203,6 +204,18 @@
      font-weight: bold;
      font-size: 22px;
      text-transform: capitalize;
+ }
+ /* to display better menu when hover on parallax banner [ desktop ] */
+ 
+ .desktop-items-container a:hover {
+     color: #fff;
+     background-color: rgba(0, 0, 0, 0) !important;
+ }
+ 
+ .navbar:hover .desktop-items-container a {
+     background-color: rgba(0, 0, 0, 0.5);
+     border-radius: 15px;
+     margin: 0 3px;
  }
  
  .parallax-back {
