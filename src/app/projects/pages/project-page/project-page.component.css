@@ -1,5 +1,10 @@
 /* project card */
 
+.card {
+    /* to place card above navbar when scrolled up */
+    z-index: 10;
+}
+
 .card-image {
     margin-top: 10px;
 }
