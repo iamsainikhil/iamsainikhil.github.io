@@ -25,6 +25,10 @@
      cursor: pointer;
  }
  
+ .first-row li a:hover {
+     color: #585C5D;
+ }
+ 
  .notes,
  .copyrights {
      font-family: 'Poppins', sans-serif;
@@ -83,7 +87,11 @@
      background-repeat: no-repeat;
      width: 20px;
      height: 20px;
-     margin-left: 5px;
+     margin: 0 5px;
+ }
+ 
+ .icon-svg.tip .message {
+     margin-left: -6px;
  }
  
  .love {
@@ -92,6 +100,7 @@
  
  .angular {
      background-image: url('../../../../assets/icons/skills/angular-icon.svg');
+     margin-left: 10px;
  }
  
  .firebase {
@@ -169,4 +178,3 @@
          grid-column-gap: 20px;
      }
  }
- /* modal popups */
