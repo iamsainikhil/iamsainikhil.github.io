@@ -12,6 +12,7 @@
  .non-sticky .desktop-items-container a {
      color: #808080;
      background-color: #f5f5f5 !important;
+     margin: 0 !important;
  }
  
  .non-sticky .desktop-items-container a:hover {
