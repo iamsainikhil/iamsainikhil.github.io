@@ -4,7 +4,7 @@
         <!-- desktop menu -->
         <div class="desktop-items-container">
             <a routerLink="/about" routerLinkActive="active" (click)="desktopLinksClick('about')">About</a>
-            <a routerLink="/skills" routerLinkActive="active" (click)="desktopLinksClick('skills')">Skills</a>
+            <!-- <a routerLink="/skills" routerLinkActive="active" (click)="desktopLinksClick('skills')">Skills</a> -->
             <a routerLink="/projects" routerLinkActive="active" (click)="desktopLinksClick('projects')">Projects</a>
             <a routerLink="/achievements" routerLinkActive="active" (click)="desktopLinksClick('achievements')">Achievements</a>
         </div>
@@ -25,7 +25,7 @@
         <div class="nav-items-wrapper" *ngIf="!menuIcon">
             <div class="nav-links">
                 <a routerLink="/about" routerLinkActive="active" (click)="mobileLinksClick('about')" class="btn btn-link">About</a>
-                <a routerLink="/skills" routerLinkActive="active" (click)="mobileLinksClick('skills')" class="btn btn-link">Skills</a>
+                <!-- <a routerLink="/skills" routerLinkActive="active" (click)="mobileLinksClick('skills')" class="btn btn-link">Skills</a> -->
                 <a routerLink="/projects" routerLinkActive="active" (click)="mobileLinksClick('projects')" class="btn btn-link">Projects</a>
                 <a routerLink="/achievements" routerLinkActive="active" (click)="mobileLinksClick('achievements')" class="btn btn-link">Achievements</a>
             </div>

@@ -170,6 +170,11 @@
      -moz-animation: ani-mouse 2.5s linear infinite;
      animation: ani-mouse 2.5s linear infinite;
  }
+ 
+ .tip span.message::after {
+     left: 15px;
+     top: 23px;
+ }
  /* desktop */
  
  .desktop-menu {
@@ -207,17 +212,12 @@
      text-transform: capitalize;
  }
  /* to display better menu when hover on parallax banner [ desktop ] */
- 
- .desktop-items-container a:hover {
-     color: #fff;
-     background-color: rgba(0, 0, 0, 0) !important;
- }
- 
- .navbar:hover .desktop-items-container a {
+ /* .navbar:hover .desktop-items-container a {
      background-color: rgba(0, 0, 0, 0.5);
      border-radius: 15px;
      margin: 0 3px;
  }
+  */
  
  .parallax-back {
      background-image: url('../../../../assets/icons/layer3.svg');
@@ -232,7 +232,7 @@
      flex-direction: column;
      color: #fff;
      font-weight: bold;
-     background: rgba(0, 0, 0, 0.4);
+     background: rgba(0, 0, 0, 0.5);
  }
  
  .parallax-front h1 {

@@ -45,7 +45,7 @@
         .mobile-about-info {
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 100%;
+            grid-template-rows: 1fr;
             grid-gap: 10px;
         }
         .desktop-about-info {
@@ -74,7 +74,7 @@
         .desktop-about-info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 100%;
+            grid-template-rows: 1fr;
             grid-gap: 20px;
             text-align: left;
         }
