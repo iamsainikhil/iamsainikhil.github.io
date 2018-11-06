@@ -4,16 +4,16 @@
         <div class="desktop-logo" routerLink="/" (click)="linksClick('logo')"></div>
         <div class="desktop-items-container">
             <a routerLink="/about" (click)="linksClick('about')">About</a>
-            <a routerLink="/skills" (click)="linksClick('skills')">Skills</a>
+            <!-- <a routerLink="/skills" (click)="linksClick('skills')">Skills</a> -->
             <a routerLink="/projects" (click)="linksClick('projects')">Projects</a>
             <a routerLink="/achievements" (click)="linksClick('achievements')">Achievements</a>
         </div>
     </div>
     <div class="parallax desktop-banner">
-        <div class="parallax-top-left"></div>
+        <!-- <div class="parallax-top-left"></div>
         <div class="parallax-top-right"></div>
         <div class="parallax-bottom-left" tabindex="1"></div>
-        <div class="parallax-bottom-right" tabindex="2"></div>
+        <div class="parallax-bottom-right" tabindex="2"></div> -->
         <div class="parallax-content">
             <div class="parallax-front">
                 <h1 class="tracking-in-expand">Sai Nikhil</h1>
@@ -27,8 +27,9 @@
             </div>
         </div>
         <span class="scroll-btn">
-                <a pageScroll href="#about" (click)="linksClick('scroll-down-desktop')">
-                    <span class="mouse">
+                <a pageScroll href="#about" class="tip" (click)="linksClick('scroll-down-desktop')">
+                    <span class="message">Scroll Down</span>
+        <span class="mouse">
                         <span></span>
         </span>
         </a>
@@ -50,7 +51,7 @@
         <div class="mobile-items-container" *ngIf="!menuIcon">
             <div class="mobile-nav-links">
                 <a routerLink="/about" (pageScrollFinish)="menuIconClick('about')">About</a>
-                <a routerLink="/skills" (pageScrollFinish)="menuIconClick('skills')">Skills</a>
+                <!-- <a routerLink="/skills" (pageScrollFinish)="menuIconClick('skills')">Skills</a> -->
                 <a pageScroll href="#projects" (pageScrollFinish)="menuIconClick('projects')">Projects</a>
                 <a routerLink="/achievements" (pageScrollFinish)="menuIconClick('achievements')">Achievements</a>
             </div>

@@ -66,6 +66,7 @@ import { TermsComponent } from './terms/terms.component';
 import { SkillsPageComponent } from './skills-page/skills-page.component';
 import { SliceStringPipe } from './shared/pipes/slice-string.pipe';
 import { UrlNameExtractPipe } from './shared/pipes/url-name-extract.pipe';
+import { GithubLinkPipe } from './shared/pipes/github-link.pipe';
 
 
 @NgModule({
@@ -113,7 +114,8 @@ import { UrlNameExtractPipe } from './shared/pipes/url-name-extract.pipe';
     FilterComponent,
     SkillsPageComponent,
     SliceStringPipe,
-    UrlNameExtractPipe
+    UrlNameExtractPipe,
+    GithubLinkPipe
   ],
   imports: [
     BrowserModule,

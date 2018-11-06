@@ -90,6 +90,10 @@
      margin: 0 5px;
  }
  
+ .icon-svg:hover {
+     cursor: help;
+ }
+ 
  .icon-svg.tip .message {
      margin-left: -6px;
  }

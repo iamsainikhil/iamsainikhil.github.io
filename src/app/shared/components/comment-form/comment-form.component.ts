@@ -15,7 +15,7 @@ export class CommentFormComponent implements OnInit {
    * condition to show comment form & avatar component when user clicks
    * leave a comment button
    */
-  showCommentForm = true;
+  showCommentForm = false;
   /**
    * success message after user leaves a comment
    */
