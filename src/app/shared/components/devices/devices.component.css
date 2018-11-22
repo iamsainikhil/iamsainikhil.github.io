@@ -16,4 +16,5 @@ img {
     left: 12%;
     overflow-x: hidden !important;
     overflow-y: scroll !important;
+    scroll-behavior: smooth;
 }

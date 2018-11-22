@@ -137,8 +137,14 @@
      .notes p {
          margin-bottom: 2px;
      }
+     .second-row {
+         padding: 25px 10px 10px 10px;
+     }
+     .notes {
+         padding: 10px 10px 15px 10px;
+     }
      .copyrights {
-         padding-top: 5px;
+         padding-top: 15px;
          margin-bottom: 0px;
          margin-left: -8px;
      }
@@ -170,15 +176,24 @@
          display: flex;
          flex-flow: row nowrap;
          justify-content: space-around;
-         padding: 10px;
      }
      .first-row .second-column {
          margin-left: -20px;
+     }
+     .second-row {
+         padding: 25px 10px 15px 10px;
+     }
+     .notes {
+         padding: 5px;
      }
      .social-icons {
          display: grid;
          grid-template-columns: repeat(7, 1fr);
          grid-template-rows: none;
          grid-column-gap: 20px;
+     }
+     .copyrights {
+         padding-top: 5px;
+         margin-bottom: 0;
      }
  }
