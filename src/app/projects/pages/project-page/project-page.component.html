@@ -19,9 +19,9 @@
                     </div>
                     <div class="card-footer">
                         <app-likes [docId]="projectId" [collectionName]="'projects'"></app-likes>
-                        <a [href]="project.url" target="_blank"><button class="project-button">View Project</button></a>
+                        <a [href]="project.url" target="_blank"><button class="project-button" (click)="buttonClick()">View Project</button></a>
                     </div>
-                    <a [href]="project.url | githubLink" target="_blank"><button class="project-button">View GitHub Repository</button></a>
+                    <a [href]="project.url | githubLink" target="_blank"><button class="project-button" (click)="buttonClick('github')">View on GitHub</button></a>
                 </div>
             </div>
         </div>

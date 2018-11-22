@@ -1,3 +1,4 @@
+import { GAService } from './../../../shared/services/ga.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -30,7 +31,8 @@ export class ProjectPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private projectsService: ProjectsService
+    private projectsService: ProjectsService,
+    private gaService: GAService
   ) { }
 
   ngOnInit() {
@@ -42,6 +44,10 @@ export class ProjectPageComponent implements OnInit, OnDestroy {
       this.projectData = this.projectsService.getProjectData(this.projectId);
       this.showLoader = false;
     });
+  }
+
+  buttonClick(purpose = 'direct') {
+    this.gaService.emitEvent(`view-${this.projectId}-${purpose}-clicked-on-project-page`, `project-view-${purpose}`, 'button');
   }
 
   ngOnDestroy() {
