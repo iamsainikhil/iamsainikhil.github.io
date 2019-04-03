@@ -44,7 +44,6 @@ export class DisableScrollDirective implements OnInit {
       window.addEventListener("DOMMouseScroll", this.preventDefault, false);
     }
     window.onwheel = this.preventDefault; // modern standard
-    window.onmousewheel = document.onmousewheel = this.preventDefault; // older browsers, IE
     window.ontouchmove = this.preventDefault; // mobile
     document.onkeydown = this.preventDefault;
   }
@@ -53,7 +52,6 @@ export class DisableScrollDirective implements OnInit {
     if (window.removeEventListener) {
       window.removeEventListener("DOMMouseScroll", this.preventDefault, false);
     }
-    window.onmousewheel = document.onmousewheel = null;
     window.onwheel = null;
     window.ontouchmove = null;
     document.onkeydown = null;
