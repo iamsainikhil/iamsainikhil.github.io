@@ -27,7 +27,7 @@
     "core-js": "2.6.5",
     "firebase": "5.9.2",
     "intl": "1.2.5",
-    "ng2-charts": "2.2.2",
+    "ng2-charts": "^1.6.0",
     "ngx-page-scroll": "4.0.2",
     "ngx-wow": "1.0.2",
     "rxjs": "6.4.0",

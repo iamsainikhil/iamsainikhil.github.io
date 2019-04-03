@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
-import { AngularFirestore } from "@angular/fire/firestore";
+import {
+  AngularFirestore,
+  AngularFirestoreCollection
+} from "@angular/fire/firestore";
 import { map } from "rxjs/operators";
 
 @Injectable()
@@ -23,7 +26,7 @@ export class CommonService {
       timestamp: false,
       ...opts
     };
-    let collection: any;
+    let collection: AngularFirestoreCollection;
     if (query.operator === null) {
       collection = this.afs.collection(collectionName, ref =>
         ref
@@ -69,10 +72,10 @@ export class CommonService {
       }
     }
 
-    const collectionData: any = collection.snapshotChanges().pipe(
+    const collectionData = collection.snapshotChanges().pipe(
       map(changes => {
         return changes.map(a => {
-          const data = a.payload.doc.data();
+          const data: any = a.payload.doc.data();
           const id = a.payload.doc.id;
           if (query.timestamp) {
             const timeStamp = data.date;
@@ -93,7 +96,7 @@ export class CommonService {
     const document = this.afs.doc(collectionName + "/" + docId);
     const documentData = document.snapshotChanges().pipe(
       map(snap => {
-        const data = snap.payload.data();
+        const data: any = snap.payload.data();
         const id = snap.payload.id;
         if (query.timestamp) {
           const timeStamp = data.date;
@@ -126,7 +129,7 @@ export class CommonService {
     const collectionData = subCollection.snapshotChanges().pipe(
       map(changes => {
         return changes.map(a => {
-          const data = a.payload.doc.data();
+          const data: any = a.payload.doc.data();
           const id = a.payload.doc.id;
           if (query.timestamp) {
             const timeStamp = data.date;

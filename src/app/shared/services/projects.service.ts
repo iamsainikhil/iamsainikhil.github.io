@@ -140,11 +140,11 @@ export class ProjectsService {
         return changes.map(a => {
           const data = a.payload.doc.data() as Story;
           const id = a.payload.doc.id;
-          // new timestamp sent from firestore need to be converted to date
-          const timestampStart = data.timeline.startDate;
-          const timestampEnd = data.timeline.endDate;
-          data.timeline.startDate = timestampStart.toDate();
-          data.timeline.endDate = timestampEnd.toDate();
+          // // new timestamp sent from firestore need to be converted to date
+          // const timestampStart = data.timeline.startDate;
+          // const timestampEnd = data.timeline.endDate;
+          // data.timeline.startDate = timestampStart.toDate();
+          // data.timeline.endDate = timestampEnd.toDate();
           return { id, data };
         });
       })
