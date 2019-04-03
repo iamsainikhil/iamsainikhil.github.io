@@ -1,15 +1,17 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/scan';
-import 'rxjs/add/operator/take';
-import { QueryConfig } from '../models/queryConfig';
+import { Injectable } from "@angular/core";
+import {
+  AngularFirestore,
+  AngularFirestoreCollection
+} from "@angular/fire/firestore";
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/do";
+import "rxjs/add/operator/scan";
+import "rxjs/add/operator/take";
+import { QueryConfig } from "../models/queryConfig";
 
 @Injectable()
 export class PaginationService {
-
   // Source data
   public _done = new BehaviorSubject(false);
   private _loading = new BehaviorSubject(false);
@@ -22,8 +24,7 @@ export class PaginationService {
   done: Observable<boolean> = this._done.asObservable();
   loading: Observable<boolean> = this._loading.asObservable();
 
-
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore) {}
 
   // Initial query sets options and defines the Observable
   // passing opts will override the defaults
@@ -39,19 +40,17 @@ export class PaginationService {
 
     const first = this.afs.collection(this.query.path, ref => {
       return ref
-              .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
-              .limit(this.query.limit);
+        .orderBy(this.query.field, this.query.reverse ? "desc" : "asc")
+        .limit(this.query.limit);
     });
 
     this.mapAndUpdate(first);
 
     // Create the observable array for consumption in components
-    this.data = this._data.asObservable()
-        .scan( (acc, val) => {
-          return this.query.prepend ? val.concat(acc) : acc.concat(val);
-        });
+    this.data = this._data.asObservable().scan((acc, val) => {
+      return this.query.prepend ? val.concat(acc) : acc.concat(val);
+    });
   }
-
 
   // Retrieves additional data from firestore
   more() {
@@ -59,34 +58,36 @@ export class PaginationService {
 
     const more = this.afs.collection(this.query.path, ref => {
       return ref
-              .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
-              .limit(this.query.limit)
-              .startAfter(cursor);
+        .orderBy(this.query.field, this.query.reverse ? "desc" : "asc")
+        .limit(this.query.limit)
+        .startAfter(cursor);
     });
     this.mapAndUpdate(more);
   }
-
 
   // Determines the doc snapshot to paginate query
   private getCursor() {
     const current = this._data.value;
     if (current.length) {
-      return this.query.prepend ? current[0].doc : current[current.length - 1].doc;
+      return this.query.prepend
+        ? current[0].doc
+        : current[current.length - 1].doc;
     }
     return null;
   }
 
-
   // Maps the snapshot to usable format the updates source
   private mapAndUpdate(col: AngularFirestoreCollection<any>) {
-
-    if (this._done.value || this._loading.value) { return; }
+    if (this._done.value || this._loading.value) {
+      return;
+    }
 
     // loading
     this._loading.next(true);
 
     // Map snapshot with doc ref (needed for cursor)
-    return col.snapshotChanges()
+    return col
+      .snapshotChanges()
       .do(arr => {
         let values = arr.map(snap => {
           const data = snap.payload.doc.data();
@@ -108,9 +109,8 @@ export class PaginationService {
         if (!values.length) {
           this._done.next(true);
         }
-    })
-    .take(1)
-    .subscribe();
+      })
+      .take(1)
+      .subscribe();
   }
-
 }
