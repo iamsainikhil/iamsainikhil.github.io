@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ChartsModule } from 'ng2-charts';
 import { NgwWowModule } from 'ngx-wow';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
