@@ -1,170 +1,178 @@
 /* skills section */
 
 .section-title {
-    padding-top: 100px;
+  padding-top: 100px;
 }
 
 .skills-content {
-    padding: 100px 25px 150px 25px;
+  padding: 100px 25px 150px 25px;
 }
 
 .gradient {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    background: #ed4101;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  background: #ff6654;
 }
-
 
 /* specialities */
 
 .speciality-image {
-    background-size: contain;
-    background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-
 
 /* categories */
 
 .category {
-    color: #000;
-    background-color: #fff;
-    border-radius: 15px;
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 30px 20px 0 20px;
-    min-height: 200px;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+  color: #000;
+  background-color: #fff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 20px 0 20px;
+  min-height: 200px;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .front-end.category,
 .back-end.category {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .category-images {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 .category-image {
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100px;
-    height: 60px;
-    margin-left: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 60px;
+  margin-left: 10px;
 }
 
 .ui-ux-design .category-image,
 .front-end .category-image {
-    margin-right: -15px;
+  margin-right: -15px;
 }
 
 .back-end .category-image {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .category-image .message {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .speciality-title,
 .sub-title,
 .category-title {
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
 }
 
 .explore-button {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .explore-button button {
-    border: 1px solid #fff;
-    color: #fff;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
 .explore-button button:hover {
-    background-color: #fff;
-    color: #ed4101;
+  background-color: #fff;
+  color: #ed4101;
 }
 
 @media only screen and (max-width: 767px) {
-    .element {
-        -webkit-clip-path: polygon(0 0, 100% calc(2% - 1vw), 100% calc(100% - 4vw), 0 100%);
-        clip-path: polygon(0 0, 100% calc(2% - 1vw), 100% calc(100% - 4vw), 0 100%);
-    }
-    .skills-content {
-        text-align: left;
-    }
-    .skills-caption {
-        font-size: 24px;
-    }
-    /* specialities */
-    .specialities {
-        display: grid;
-        justify-items: center;
-    }
-    .speciality-image {
-        width: 200px;
-        height: 200px;
-    }
-    .speciality-title {
-        margin-top: -20px;
-        text-align: center;
-    }
-    /* categories */
-    .sub-title {
-        font-size: 22px;
-    }
-    .category-title {
-        font-size: 24px;
-    }
-    .categories {
-        text-align: center;
-        padding: 20px 10px;
-    }
-    .category {
-        margin: 20px auto;
-    }
+  .element {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% calc(2% - 1vw),
+      100% calc(100% - 4vw),
+      0 100%
+    );
+    clip-path: polygon(0 0, 100% calc(2% - 1vw), 100% calc(100% - 4vw), 0 100%);
+  }
+  .skills-content {
+    text-align: left;
+  }
+  .skills-caption {
+    font-size: 24px;
+  }
+  /* specialities */
+  .specialities {
+    display: grid;
+    justify-items: center;
+  }
+  .speciality-image {
+    width: 200px;
+    height: 200px;
+  }
+  .speciality-title {
+    margin-top: -20px;
+    text-align: center;
+  }
+  /* categories */
+  .sub-title {
+    font-size: 22px;
+  }
+  .category-title {
+    font-size: 24px;
+  }
+  .categories {
+    text-align: center;
+    padding: 20px 10px;
+  }
+  .category {
+    margin: 20px auto;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .element {
-        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
-        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
-    }
-    .skills-caption {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    /* specialities */
-    .specialities {
-        display: flex;
-        flex-direction: row !important;
-        justify-content: space-around;
-    }
-    .speciality-image {
-        width: 250px;
-        height: 250px;
-    }
-    .speciality-title {
-        margin-top: -30px;
-    }
-    /* categories */
-    .sub-title {
-        padding: 10px;
-    }
-    .categories {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        justify-content: center;
-        grid-gap: 25px;
-        padding: 20px;
-    }
+  .element {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% calc(3% - 1vw),
+      100% calc(100% - 3vw),
+      0 100%
+    );
+    clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
+  }
+  .skills-caption {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /* specialities */
+  .specialities {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+  }
+  .speciality-image {
+    width: 250px;
+    height: 250px;
+  }
+  .speciality-title {
+    margin-top: -30px;
+  }
+  /* categories */
+  .sub-title {
+    padding: 10px;
+  }
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    justify-content: center;
+    grid-gap: 25px;
+    padding: 20px;
+  }
 }
