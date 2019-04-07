@@ -1,53 +1,95 @@
 <div class="container">
-    <div class="columns">
-        <div class="column">
-            <h2 class="text-center" [ngClass]="{'section-title': page === 'home', 'pa-title': page === 'projects'}">Projects</h2>
-        </div>
+  <div class="columns">
+    <div class="column">
+      <h2
+        class="text-center"
+        [ngClass]="{
+          'section-title': page === 'home',
+          'pa-title': page === 'projects'
+        }"
+      >
+        Projects
+      </h2>
     </div>
+  </div>
 </div>
 <div class="container-fluid">
-    <div class="columns">
-        <div class="column">
-            <div class="gradient" [ngClass]="{'element': page === 'home', 'projects-element': page === 'projects'}">
-                <div class="section-content projects-content">
-                    <div *ngIf="page === 'projects'">
-                        <app-filter [chipData]="chipData" [page]="page"></app-filter>
+  <div class="columns">
+    <div class="column">
+      <div
+        class="gradient"
+        [ngClass]="{
+          element: page === 'home',
+          'projects-element': page === 'projects'
+        }"
+      >
+        <div class="section-content projects-content">
+          <div *ngIf="page === 'projects'">
+            <app-filter [chipData]="chipData" [page]="page"></app-filter>
+          </div>
+          <div *ngIf="showLoader">
+            <app-site-loader></app-site-loader>
+          </div>
+          <div *ngIf="!showLoader">
+            <div class="projects">
+              <div *ngFor="let project of (projectsData | async)">
+                <div class="card wow fade-in-bottom">
+                  <div class="card-image">
+                    <app-devices
+                      [imageUrl]="project.data.imageUrl"
+                    ></app-devices>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-header">
+                      <div class="card-title h3">{{ project.data.title }}</div>
                     </div>
-                    <div *ngIf="showLoader">
-                        <app-site-loader></app-site-loader>
+                    <div class="card-body">
+                      <p>{{ project.data.shortInfo }}</p>
+                      <p>
+                        <span
+                          class="chip"
+                          *ngFor="let tag of project.data.tags"
+                          >{{ tag }}</span
+                        >
+                      </p>
                     </div>
-                    <div *ngIf="!showLoader">
-                        <div class="projects">
-                            <div *ngFor="let project of projectsData | async">
-                                <div class="card wow fade-in-bottom">
-                                    <div class="card-image">
-                                        <app-devices [imageUrl]="project.data.imageUrl"></app-devices>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-header">
-                                            <div class="card-title h3">{{project.data.title}}</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <p>{{project.data.shortInfo}}</p>
-                                            <p>
-                                                <span class="chip" *ngFor="let tag of project.data.tags">{{tag}}</span>
-                                            </p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <button class="project-button" [routerLink]="['/projects', project.id]" (click)="buttonClick('read-story', project.id)">Read story</button>
-                                            <a [href]="project.data.url" target="_blank"><button class="project-button" (click)="buttonClick('visit', project.id)">View project</button></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><br>
-                        <!-- button -->
-                        <div class="explore-button wow zoomIn" *ngIf="page === 'home'">
-                            <button routerLink="/projects" (click)="buttonClick('explore-more')">explore more</button>
-                        </div>
+                    <div class="card-footer">
+                      <button
+                        class="project-button"
+                        [routerLink]="['/projects', project.id]"
+                        (click)="buttonClick('read-story', project.id)"
+                      >
+                        Read story
+                      </button>
+                      <button
+                        class="project-button"
+                        (click)="buttonClick('visit', project.id)"
+                      >
+                        <a
+                          [href]="project.data.url"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          >View project</a
+                        >
+                      </button>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+            <br />
+            <!-- button -->
+            <div class="explore-button wow zoomIn" *ngIf="page === 'home'">
+              <button
+                routerLink="/projects"
+                (click)="buttonClick('explore-more')"
+              >
+                explore more
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
