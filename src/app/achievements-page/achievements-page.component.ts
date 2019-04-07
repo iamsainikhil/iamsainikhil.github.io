@@ -5,10 +5,6 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
   templateUrl: "./achievements-page.component.html",
   styleUrls: ["./achievements-page.component.css"]
 })
-export class AchievementsPageComponent implements OnInit {
-  page = "achievements";
-
+export class AchievementsPageComponent {
   constructor() {}
-
-  ngOnInit() {}
 }

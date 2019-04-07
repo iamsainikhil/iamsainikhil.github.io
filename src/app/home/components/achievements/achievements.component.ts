@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs/Subscription";
 import { AchievementsService } from "../../../shared/services/achievements.service";
 import { FilterService } from "../../../shared/services/filter.service";
+import { GAService } from "../../../shared/services/ga.service";
 
 @Component({
   selector: "app-achievements",
@@ -9,10 +10,6 @@ import { FilterService } from "../../../shared/services/filter.service";
   styleUrls: ["./achievements.component.css"]
 })
 export class AchievementsComponent implements OnInit, OnDestroy {
-  /**
-   * page and data
-   */
-  @Input() page: string;
   achievementsData: any;
   showLoader: boolean;
   chipName: string;
@@ -41,7 +38,8 @@ export class AchievementsComponent implements OnInit, OnDestroy {
 
   constructor(
     private achievementsService: AchievementsService,
-    private filterService: FilterService
+    private filterService: FilterService,
+    private gaService: GAService
   ) {}
 
   ngOnInit() {
@@ -128,6 +126,10 @@ export class AchievementsComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.showLoader = false;
     }, 100);
+  }
+
+  buttonClick(id) {
+    this.gaService.emitEvent(`${id}-view`, "achievement-view", "button");
   }
 
   ngOnDestroy() {

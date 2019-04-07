@@ -1,13 +1,7 @@
 <div class="container">
   <div class="columns">
     <div class="column">
-      <h2
-        class="text-center"
-        [ngClass]="{
-          'section-title': page === 'home',
-          'pa-title': page === 'projects'
-        }"
-      >
+      <h2 class="section-title text-center">
         Projects
       </h2>
     </div>
@@ -16,16 +10,10 @@
 <div class="container-fluid">
   <div class="columns">
     <div class="column">
-      <div
-        class="gradient"
-        [ngClass]="{
-          element: page === 'home',
-          'projects-element': page === 'projects'
-        }"
-      >
+      <div class="gradient element">
         <div class="section-content projects-content">
-          <div *ngIf="page === 'projects'">
-            <app-filter [chipData]="chipData" [page]="page"></app-filter>
+          <div>
+            <app-filter [chipData]="chipData" [page]="'projects'"></app-filter>
           </div>
           <div *ngIf="showLoader">
             <app-site-loader></app-site-loader>
@@ -33,17 +21,15 @@
           <div *ngIf="!showLoader">
             <div class="projects">
               <div *ngFor="let project of (projectsData | async)">
-                <div class="card wow fade-in-bottom">
-                  <div class="card-image">
+                <div class="project-card wow fade-in-bottom">
+                  <div class="image-section">
                     <app-devices
                       [imageUrl]="project.data.imageUrl"
                     ></app-devices>
                   </div>
-                  <div class="card-content">
-                    <div class="card-header">
-                      <div class="card-title h3">{{ project.data.title }}</div>
-                    </div>
-                    <div class="card-body">
+                  <div class="content-section">
+                    <div class="project-title">{{ project.data.title }}</div>
+                    <div class="project-info">
                       <p>{{ project.data.shortInfo }}</p>
                       <p>
                         <span
@@ -53,24 +39,25 @@
                         >
                       </p>
                     </div>
-                    <div class="card-footer">
+                    <div class="footer-section">
                       <button
-                        class="project-button"
-                        [routerLink]="['/projects', project.id]"
-                        (click)="buttonClick('read-story', project.id)"
-                      >
-                        Read story
-                      </button>
-                      <button
-                        class="project-button"
-                        (click)="buttonClick('visit', project.id)"
+                        class="view-button"
+                        (click)="buttonClick('visit-project', project.id)"
                       >
                         <a
+                          class="view-link"
                           [href]="project.data.url"
                           target="_blank"
                           rel="noreferrer noopener"
-                          >View project</a
+                          >View</a
                         >
+                      </button>
+                      <button
+                        class="info-button"
+                        [routerLink]="['/projects', project.id]"
+                        (click)="buttonClick('read-story', project.id)"
+                      >
+                        More Info
                       </button>
                     </div>
                   </div>
@@ -78,15 +65,6 @@
               </div>
             </div>
             <br />
-            <!-- button -->
-            <div class="explore-button wow zoomIn" *ngIf="page === 'home'">
-              <button
-                routerLink="/projects"
-                (click)="buttonClick('explore-more')"
-              >
-                explore more
-              </button>
-            </div>
           </div>
         </div>
       </div>
