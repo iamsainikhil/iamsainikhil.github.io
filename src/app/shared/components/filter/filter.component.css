@@ -34,19 +34,19 @@
 /* page specific styling */
 
 .project-chips.selected-chip {
-  color: #6a5acd;
+  color: #e57d3a;
 }
 
 .project-chips:hover {
-  color: #6a5acd;
+  color: #e57d3a;
 }
 
 .achievement-chips.selected-chip {
-  color: #4988cf;
+  color: #33ae56;
 }
 
 .achievement-chips:hover {
-  color: #4988cf;
+  color: #33ae56;
 }
 
 @media only screen and (max-width: 767px) {

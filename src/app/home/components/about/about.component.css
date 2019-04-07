@@ -1,88 +1,88 @@
-    /* about section */
-    
-    .about-content {
-        font-family: 'Poppins', sans-serif;
-        letter-spacing: 1px;
-    }
-    
-    .gradient {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        background-color: #008080;
-    }
-    
-    .buttons-group a:hover,
-    .about-button:hover {
-        cursor: pointer;
-    }
-    
-    .about-button {
-        font-size: 16px;
-        border: 1px solid #fff;
-        color: #fff;
-        background: transparent;
-    }
-    
-    .about-button:hover {
-        background-color: #fff;
-        color: #008080;
-    }
-    
-    @media only screen and (max-width: 767px) {
-        .element {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
-        }
-        /* about section */
-        .about-content {
-            padding: 50px 25px 150px 25px;
-            text-align: left;
-        }
-        .about-caption {
-            font-size: 24px;
-        }
-        .mobile-about-info {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
-            grid-gap: 10px;
-        }
-        .desktop-about-info {
-            display: none;
-        }
-        .buttons-group {
-            text-align: center;
-        }
-        .about-button {
-            margin: 20px;
-        }
-    }
-    
-    @media only screen and (min-width: 768px) {
-        .element {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
-        }
-        /* about section */
-        .about-content {
-            padding: 100px 50px 200px 50px;
-        }
-        .mobile-about-info {
-            display: none;
-        }
-        .desktop-about-info {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 1fr;
-            grid-gap: 20px;
-            text-align: left;
-        }
-        .buttons-group {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: space-around;
-            padding: 25px;
-        }
-    }
+/* about section */
+
+.about-content {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+
+.gradient {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  background-color: #1f9999;
+}
+
+.buttons-group a:hover,
+.about-button:hover {
+  cursor: pointer;
+}
+
+.about-button {
+  font-size: 16px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.about-button:hover {
+  background-color: #fff;
+  color: #1f9999;
+}
+
+@media only screen and (max-width: 767px) {
+  .element {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
+  }
+  /* about section */
+  .about-content {
+    padding: 50px 25px 150px 25px;
+    text-align: left;
+  }
+  .about-caption {
+    font-size: 24px;
+  }
+  .mobile-about-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+  }
+  .desktop-about-info {
+    display: none;
+  }
+  .buttons-group {
+    text-align: center;
+  }
+  .about-button {
+    margin: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .element {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
+  }
+  /* about section */
+  .about-content {
+    padding: 100px 50px 200px 50px;
+  }
+  .mobile-about-info {
+    display: none;
+  }
+  .desktop-about-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    text-align: left;
+  }
+  .buttons-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 25px;
+  }
+}

@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  background: #4988cf;
+  background: #33ae56;
 }
 
 .a-content {
@@ -41,13 +41,13 @@
 }
 
 .achievement-button {
-  border: 1px solid #4988cf;
-  color: #4988cf;
+  border: 1px solid #33ae56;
+  color: #33ae56;
   width: 100px;
 }
 
 .achievement-button:hover {
-  background-color: #4988cf;
+  background-color: #33ae56;
   color: #fff;
 }
 
@@ -62,7 +62,7 @@
 
 .explore-button button:hover {
   background-color: #fff;
-  color: #4988cf;
+  color: #33ae56;
 }
 
 @media only screen and (max-width: 766px) {
@@ -127,7 +127,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    grid-gap: calc(20px + 3%);
+    grid-gap: calc(20px + 2%) calc(4% - 4px);
   }
   .a-content {
     padding: 150px 50px 300px 50px;
@@ -138,11 +138,16 @@
   .element {
     -webkit-clip-path: polygon(
       0 0,
-      100% calc(3% - 1vw),
+      100% calc(10% - 2vw),
       100% calc(100% - 2vw),
       0 100%
     );
-    clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 2vw), 0 100%);
+    clip-path: polygon(
+      0 0,
+      100% calc(10% - 2vw),
+      100% calc(100% - 2vw),
+      0 100%
+    );
   }
   .a-content {
     padding: 150px 100px 300px 100px;
@@ -151,6 +156,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    grid-gap: calc(20px + 3%);
+    grid-gap: calc(20px + 3%) calc(2% - 2px);
   }
 }
