@@ -156,7 +156,7 @@
 
 @media only screen and (min-width: 1280px) and (max-width: 1679px) {
   .skills-content {
-    padding: 100px 50px 150px 50px;
+    padding: 100px 50px 200px 50px;
     margin: 0 auto;
   }
   .categories {
@@ -169,7 +169,7 @@
 }
 @media only screen and (min-width: 1680px) {
   .skills-content {
-    padding: 100px 100px 150px 100px;
+    padding: 100px 100px 250px 100px;
     margin: 0 auto;
   }
   .categories {

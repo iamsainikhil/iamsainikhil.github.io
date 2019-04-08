@@ -1,83 +1,120 @@
 <header class="navbar" appScrollable (scrollDirection)="getPosition($event)">
-    <!-- desktop menu & banner -->
-    <div class="desktop-menu" [ngClass]="{'sticky': !showHeader, 'non-sticky slide-bottom': animateHeader}">
-        <div class="desktop-logo" routerLink="/" (click)="linksClick('logo')"></div>
-        <div class="desktop-items-container">
-            <a routerLink="/about" (click)="linksClick('about')">About</a>
-            <!-- <a routerLink="/skills" (click)="linksClick('skills')">Skills</a> -->
-            <a routerLink="/projects" (click)="linksClick('projects')">Projects</a>
-            <a routerLink="/achievements" (click)="linksClick('achievements')">Achievements</a>
-        </div>
+  <!-- desktop menu & banner -->
+  <div
+    class="desktop-menu"
+    [ngClass]="{
+      sticky: !showHeader,
+      'non-sticky slide-bottom': animateHeader
+    }"
+  >
+    <div class="desktop-logo" routerLink="/" (click)="linksClick('logo')"></div>
+    <div class="desktop-items-container">
+      <a routerLink="/about" (click)="linksClick('about')">About</a>
+      <!-- <a routerLink="/skills" (click)="linksClick('skills')">Skills</a> -->
+      <a routerLink="/projects" (click)="linksClick('projects')">Projects</a>
+      <a routerLink="/achievements" (click)="linksClick('achievements')"
+        >Achievements</a
+      >
     </div>
-    <div class="parallax desktop-banner">
-        <!-- <div class="parallax-top-left"></div>
+  </div>
+  <div class="parallax desktop-banner">
+    <!-- <div class="parallax-top-left"></div>
         <div class="parallax-top-right"></div>
         <div class="parallax-bottom-left" tabindex="1"></div>
         <div class="parallax-bottom-right" tabindex="2"></div> -->
-        <div class="parallax-content">
-            <div class="parallax-front">
-                <h1 class="tracking-in-expand">Sai Nikhil</h1>
-                <div class="sub-title">
-                    <p class="tracking-in-expand-fwd">UI/UX&nbsp;Designer</p>
-                    <p class="tracking-in-expand-fwd">Web&nbsp;Application&nbsp;Developer</p>
-                    <p class="tracking-in-expand-fwd">Front&nbsp;End&nbsp;Web&nbsp;Developer</p>
-                </div>
-            </div>
-            <div class="parallax-back">
-            </div>
+    <div class="parallax-content">
+      <div class="parallax-front">
+        <h1 class="tracking-in-expand name">Sai Nikhil</h1>
+        <div class="sub-title">
+          <p class="tracking-in-expand-fwd">UI/UX&nbsp;Designer</p>
+          <p class="tracking-in-expand-fwd">Web&nbsp;Developer</p>
+          <p class="tracking-in-expand-fwd">Front&nbsp;End&nbsp;Engineer</p>
         </div>
-        <span class="scroll-btn">
-                <a pageScroll href="#about" class="tip" (click)="linksClick('scroll-down-desktop')">
-                    <span class="message">Scroll Down</span>
+      </div>
+      <div class="parallax-back"></div>
+    </div>
+    <span class="scroll-btn">
+      <a
+        pageScroll
+        href="#about"
+        class="tip"
+        (click)="linksClick('scroll-down-desktop')"
+      >
+        <span class="message">Scroll Down</span>
         <span class="mouse">
-                        <span></span>
+          <span></span>
         </span>
-        </a>
-        </span>
-    </div>
+      </a>
+    </span>
+  </div>
 
-    <!-- desktop menu & banner end -->
-    <!-- mobile menu & banner -->
-    <div class="mobile-menu" [ngClass]="{'sticky': !showHeader, 'non-sticky slide-bottom': animateHeader}">
-        <div class="mobile-logo" routerLink="/"></div>
-        <div class="mobile-icon">
-            <div class="menu-icon menu-icon-cross" [ngClass]="{'isOpen' : !menuIcon}" (click)="menuIconClick('menu')">
-                <span></span>
-                <svg x="0" y="0" width="54px" height="54px" viewbox="0 0 54 54">
-                    <circle cx="27" cy="27" r="26"></circle>
-                </svg>
-            </div>
-        </div>
-        <div class="mobile-items-container" *ngIf="!menuIcon">
-            <div class="mobile-nav-links">
-                <a routerLink="/about" (pageScrollFinish)="menuIconClick('about')">About</a>
-                <!-- <a routerLink="/skills" (pageScrollFinish)="menuIconClick('skills')">Skills</a> -->
-                <a pageScroll href="#projects" (pageScrollFinish)="menuIconClick('projects')">Projects</a>
-                <a routerLink="/achievements" (pageScrollFinish)="menuIconClick('achievements')">Achievements</a>
-            </div>
-        </div>
+  <!-- desktop menu & banner end -->
+  <!-- mobile menu & banner -->
+  <div
+    class="mobile-menu"
+    [ngClass]="{
+      sticky: !showHeader,
+      'non-sticky slide-bottom': animateHeader
+    }"
+  >
+    <div class="mobile-logo" routerLink="/"></div>
+    <div class="mobile-icon">
+      <div
+        class="menu-icon menu-icon-cross"
+        [ngClass]="{ isOpen: !menuIcon }"
+        (click)="menuIconClick('menu')"
+      >
+        <span></span>
+        <svg x="0" y="0" width="54px" height="54px" viewbox="0 0 54 54">
+          <circle cx="27" cy="27" r="26"></circle>
+        </svg>
+      </div>
     </div>
-    <div class="parallax mobile-banner">
-        <div class="parallax-content">
-            <div class="parallax-front">
-                <h1 class="wow tracking-in-expand">Sai Nikhil</h1>
-                <div class="sub-title">
-                    <p class="wow tracking-in-expand-fwd">UI/UX&nbsp;Designer</p>
-                    <p class="wow tracking-in-expand-fwd">Web&nbsp;Application&nbsp;Developer</p>
-                    <p class="wow tracking-in-expand-fwd">Full&nbsp;Stack&nbsp;Web&nbsp;Developer</p>
-                </div>
-            </div>
-            <div class="parallax-back">
-                <!-- image is placed here from css -->
-            </div>
-        </div>
-        <span class="scroll-btn">
-                <a pageScroll href="#about" (click)="linksClick('scroll-down-mobile')">
-                    <span class="mouse">
-                        <span></span>
-        </span>
-        </a>
-        </span>
+    <div class="mobile-items-container" *ngIf="!menuIcon">
+      <div class="mobile-nav-links">
+        <a routerLink="/about" (pageScrollFinish)="menuIconClick('about')"
+          >About</a
+        >
+        <!-- <a routerLink="/skills" (pageScrollFinish)="menuIconClick('skills')">Skills</a> -->
+        <a
+          pageScroll
+          href="#projects"
+          (pageScrollFinish)="menuIconClick('projects')"
+          >Projects</a
+        >
+        <a
+          routerLink="/achievements"
+          (pageScrollFinish)="menuIconClick('achievements')"
+          >Achievements</a
+        >
+      </div>
     </div>
-    <!-- mobile menu & banner end -->
+  </div>
+  <div class="parallax mobile-banner">
+    <div class="parallax-content">
+      <div class="parallax-front">
+        <h1 class="wow tracking-in-expand">Sai Nikhil</h1>
+        <div class="sub-title">
+          <p class="wow tracking-in-expand-fwd">UI/UX&nbsp;Designer</p>
+          <p class="wow tracking-in-expand-fwd">
+            Web&nbsp;Application&nbsp;Developer
+          </p>
+          <p class="wow tracking-in-expand-fwd">
+            Full&nbsp;Stack&nbsp;Web&nbsp;Developer
+          </p>
+        </div>
+      </div>
+      <div class="parallax-back">
+        <!-- image is placed here from css -->
+      </div>
+    </div>
+    <span class="scroll-btn">
+      <a pageScroll href="#about" (click)="linksClick('scroll-down-mobile')">
+        <span class="mouse">
+          <span></span>
+        </span>
+      </a>
+    </span>
+  </div>
+  <!-- mobile menu & banner end -->
 </header>

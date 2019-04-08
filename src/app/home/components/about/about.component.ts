@@ -1,19 +1,34 @@
-import { Component, OnDestroy, OnInit, SecurityContext } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Subscription } from 'rxjs/Subscription';
-import { AboutService } from '../../../shared/services/about.service';
-import { GAService } from './../../../shared/services/ga.service';
+import { Component, OnDestroy, OnInit, SecurityContext } from "@angular/core";
+import { DomSanitizer } from "@angular/platform-browser";
+import { Subscription } from "rxjs/Subscription";
+import { AboutService } from "../../../shared/services/about.service";
+import { GAService } from "./../../../shared/services/ga.service";
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  selector: "app-about",
+  templateUrl: "./about.component.html",
+  styleUrls: ["./about.component.css"]
 })
 export class AboutComponent implements OnInit, OnDestroy {
-
   aboutData: any;
-
+  aboutCardData: any;
   showLoader = true;
+
+  // products button data
+  productsData = [
+    {
+      name: "blog",
+      link: "/blog"
+    },
+    {
+      name: "photos",
+      link: "/photos"
+    },
+    {
+      name: "videos",
+      link: "/videos"
+    }
+  ];
 
   private subscription: Subscription;
 
@@ -21,9 +36,10 @@ export class AboutComponent implements OnInit, OnDestroy {
     private aboutService: AboutService,
     private _sanitizer: DomSanitizer,
     private gaService: GAService
-  ) { }
+  ) {}
 
   ngOnInit() {
+    this.aboutCardData = this.aboutService.getAboutCardData();
     this.subscription = this.aboutService.getAboutData().subscribe(() => {
       this.aboutData = this.aboutService.getAboutData();
       this.showLoader = false;
@@ -31,7 +47,15 @@ export class AboutComponent implements OnInit, OnDestroy {
   }
 
   buttonClick(name) {
-    this.gaService.emitEvent(`${name}-about-section`, 'buttons-about-section', 'button');
+    this.gaService.emitEvent(
+      `${name}-about-section`,
+      "buttons-about-section",
+      "button"
+    );
+  }
+
+  cardItemClick(name) {
+    this.gaService.emitEvent(`${name}-about-card`, "about-card", "link");
   }
 
   /**
@@ -40,10 +64,9 @@ export class AboutComponent implements OnInit, OnDestroy {
    */
   getSanitizedHtml(data) {
     return this._sanitizer.sanitize(SecurityContext.HTML, data);
- }
+  }
 
- ngOnDestroy() {
-  this.subscription.unsubscribe();
-}
-
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }
