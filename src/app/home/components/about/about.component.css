@@ -16,10 +16,6 @@
   cursor: pointer;
 }
 
-.link {
-  color: #fff;
-}
-
 .about-button {
   font-size: 16px;
   border: 1px solid #fff;
@@ -143,11 +139,6 @@
   background: #f5f5f5;
 }
 
-.timeline {
-  margin: 25px auto;
-  padding-top: 25px;
-}
-
 @media only screen and (max-width: 767px) {
   .element {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
@@ -188,9 +179,6 @@
 }
 
 @media only screen and (max-width: 370px) {
-  .timeline {
-    display: none;
-  }
   .side-content {
     margin: 0;
   }
@@ -203,23 +191,17 @@
   }
   /* about section */
   .about-content {
-    padding: 100px 10px 150px 10px;
+    padding: 100px 0px 150px 0px;
   }
   .mobile-about-info {
     display: none;
-  }
-  .buttons-group {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    margin-top: 25px;
   }
   /* about card & main content */
   .wrapper {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "side main main main";
+    grid-template-areas: "side main";
     grid-gap: 20px;
     padding: 20px;
   }
@@ -233,8 +215,9 @@
   }
   .main-content {
     grid-area: main;
-    min-height: 75vh;
+    min-height: 50vh;
     overflow: auto;
+    padding-top: 25px;
   }
   .desktop-about-info {
     display: grid;
@@ -244,7 +227,30 @@
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1279px) {
+@media only screen and (min-width: 992px) {
+  .buttons-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-top: 25px;
+    padding-top: 40px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .desktop-about-info {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .buttons-group {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    grid-gap: 35px;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
   .desktop-about-info {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;

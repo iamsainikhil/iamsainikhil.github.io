@@ -10,6 +10,7 @@ import { FilterService } from "./../../../shared/services/filter.service";
   styleUrls: ["./projects.component.css"]
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
+  @Input() page: string;
   projectsData: any;
   showLoader: boolean;
   chipName: string;

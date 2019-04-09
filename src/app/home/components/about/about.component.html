@@ -108,27 +108,18 @@
                       class="desktop-about-info wow fade-in-bottom"
                       [innerHTML]="getSanitizedHtml(about.desktopInfo)"
                     ></div>
-                    <div class="timeline">
-                      <app-timeline></app-timeline>
+                    <!-- links to other products -->
+                    <div class="buttons-group">
+                      <div *ngFor="let product of productsData">
+                        <button
+                          class="about-button wow zoomIn"
+                          (click)="buttonClick(product.name)"
+                          [routerLink]="product.link"
+                        >
+                          View {{ product.name }}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <!-- links to other products -->
-                <div class="buttons-group">
-                  <div *ngFor="let product of productsData">
-                    <button
-                      class="about-button wow zoomIn"
-                      (click)="buttonClick(product.name)"
-                    >
-                      <a
-                        class="link"
-                        [href]="product.link"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        ><i class="fas fa-external-link-alt"></i>&nbsp;View
-                        {{ product.name }}</a
-                      >
-                    </button>
                   </div>
                 </div>
               </div>

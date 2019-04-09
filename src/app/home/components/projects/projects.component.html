@@ -1,7 +1,13 @@
 <div class="container">
   <div class="columns">
     <div class="column">
-      <h2 class="section-title text-center">
+      <h2
+        class="text-center"
+        [ngClass]="{
+          'section-title': page === 'home',
+          'pa-title': page === 'projects'
+        }"
+      >
         Projects
       </h2>
     </div>
@@ -10,7 +16,13 @@
 <div class="container-fluid">
   <div class="columns">
     <div class="column">
-      <div class="gradient element">
+      <div
+        class="gradient"
+        [ngClass]="{
+          element: page === 'home',
+          'projects-element': page === 'projects'
+        }"
+      >
         <div class="section-content projects-content">
           <div>
             <app-filter [chipData]="chipData" [page]="'projects'"></app-filter>

@@ -1,4 +1,8 @@
 <header class="navbar" appScrollable (scrollDirection)="getPosition($event)">
+  <div class="description">
+    <div class="content"></div>
+    <div class="logo"></div>
+  </div>
   <!-- desktop menu & banner -->
   <div
     class="desktop-menu"
@@ -40,14 +44,6 @@
         (click)="linksClick('achievements')"
         rel="noreferrer noopener"
         >Achievements</a
-      >
-      <a
-        pageScroll
-        [pageScrollDuration]="2000"
-        href="#contact"
-        (click)="linksClick('contact')"
-        rel="noreferrer noopener"
-        >Contact</a
       >
     </div>
   </div>
@@ -138,14 +134,6 @@
           (pageScrollFinish)="menuIconClick('achievements')"
           rel="noreferrer noopener"
           >Achievements</a
-        >
-        <a
-          pageScroll
-          [pageScrollDuration]="0"
-          href="#contact"
-          (pageScrollFinish)="menuIconClick('contact')"
-          rel="noreferrer noopener"
-          >Contact</a
         >
       </div>
     </div>

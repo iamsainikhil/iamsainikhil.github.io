@@ -17,16 +17,20 @@ export class AboutComponent implements OnInit, OnDestroy {
   // products button data
   productsData = [
     {
+      name: "timeline",
+      link: "/about"
+    },
+    {
       name: "blog",
-      link: "/blog"
+      link: "/about/blog"
     },
     {
       name: "photos",
-      link: "/photos"
+      link: "/about/photos"
     },
     {
       name: "videos",
-      link: "/videos"
+      link: "/about/videos"
     }
   ];
 

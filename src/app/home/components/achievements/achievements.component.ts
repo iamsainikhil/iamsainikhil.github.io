@@ -10,6 +10,7 @@ import { GAService } from "../../../shared/services/ga.service";
   styleUrls: ["./achievements.component.css"]
 })
 export class AchievementsComponent implements OnInit, OnDestroy {
+  @Input() page: string;
   achievementsData: any;
   showLoader: boolean;
   chipName: string;

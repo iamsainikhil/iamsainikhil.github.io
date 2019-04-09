@@ -79,6 +79,10 @@
     );
     clip-path: polygon(0 calc(1% - 1vw), 100% 0, 100% 100%, 0 calc(100% - 4vw));
   }
+  .projects-element {
+    -webkit-clip-path: polygon(0 calc(1% - 1vw), 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 calc(1% - 1vw), 100% 0, 100% 100%, 0 100%);
+  }
   .projects-content {
     padding: 100px 10px;
   }
@@ -120,6 +124,10 @@
     );
     clip-path: polygon(0 calc(2% - 1vw), 100% 0, 100% 100%, 0 calc(100% - 4vw));
   }
+  .projects-element {
+    -webkit-clip-path: polygon(0 calc(2% - 1vw), 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 calc(2% - 1vw), 100% 0, 100% 100%, 0 100%);
+  }
   .projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -139,6 +147,10 @@
   .element {
     -webkit-clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);
     clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);
+  }
+  .projects-element {
+    -webkit-clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
   }
   .projects-content {
     padding: 150px 50px 300px 50px;
@@ -163,6 +175,10 @@
   .element {
     -webkit-clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);
     clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 97%);
+  }
+  .projects-element {
+    -webkit-clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
   }
   .projects-content {
     padding: 150px 100px 300px 100px;

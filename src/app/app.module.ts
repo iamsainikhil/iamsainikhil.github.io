@@ -31,7 +31,6 @@ import { SkillsComponent } from "./home/components/skills/skills.component";
 import { HomePageComponent } from "./home/pages/home-page/home-page.component";
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 import { ContentCardComponent } from "./projects/components/content-card/content-card.component";
-import { ProjectListComponent } from "./projects/components/project-list/project-list.component";
 import { ProjectPageComponent } from "./projects/pages/project-page/project-page.component";
 import { ProjectsPageComponent } from "./projects/pages/projects-page/projects-page.component";
 import { ResumeComponent } from "./resume/resume.component";
@@ -82,7 +81,6 @@ import { GithubLinkPipe } from "./shared/pipes/github-link.pipe";
     SiteLoaderComponent,
     ResumeComponent,
     ProjectPageComponent,
-    ProjectListComponent,
     ProjectsPageComponent,
     SiteHeaderComponent,
     AboutPageComponent,
