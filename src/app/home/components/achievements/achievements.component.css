@@ -22,6 +22,9 @@
 }
 
 .certificate {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 80px;
   height: 80px;
   border-radius: 8px;
