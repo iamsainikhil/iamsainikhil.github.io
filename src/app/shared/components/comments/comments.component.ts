@@ -1,15 +1,14 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-import { GAService } from './../../services/ga.service';
-import { LikesCommentsService } from './../../services/likes-comments.service';
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs/Subscription";
+import { GAService } from "./../../services/ga.service";
+import { LikesCommentsService } from "./../../services/likes-comments.service";
 
 @Component({
-  selector: 'app-comments',
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.css']
+  selector: "app-comments",
+  templateUrl: "./comments.component.html",
+  styleUrls: ["./comments.component.css"]
 })
 export class CommentsComponent implements OnInit, OnDestroy {
-
   @Input() docId: string;
   @Input() collectionName: string;
 
@@ -28,7 +27,7 @@ export class CommentsComponent implements OnInit, OnDestroy {
   constructor(
     private likesCommentsService: LikesCommentsService,
     private gaService: GAService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getLatestComments();
@@ -42,28 +41,46 @@ export class CommentsComponent implements OnInit, OnDestroy {
   }
 
   getLatestComments() {
-    this.subscription = this.likesCommentsService.getCommentsData(this.collectionName, this.docId, 'approved', '==', true).subscribe(() => {
-      this.commentsData = this.likesCommentsService.getCommentsData(this.collectionName, this.docId, 'approved', '==', true);
-      this.commentsLoader = false;
-    });
+    this.subscription = this.likesCommentsService
+      .getCommentsData(this.collectionName, this.docId, "approved", "==", true)
+      .subscribe(() => {
+        this.commentsData = this.likesCommentsService.getCommentsData(
+          this.collectionName,
+          this.docId,
+          "approved",
+          "==",
+          true
+        );
+        this.commentsLoader = false;
+      });
     // this.gaService.emitEvent(`${this.docId}-latest-comments`, 'filter-click', 'filter');
-
   }
 
   getOldestCommentsData() {
     this.latestChip = false;
     this.oldestChip = true;
     this.commentsLoader = true;
-    const subscription =
-    this.likesCommentsService.getOrderedCommentsData(this.collectionName, this.docId, 'dateAdded').subscribe(() => {
-      this.commentsData = this.likesCommentsService.getOrderedCommentsData(this.collectionName, this.docId, 'dateAdded');
-      this.commentsLoader = false;
-    });
-    this.gaService.emitEvent(`${this.docId}-oldest-comments`, 'filter-click', 'filter');
+    const subscription = this.likesCommentsService
+      .getOrderedCommentsData(this.collectionName, this.docId, "dateAdded")
+      .subscribe(() => {
+        this.commentsData = this.likesCommentsService.getOrderedCommentsData(
+          this.collectionName,
+          this.docId,
+          "dateAdded"
+        );
+        this.commentsLoader = false;
+      });
+    this.gaService.emitEvent(
+      `${this.docId}-oldest-comments`,
+      "filter-click",
+      "filter"
+    );
     this.subscription.add(subscription);
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if (this.subscription !== undefined) {
+      this.subscription.unsubscribe();
+    }
   }
 }

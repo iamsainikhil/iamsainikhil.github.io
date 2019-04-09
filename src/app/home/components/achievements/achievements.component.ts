@@ -134,7 +134,9 @@ export class AchievementsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if (this.subscription !== undefined) {
+      this.subscription.unsubscribe();
+    }
     this.filterService.chipName.next("");
   }
 }

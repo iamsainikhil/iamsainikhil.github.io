@@ -1,15 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-import { SkillsService } from '../../../shared/services/skills.service';
-import { GAService } from './../../../shared/services/ga.service';
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs/Subscription";
+import { SkillsService } from "../../../shared/services/skills.service";
+import { GAService } from "./../../../shared/services/ga.service";
 
 @Component({
-  selector: 'app-skills',
-  templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  selector: "app-skills",
+  templateUrl: "./skills.component.html",
+  styleUrls: ["./skills.component.css"]
 })
 export class SkillsComponent implements OnInit, OnDestroy {
-
   skillsData: any;
 
   showLoader = true;
@@ -19,7 +18,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
   constructor(
     private skillsService: SkillsService,
     private gaService: GAService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.subscription = this.skillsService.getSkillsData().subscribe(() => {
@@ -29,15 +28,16 @@ export class SkillsComponent implements OnInit, OnDestroy {
   }
 
   getUrl(imageUrl) {
-    return 'url(imageUrl)';
+    return "url(imageUrl)";
   }
 
   buttonClick(name) {
-   this.gaService.emitEvent(`${name}-skills`, 'skills-section', 'button');
+    this.gaService.emitEvent(`${name}-skills`, "skills-section", "button");
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if (this.subscription !== undefined) {
+      this.subscription.unsubscribe();
+    }
   }
-
 }
