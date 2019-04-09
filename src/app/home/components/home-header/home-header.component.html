@@ -9,11 +9,45 @@
   >
     <div class="desktop-logo" routerLink="/" (click)="linksClick('logo')"></div>
     <div class="desktop-items-container">
-      <a routerLink="/about" (click)="linksClick('about')">About</a>
-      <!-- <a routerLink="/skills" (click)="linksClick('skills')">Skills</a> -->
-      <a routerLink="/projects" (click)="linksClick('projects')">Projects</a>
-      <a routerLink="/achievements" (click)="linksClick('achievements')"
+      <a
+        pageScroll
+        [pageScrollDuration]="1500"
+        href="#about"
+        (click)="linksClick('about')"
+        rel="noreferrer noopener"
+        >About</a
+      >
+      <a
+        pageScroll
+        [pageScrollDuration]="1500"
+        href="#skills"
+        (click)="linksClick('skills')"
+        rel="noreferrer noopener"
+        >Skills</a
+      >
+      <a
+        pageScroll
+        [pageScrollDuration]="2000"
+        href="#projects"
+        (click)="linksClick('projects')"
+        rel="noreferrer noopener"
+        >Projects</a
+      >
+      <a
+        pageScroll
+        [pageScrollDuration]="2000"
+        href="#achievements"
+        (click)="linksClick('achievements')"
+        rel="noreferrer noopener"
         >Achievements</a
+      >
+      <a
+        pageScroll
+        [pageScrollDuration]="2000"
+        href="#contact"
+        (click)="linksClick('contact')"
+        rel="noreferrer noopener"
+        >Contact</a
       >
     </div>
   </div>
@@ -39,6 +73,7 @@
         href="#about"
         class="tip"
         (click)="linksClick('scroll-down-desktop')"
+        rel="noreferrer noopener"
       >
         <span class="message">Scroll Down</span>
         <span class="mouse">
@@ -72,20 +107,45 @@
     </div>
     <div class="mobile-items-container" *ngIf="!menuIcon">
       <div class="mobile-nav-links">
-        <a routerLink="/about" (pageScrollFinish)="menuIconClick('about')"
-          >About</a
-        >
-        <!-- <a routerLink="/skills" (pageScrollFinish)="menuIconClick('skills')">Skills</a> -->
         <a
           pageScroll
+          [pageScrollDuration]="0"
+          href="#about"
+          (pageScrollFinish)="menuIconClick('about')"
+          rel="noreferrer noopener"
+          >About</a
+        >
+        <a
+          pageScroll
+          [pageScrollDuration]="0"
+          href="#skills"
+          (pageScrollFinish)="menuIconClick('skills')"
+          rel="noreferrer noopener"
+          >Skills</a
+        >
+        <a
+          pageScroll
+          [pageScrollDuration]="0"
           href="#projects"
           (pageScrollFinish)="menuIconClick('projects')"
+          rel="noreferrer noopener"
           >Projects</a
         >
         <a
-          routerLink="/achievements"
+          pageScroll
+          [pageScrollDuration]="0"
+          href="#achievements"
           (pageScrollFinish)="menuIconClick('achievements')"
+          rel="noreferrer noopener"
           >Achievements</a
+        >
+        <a
+          pageScroll
+          [pageScrollDuration]="0"
+          href="#contact"
+          (pageScrollFinish)="menuIconClick('contact')"
+          rel="noreferrer noopener"
+          >Contact</a
         >
       </div>
     </div>
@@ -109,7 +169,12 @@
       </div>
     </div>
     <span class="scroll-btn">
-      <a pageScroll href="#about" (click)="linksClick('scroll-down-mobile')">
+      <a
+        pageScroll
+        href="#about"
+        (click)="linksClick('scroll-down-mobile')"
+        rel="noreferrer noopener"
+      >
         <span class="mouse">
           <span></span>
         </span>
