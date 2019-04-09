@@ -1,158 +1,155 @@
 /* achievements section */
 
 .gradient {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    background: #4988CF;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  background: #33ae56;
 }
 
+.a-content {
+  min-height: 100vh;
+}
 
 /* card */
-
-.card-header {
-    color: #000;
+.achievement-card {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
 }
 
-.card-body {
-    color: #808080;
+.certificate {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
 }
 
-.img-responsive {
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 15px !important;
+.content-section {
+  padding-left: 20px;
 }
 
-.card-footer {
-    padding: 20px;
+.achievement-title {
+  color: #000;
+  font-size: 20px;
+}
+
+.achievement-caption {
+  color: #808080;
 }
 
 .achievement-button {
-    border: 1px solid #4988CF;
-    color: #4988CF;
-    width: 100px;
-}
-
-.achievement-button:hover {
-    background-color: #4988CF;
-    color: #fff;
-}
-
-.explore-button {
-    padding-top: 50px;
-}
-
-.explore-button button {
-    border: 1px solid #fff;
-    color: #fff;
-}
-
-.explore-button button:hover {
-    background-color: #fff;
-    color: #4988CF;
+  border: 1px solid #33ae56;
+  background-color: #33ae56;
+  color: #fff;
+  width: 100px;
 }
 
 @media only screen and (max-width: 766px) {
-    .element {
-        -webkit-clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% calc(100% - 4vw), 0 100%);
-        clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% calc(100% - 4vw), 0 100%);
-    }
-    .a-element {
-        -webkit-clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% 100%, 0 100%);
-        clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% 100%, 0 100%);
-    }
-    .a-content {
-        padding: 50px 20px;
-    }
-    .achievements {
-        display: grid;
-        grid-template-columns: 0.85fr;
-        grid-template-rows: auto;
-        grid-gap: 20px;
-        justify-content: center;
-    }
+  .element {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% calc(1% - 1vw),
+      100% calc(100% - 4vw),
+      0 100%
+    );
+    clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% calc(100% - 4vw), 0 100%);
+  }
+  .a-element {
+    -webkit-clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% calc(1% - 1vw), 100% 100%, 0 100%);
+  }
+  .a-content {
+    padding: 50px 20px;
+  }
+  .achievements {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    justify-content: center;
+  }
 }
 
+/* ipad and ipad pro devices [ tablets ] */
 
-/* ipad only */
-
-@media only screen and (min-width: 767px) and (max-width: 1279px) {
-    .element {
-        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
-        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
-    }
-    .a-element {
-        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
-        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
-    }
-    .a-content {
-        padding: 150px 20px;
-    }
-    .card-image img {
-        height: 250px;
-        width: 100%;
-    }
+@media only screen and (min-width: 767px) and (max-width: 1680px) {
+  .element {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% calc(3% - 1vw),
+      100% calc(100% - 3vw),
+      0 100%
+    );
+    clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 3vw), 0 100%);
+  }
+  .a-element {
+    -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .achievements {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        grid-gap: 20px;
-    }
-    .card-content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px 50px;
-    }
+  .a-content {
+    padding: 150px 20px 300px 20px;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1279px) {
-    .achievements {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-        grid-gap: 20px;
-    }
-    .card-content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px 50px;
-    }
+  .a-content {
+    padding: 150px 60px 300px 60px;
+  }
 }
 
-@media only screen and (min-width: 1280px) {
-    .element {
-        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 2vw), 0 100%);
-        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% calc(100% - 2vw), 0 100%);
-    }
-    .a-element {
-        -webkit-clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
-        clip-path: polygon(0 0, 100% calc(3% - 1vw), 100% 100%, 0 100%);
-    }
-    .a-content {
-        padding: 150px 100px;
-    }
-    .achievements {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
-        grid-gap: 20px;
-    }
-    .card-content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 150px 75px;
-    }
-    .card-image img {
-        height: 250px;
-        width: 100%;
-    }
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .achievements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: calc(2% + 20px) calc(7% - 7px);
+  }
 }
 
-@media only screen and (min-width: 1920px) {
-    .card-image img {
-        height: 300px;
-    }
+@media only screen and (min-width: 1280px) and (max-width: 1679px) {
+  .achievements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: calc(20px + 2%) calc(4% - 4px);
+  }
+  .a-content {
+    padding: 150px 50px 300px 50px;
+  }
+}
+
+@media only screen and (min-width: 1680px) {
+  .element {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% calc(10% - 2vw),
+      100% calc(100% - 2vw),
+      0 100%
+    );
+    clip-path: polygon(
+      0 0,
+      100% calc(10% - 2vw),
+      100% calc(100% - 2vw),
+      0 100%
+    );
+  }
+  .a-element {
+    -webkit-clip-path: polygon(0 0, 100% calc(10% - 2vw), 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% calc(10% - 2vw), 100% 100%, 0 100%);
+  }
+  .a-content {
+    padding: 150px 100px 300px 100px;
+  }
+  .achievements {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: calc(20px + 3%) calc(2% - 2px);
+  }
 }

@@ -1,54 +1,133 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { Project } from '../../../shared/models/project';
-import { GAService } from './../../../shared/services/ga.service';
-import { ProjectsService } from './../../../shared/services/projects.service';
-
+import { Component, Input, OnInit, Output, OnDestroy } from "@angular/core";
+import { GAService } from "./../../../shared/services/ga.service";
+import { ProjectsService } from "./../../../shared/services/projects.service";
+import { Subscription } from "rxjs/Subscription";
+import { FilterService } from "./../../../shared/services/filter.service";
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  selector: "app-projects",
+  templateUrl: "./projects.component.html",
+  styleUrls: ["./projects.component.css"]
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, OnDestroy {
+  @Input() page: string;
+  projectsData: any;
+  showLoader: boolean;
+  chipName: string;
 
-  @Input() projectsData: Array<Project>;
-  @Input() page: any;
-  @Input() showLoader: boolean;
+  private subscription: Subscription;
 
   // filter chips
   @Output() chipData = [
     {
-      name: 'latest',
+      name: "latest",
       selected: true
     },
     {
-      name: 'oldest',
+      name: "oldest",
       selected: false
     },
     {
-      name: 'websites',
+      name: "websites",
       selected: false
     },
     {
-      name: 'web applications',
+      name: "web applications",
       selected: false
     }
   ];
 
   constructor(
     private projectsService: ProjectsService,
+    private filterService: FilterService,
     private gaService: GAService
-  ) { }
+  ) {}
 
   ngOnInit() {
+    this.filterService.chipName.subscribe(name => {
+      this.chipName = name;
+      this.chipCondition(this.chipName);
+    });
   }
 
-  buttonClick(name, id = null) {
-    if (id !== null) {
-      this.gaService.emitEvent(`${id}-view`, 'project-view', 'button');
-    } else {
-      this.gaService.emitEvent(`${name}-projects-on-${this.page}`, 'projects-section', 'button');
+  /**
+   * conditions to highlight respective chips
+   */
+  chipCondition(data: string) {
+    if (data === "" || data === "latest") {
+      this.latestClick();
+    } else if (data === "oldest") {
+      this.oldestClick();
+    } else if (data === "websites") {
+      this.websiteClick();
+    } else if (data === "web applications") {
+      this.webAppClick();
     }
   }
 
+  latestClick() {
+    this.showLoader = true;
+    this.subscription = this.projectsService.getProjectsData().subscribe(() => {
+      this.projectsData = this.projectsService.getProjectsData();
+      this.loaderOff();
+    });
+  }
+
+  oldestClick() {
+    this.showLoader = true;
+    const subscription = this.projectsService
+      .getOrderedProjectsData("dateAdded")
+      .subscribe(() => {
+        this.projectsData = this.projectsService.getOrderedProjectsData(
+          "dateAdded"
+        );
+        this.loaderOff();
+      });
+    this.subscription.add(subscription);
+  }
+
+  websiteClick() {
+    this.showLoader = true;
+    const subscription = this.projectsService
+      .getQueriedProjectsData("website", "==", true)
+      .subscribe(() => {
+        this.projectsData = this.projectsService.getQueriedProjectsData(
+          "website",
+          "==",
+          true
+        );
+        this.loaderOff();
+      });
+    this.subscription.add(subscription);
+  }
+
+  webAppClick() {
+    this.showLoader = true;
+    const subscription = this.projectsService
+      .getQueriedProjectsData("webApplication", "==", true)
+      .subscribe(() => {
+        this.projectsData = this.projectsService.getQueriedProjectsData(
+          "webApplication",
+          "==",
+          true
+        );
+        this.loaderOff();
+      });
+    this.subscription.add(subscription);
+  }
+
+  loaderOff() {
+    setTimeout(() => {
+      this.showLoader = false;
+    }, 100);
+  }
+
+  buttonClick(name, id) {
+    this.gaService.emitEvent(`${id}-view`, name, "button");
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+    this.filterService.chipName.next("");
+  }
 }

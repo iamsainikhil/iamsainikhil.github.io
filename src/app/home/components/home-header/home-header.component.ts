@@ -1,21 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { GAService } from './../../../shared/services/ga.service';
+import { Component, OnInit } from "@angular/core";
+import { GAService } from "./../../../shared/services/ga.service";
 
 @Component({
-  selector: 'app-home-header',
-  templateUrl: './home-header.component.html',
-  styleUrls: ['./home-header.component.css']
+  selector: "app-home-header",
+  templateUrl: "./home-header.component.html",
+  styleUrls: ["./home-header.component.css"]
 })
-export class HomeHeaderComponent implements OnInit {
-
+export class HomeHeaderComponent {
   menuIcon = true;
   showHeader = true;
   animateHeader = false;
 
-  constructor(private gaService: GAService) { }
-
-  ngOnInit() {
-  }
+  constructor(private gaService: GAService) {}
 
   menuIconClick(name) {
     if (this.menuIcon === false) {
@@ -23,19 +19,27 @@ export class HomeHeaderComponent implements OnInit {
     } else {
       this.menuIcon = false;
     }
-    this.gaService.emitEvent(`${name}-home-header-mobile`, 'mobile-menu-links', 'link');
+    this.gaService.emitEvent(
+      `${name}-home-header-mobile`,
+      "mobile-menu-links",
+      "link"
+    );
   }
 
   linksClick(name) {
-    this.gaService.emitEvent(`${name}-home-header-desktop`, 'home-header-desktop', 'link');
+    this.gaService.emitEvent(
+      `${name}-home-header-desktop`,
+      "home-header-desktop",
+      "link"
+    );
   }
 
   // show header when user scrolls up
   getPosition(e) {
-    if (e === 'up') {
+    if (e === "up") {
       this.showHeader = true;
       this.animateHeader = true;
-    } else if (e === 'zero') {
+    } else if (e === "zero") {
       this.showHeader = true;
       this.animateHeader = false;
     } else {
@@ -43,5 +47,4 @@ export class HomeHeaderComponent implements OnInit {
       this.animateHeader = false;
     }
   }
-
 }

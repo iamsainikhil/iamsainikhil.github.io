@@ -1,51 +1,69 @@
 <div class="container">
-    <div class="columns">
-        <div class="column">
-            <h2 class="text-center" [ngClass]="{'section-title': page === 'home', 'pa-title': page === 'achievements'}">Achievements</h2>
-        </div>
+  <div class="columns">
+    <div class="column">
+      <h2
+        class="text-center"
+        [ngClass]="{
+          'section-title': page === 'home',
+          'pa-title': page === 'achievements'
+        }"
+      >
+        Achievements
+      </h2>
     </div>
+  </div>
 </div>
 <div class="container-fluid">
-    <div class="columns">
-        <div class="column">
-            <div class="gradient" [ngClass]="{'element': page === 'home', 'a-element': page === 'achievements'}">
-                <div class="section-content a-content">
-                    <div *ngIf="page === 'achievements'">
-                        <app-filter [chipData]="chipData" [page]="page"></app-filter>
-                    </div>
-                    <div *ngIf="showLoader">
-                        <app-site-loader></app-site-loader>
-                    </div>
-                    <div *ngIf="!showLoader">
-                        <div class="achievements">
-                            <div *ngFor="let item of achievementsData | async">
-                                <div class="card wow fade-in-bottom">
-                                    <div class="card-image">
-                                        <img class="img-responsive" [src]="item.imageUrl" alt="achievement-image">
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="card-header">
-                                            <div class="card-title h3">{{item.title}}</div>
-                                        </div>
-                                        <div class="card-body">
-                                            <p>{{item.caption}}</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a [href]="item.url" target="_blank">
-                                                <button class="achievement-button" (click)="buttonClick('view', item.title)">View</button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><br>
-                        <!-- button -->
-                        <div class="explore-button wow zoomIn" *ngIf="page === 'home'">
-                            <button routerLink="/achievements" (click)="buttonClick('explore-more')">explore more</button>
-                        </div>
-                    </div>
+  <div class="columns">
+    <div class="column">
+      <div
+        class="gradient"
+        [ngClass]="{
+          element: page === 'home',
+          'a-element': page === 'achievements'
+        }"
+      >
+        <div class="section-content a-content">
+          <div>
+            <app-filter
+              [chipData]="chipData"
+              [page]="'achievements'"
+            ></app-filter>
+          </div>
+          <div *ngIf="showLoader">
+            <app-site-loader></app-site-loader>
+          </div>
+          <div *ngIf="!showLoader">
+            <div class="achievements">
+              <div *ngFor="let achievement of (achievementsData | async)">
+                <div class="achievement-card wow fade-in-bottom">
+                  <div class="image-section">
+                    <img
+                      class="certificate"
+                      [src]="achievement.imageUrl"
+                      alt="achievement-image"
+                    />
+                  </div>
+                  <div class="content-section text-left">
+                    <h3 class="achievement-title">{{ achievement.title }}</h3>
+                    <p class="achievement-caption">
+                      {{ achievement.caption }}
+                    </p>
+                    <a [href]="achievement.url" target="_blank">
+                      <button
+                        class="achievement-button"
+                        (click)="buttonClick('view', achievement.title)"
+                      >
+                        View
+                      </button>
+                    </a>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
