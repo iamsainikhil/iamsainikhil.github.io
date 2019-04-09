@@ -1,17 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
-import { AboutService } from './../../../shared/services/about.service';
-import { GAService } from './../../../shared/services/ga.service';
-import { ModalService } from './../../../shared/services/modal.service';
-
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs/Subscription";
+import { AboutService } from "./../../../shared/services/about.service";
+import { GAService } from "./../../../shared/services/ga.service";
+import { ModalService } from "./../../../shared/services/modal.service";
 
 @Component({
-  selector: 'app-about-page',
-  templateUrl: './about-page.component.html',
-  styleUrls: ['./about-page.component.css']
+  selector: "app-about-page",
+  templateUrl: "./about-page.component.html",
+  styleUrls: ["./about-page.component.css"]
 })
 export class AboutPageComponent implements OnInit, OnDestroy {
-
   aboutCardData: any;
   showLoader = true;
 
@@ -28,44 +26,45 @@ export class AboutPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.modalService.showModal.subscribe((res) => {
+    this.modalService.showModal.subscribe(res => {
       setTimeout(() => {
         this.modalVisible = res;
       }, 50);
       if (!res) {
         // once closes the modal go to the previous user position
         // when they tried to open the modal
-        this.modalService.scroll.subscribe((logic) => {
+        this.modalService.scroll.subscribe(logic => {
           if (logic) {
             this.scrollEnable = logic;
-              if (sessionStorage.getItem('y')) {
-                this.yPosition = Number(sessionStorage.getItem('y'));
-                  setTimeout(() => {
-                    window.scrollTo({
-                      top: this.yPosition,
-                      behavior: 'smooth'
-                  });
-                }, 100);
+            if (sessionStorage.getItem("y")) {
+              this.yPosition = Number(sessionStorage.getItem("y"));
+              setTimeout(() => {
+                window.scrollTo({
+                  top: this.yPosition,
+                  behavior: "smooth"
+                });
+              }, 100);
             }
           } else {
-            sessionStorage.removeItem('y');
+            sessionStorage.removeItem("y");
           }
         });
       }
     });
 
-    this.subscription = this.aboutService.getAboutCardData().subscribe((res) => {
+    this.subscription = this.aboutService.getAboutCardData().subscribe(res => {
       this.aboutCardData = this.aboutService.getAboutCardData();
       this.showLoader = false;
     });
   }
 
   cardItemClick(name) {
-    this.gaService.emitEvent(`${name}-about-card`, 'about-card', 'link');
+    this.gaService.emitEvent(`${name}-about-card`, "about-card", "link");
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    if (this.subscription !== undefined) {
+      this.subscription.unsubscribe();
+    }
   }
-
 }

@@ -40,8 +40,9 @@
                   <div class="image-section">
                     <img
                       class="certificate"
-                      [src]="achievement.imageUrl"
-                      alt="achievement-image"
+                      [ngStyle]="{
+                        'background-image': 'url(' + achievement.imageUrl + ')'
+                      }"
                     />
                   </div>
                   <div class="content-section text-left">

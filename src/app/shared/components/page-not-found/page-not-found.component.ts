@@ -13,9 +13,7 @@ export class PageNotFoundComponent {
     router.events
       .pipe(filter((event: RouterEvent) => event instanceof NavigationEnd))
       .subscribe(x => {
-        router
-          .navigate(["/404"], { skipLocationChange: true })
-          .then(() => location.go(x.url));
+        location.go(x.url);
       });
   }
 }
