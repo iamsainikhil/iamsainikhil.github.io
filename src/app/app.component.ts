@@ -97,6 +97,23 @@ export class AppComponent implements OnInit, AfterViewInit {
       .subscribe((x: any) => {
         gtag("config", this.analyticsId, { page_path: x.url });
       });
+
+    console.log(`%c
+
+    lloHe   HelloH lloHelloHel  HelloH       loHell          oHello
+    lloHe   Hello  lloHelloHell HelloH       loHell         loHelloH
+     loH     ell   lloH    Hell   llo          Hel         lloH  loHe
+     loH     ell    loH           ll           He          llo    oHe
+     loH     ell    loHell        ll           He         ello    oHel
+     loHelloHell    loHello       ll           He         ello    oHel
+     loHel o ell    loHello       llo          Hel         llo    oHe
+     loH     ell    loH          ello    oH   oHel    ll   llo    oHe
+     loH     ell    loHe    ell   llo    oH    Hel    ll   lloH  loHe
+    lloHe   Hello  lloHell Hell HelloHelloH  loHelloHell    loHelloH
+    lloHe   Hello  lloHelloHell HelloHelloH  loHelloHell     oHello
+
+
+    %c Interested in the code behind this website? Well you're in luck - this site is open source! Come say hi, tell me what you're debugging, or even lend a hand in my repo - https://github.com/iamsainikhil/iamsainikhil.github.io    `, 'font-size: 1vmin', 'padding: 5px; margin-bottom: 15px; line-height: 1.5');
   }
 
   ngAfterViewInit() {
