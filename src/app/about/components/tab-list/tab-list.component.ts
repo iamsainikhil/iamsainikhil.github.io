@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { GAService } from './../../../shared/services/ga.service';
 import { ModalService } from './../../../shared/services/modal.service';
+import { LikesCommentsService } from './../../../shared/services/likes-comments.service';
 
 @Component({
   selector: 'app-tab-list',
@@ -19,11 +20,14 @@ export class TabListComponent implements OnInit {
 
   routeUrl: string;
 
+  timeCounterData: any;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private modalService: ModalService,
-    private gaService: GAService
+    private gaService: GAService,
+    private likesCommentsService: LikesCommentsService
   ) {
   }
 
@@ -33,6 +37,9 @@ export class TabListComponent implements OnInit {
       this.routeUrl = segments[1].path;
       this.activeCondition(this.routeUrl);
     }
+
+    this.timeCounterData = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
+    console.log(`${this.timeCounterData.days}d, ${this.timeCounterData.hours}h, ${this.timeCounterData.minutes}mi, ${this.timeCounterData.seconds}s`)
   }
 
   activeCondition(data) {
@@ -67,8 +74,8 @@ export class TabListComponent implements OnInit {
     // to not make biography load under other sub-pages of about
     // instead re-direct to about and usual tab behavior follows
     if (this.routeUrl === undefined) {
-        this.activeCondition('biography');
-        this.gaService.emitEvent('bio-active-about-page', 'about-page', 'tab-button');
+      this.activeCondition('biography');
+      this.gaService.emitEvent('bio-active-about-page', 'about-page', 'tab-button');
     } else {
       this.router.navigateByUrl('/about');
     }
@@ -76,8 +83,8 @@ export class TabListComponent implements OnInit {
 
   blogClick() {
     if (this.routeUrl === undefined) {
-        this.activeCondition('blog');
-        this.gaService.emitEvent('blog-active-about-page', 'about-page', 'tab-button');
+      this.activeCondition('blog');
+      this.gaService.emitEvent('blog-active-about-page', 'about-page', 'tab-button');
     } else if (this.routeUrl === 'blog') {
       this.activeCondition('blog');
       this.gaService.emitEvent('blog-active-blog-page', 'blog-page', 'tab-button');
@@ -88,8 +95,8 @@ export class TabListComponent implements OnInit {
 
   photoClick() {
     if (this.routeUrl === undefined) {
-        this.activeCondition('photos');
-        this.gaService.emitEvent('photos-active-about-page', 'about-page', 'tab-button');
+      this.activeCondition('photos');
+      this.gaService.emitEvent('photos-active-about-page', 'about-page', 'tab-button');
     } else if (this.routeUrl === 'photos') {
       this.activeCondition('photos');
       this.gaService.emitEvent('photos-active-photos-page', 'photos-page', 'tab-button');
@@ -100,8 +107,8 @@ export class TabListComponent implements OnInit {
 
   videoClick() {
     if (this.routeUrl === undefined) {
-        this.activeCondition('videos');
-        this.gaService.emitEvent('videos-active-about-page', 'about-page', 'tab-button');
+      this.activeCondition('videos');
+      this.gaService.emitEvent('videos-active-about-page', 'about-page', 'tab-button');
     } else if (this.routeUrl === 'videos') {
       this.activeCondition('videos');
       this.gaService.emitEvent('videos-active-videos-page', 'videos-page', 'tab-button');
