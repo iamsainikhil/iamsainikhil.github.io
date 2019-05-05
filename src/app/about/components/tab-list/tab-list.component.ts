@@ -37,8 +37,15 @@ export class TabListComponent implements OnInit {
       this.routeUrl = segments[1].path;
       this.activeCondition(this.routeUrl);
     }
+    this.getTimeCounter()
+  }
 
+  getTimeCounter() {
     this.timeCounter = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
+    // to update content every one second
+    setInterval(() => {
+      this.timeCounter = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
+    }, 1000);
   }
 
   activeCondition(data) {
