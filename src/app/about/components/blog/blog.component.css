@@ -1,5 +1,6 @@
 .panel {
     border-radius: 10px;
+    margin: 5px 15px;
 }
 
 .panel:hover {
@@ -62,7 +63,7 @@
 @media only screen and (min-width: 1280px) and (max-width: 1979px) {
     .blog-wrapper {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 10px;
     }
 }

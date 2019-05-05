@@ -37,7 +37,7 @@
 
 .puc-wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
   justify-content: space-around;
   align-items: center;
@@ -65,10 +65,11 @@
 
 .time-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 32px;
+  font-size: 40px;
   color: #e43c6a;
 }
 
 .time-caption {
+  font-size: 32px;
   color: #fb7853;
 }
