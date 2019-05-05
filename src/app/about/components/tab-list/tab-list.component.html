@@ -29,25 +29,35 @@
     <h2 class="text-center page-title">Videos are coming soon...</h2>
     <p class="text-center page-subtitle">Stay Connected and Updated.</p>
   </div>
+  <!-- counter -->
   <div *ngIf="photoActive || videoActive">
     <div class="puc-wrapper">
       <div class="puc-image"></div>
-      <div class="puc-data">
-        <div class="time-counter">
-          <p class="time-title">{{ timeCounter.days }}</p>
-          <p class="time-caption">Days</p>
+      <div class="puc-content">
+        <div class="puc-data">
+          <div class="time-counter">
+            <p class="time-title">{{ timeCounter.days }}</p>
+            <p class="time-caption">Days</p>
+          </div>
+          <div class="time-counter">
+            <p class="time-title">{{ timeCounter.hours }}</p>
+            <p class="time-caption">Hours</p>
+          </div>
+          <div class="time-counter">
+            <p class="time-title">{{ timeCounter.minutes }}</p>
+            <p class="time-caption">Minutes</p>
+          </div>
+          <div class="time-counter">
+            <p class="time-title">{{ timeCounter.seconds }}</p>
+            <p class="time-caption">Seconds</p>
+          </div>
         </div>
-        <div class="time-counter">
-          <p class="time-title">{{ timeCounter.hours }}</p>
-          <p class="time-caption">Hours</p>
-        </div>
-        <div class="time-counter">
-          <p class="time-title">{{ timeCounter.minutes }}</p>
-          <p class="time-caption">Minutes</p>
-        </div>
-        <div class="time-counter">
-          <p class="time-title">{{ timeCounter.seconds }}</p>
-          <p class="time-caption">Seconds</p>
+        <div class="divider"></div>
+        <div class="subscribe">
+          <h3 class="subscribe-title">Get Updates!</h3>
+          <input type="email" [(ngModel)]="subscriberEmail" name="email" placeholder="Email Adress"
+            class="subscribe-email">
+          <button type="submit" class="subscribe-button" (click)="emailSubscribe()">Subscribe</button>
         </div>
       </div>
     </div>

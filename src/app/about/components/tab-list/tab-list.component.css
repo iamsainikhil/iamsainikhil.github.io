@@ -52,7 +52,6 @@
 .puc-data {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
   align-items: center;
   line-height: 0.8;
 }
@@ -66,10 +65,60 @@
   color: #fb7853;
 }
 
+/* subscribe section */
+.subscribe {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 0;
+}
+
+.subscribe-title {
+  padding: 10px 0;
+  font-size: 32px;
+}
+
+.subscribe-email {
+  font-size: 18px;
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 5px 15px;
+  border: 1px solid #808080;
+}
+
+.subscribe-button {
+  margin-left: -140px;
+  width: 140px;
+  height: 42px;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  background: rgb(214, 41, 116);
+  background: linear-gradient(
+    to right bottom,
+    #d62974,
+    #e43c6a,
+    #ef5061,
+    #f66459,
+    #fb7853
+  );
+}
+
+.subscribe-button:hover {
+  box-shadow: none;
+  color: #353637;
+}
+
 @media only screen and (max-width: 1179px) {
   .puc-wrapper {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  .puc-content {
+    padding: 0 20px;
+  }
+  .puc-data {
+    justify-content: space-around;
+    margin: 0 auto;
   }
   .time-title {
     font-size: 25px;
@@ -79,15 +128,26 @@
     font-size: 20px;
     font-size: 4vw;
   }
+  .subscribe {
+    text-align: center;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
   .puc-wrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.3fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .puc-content {
+    width: 90%;
   }
   .puc-image {
     min-height: 60vh;
+  }
+  .puc-data {
+    justify-content: space-between;
   }
   .time-title {
     font-size: 32px;

@@ -22,6 +22,8 @@ export class TabListComponent implements OnInit {
 
   timeCounter: any;
 
+  subscriberEmail: string;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -46,6 +48,10 @@ export class TabListComponent implements OnInit {
     setInterval(() => {
       this.timeCounter = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
     }, 1000);
+  }
+
+  emailSubscribe() {
+    console.log(this.subscriberEmail);
   }
 
   activeCondition(data) {
