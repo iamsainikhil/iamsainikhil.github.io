@@ -221,6 +221,8 @@
   }
   .desktop-about-info {
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     grid-gap: 20px;
     text-align: left;
     line-height: 28px;
@@ -238,10 +240,6 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .desktop-about-info {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
   .buttons-group {
     display: grid;
     grid-template-columns: repeat(2, 0.5fr);
@@ -249,33 +247,21 @@
     justify-content: center;
   }
 }
-
-@media only screen and (min-width: 992px) and (max-width: 1279px) {
-  .desktop-about-info {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-}
-
 @media only screen and (min-width: 1280px) and (max-width: 1679px) {
-  .desktop-about-info {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+  .wrapper {
+    grid-template-columns: 0.4fr 1fr;
   }
 }
 
 @media only screen and (min-width: 1680px) {
   .about-content {
-    padding: 100px 20px 150px 20px;
+    padding: 100px 50px 150px 50px;
+  }
+  .wrapper {
+   grid-template-columns: 450px auto;
   }
   .desktop-about-info {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-  }
-  /* about card & main content */
-  .wrapper {
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 30px;
+    font-size: 1.2vw;
+    line-height: 1.5;
   }
 }
