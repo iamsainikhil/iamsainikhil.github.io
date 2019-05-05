@@ -20,7 +20,7 @@ export class TabListComponent implements OnInit {
 
   routeUrl: string;
 
-  timeCounterData: any;
+  timeCounter: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,8 +38,7 @@ export class TabListComponent implements OnInit {
       this.activeCondition(this.routeUrl);
     }
 
-    this.timeCounterData = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
-    console.log(`${this.timeCounterData.days}d, ${this.timeCounterData.hours}h, ${this.timeCounterData.minutes}mi, ${this.timeCounterData.seconds}s`)
+    this.timeCounter = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
   }
 
   activeCondition(data) {

@@ -1,32 +1,53 @@
 <ul class="tab tab-block">
-    <li class="tab-item" [ngClass]="{'active': bioActive}">
-        <a (click)="bioClick()">Biography</a>
-    </li>
-    <li class="tab-item" [ngClass]="{'active': blogActive}">
-        <a (click)="blogClick()">Blog</a>
-    </li>
-    <li class="tab-item" [ngClass]="{'active': photoActive}">
-        <a (click)="photoClick()">Photos</a>
-    </li>
-    <li class="tab-item" [ngClass]="{'active': videoActive}">
-        <a (click)="videoClick()">Videos</a>
-    </li>
+  <li class="tab-item" [ngClass]="{'active': bioActive}">
+    <a (click)="bioClick()">Biography</a>
+  </li>
+  <li class="tab-item" [ngClass]="{'active': blogActive}">
+    <a (click)="blogClick()">Blog</a>
+  </li>
+  <li class="tab-item" [ngClass]="{'active': photoActive}">
+    <a (click)="photoClick()">Photos</a>
+  </li>
+  <li class="tab-item" [ngClass]="{'active': videoActive}">
+    <a (click)="videoClick()">Videos</a>
+  </li>
 </ul>
 
 <div class="tab-content">
-    <div *ngIf="bioActive">
-        <app-timeline></app-timeline>
+  <div *ngIf="bioActive">
+    <app-timeline></app-timeline>
+  </div>
+  <div *ngIf="blogActive">
+    <app-blog></app-blog>
+  </div>
+  <div *ngIf="photoActive">
+    <!-- <app-image-gallery></app-image-gallery> -->
+    <p class="text-center page-title">Photos section under progress...</p>
+  </div>
+  <div *ngIf="videoActive">
+    <p class="text-center page-title">Video section under progress...</p>
+  </div>
+  <div *ngIf="photoActive || videoActive">
+    <div class="puc-wrapper">
+      <div class="puc-image"></div>
+      <div class="puc-data">
+        <div class="time-counter">
+          <p class="time-title">{{ timeCounter.days }}</p>
+          <p class="time-caption">Days</p>
+        </div>
+        <div class="time-counter">
+          <p class="time-title">{{ timeCounter.hours }}</p>
+          <p class="time-caption">Hours</p>
+        </div>
+        <div class="time-counter">
+          <p class="time-title">{{ timeCounter.minutes }}</p>
+          <p class="time-caption">Minutes</p>
+        </div>
+        <div class="time-counter">
+          <p class="time-title">{{ timeCounter.seconds }}</p>
+          <p class="time-caption">Seconds</p>
+        </div>
+      </div>
     </div>
-    <div *ngIf="blogActive">
-        <app-blog></app-blog>
-    </div>
-    <div *ngIf="photoActive">
-        <!-- <app-image-gallery></app-image-gallery> -->
-        <p class="text-center">Photos section under progress...</p>
-        <div class="svg-image puc-image"></div>
-    </div>
-    <div *ngIf="videoActive">
-        <p class="text-center">Video section under progress...</p>
-        <div class="svg-image puc-image"></div>
-    </div>
+  </div>
 </div>
