@@ -56,8 +56,12 @@
         <div class="subscribe">
           <h3 class="subscribe-title">Get Updates!</h3>
           <input type="email" [(ngModel)]="subscriberEmail" name="email" placeholder="Email Adress"
-            class="subscribe-email">
-          <button type="submit" class="subscribe-button" (click)="emailSubscribe()">Subscribe</button>
+            class="subscribe-email" required email #subscriber="ngModel" [ngStyle]="{'width': updateWidth()}">
+          <button type="submit" class="subscribe-button" (click)="emailSubscribe()"
+            [disabled]="!subscriber.valid">Subscribe</button>
+          <div *ngIf="subscriber.errors?.email" class="error">
+            Email Address not valid.
+          </div>
         </div>
       </div>
     </div>

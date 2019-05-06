@@ -169,6 +169,39 @@ export class LikesCommentsService {
     return comments;
   }
 
+  /**
+   * add subscribers data
+   */
+  addSubscribersData(data: any) {
+    const subscribersCollection = this.afs
+      .collection<any>('subscribers')
+      .doc(this.date.toISOString());
+    // get location details
+    this.http.get("https://ipinfo.io").subscribe(
+      (res: Ip) => {
+        if (res !== null) {
+          subscribersCollection.set({
+            email: data,
+            dateSubscribed: this.date,
+            city: res.city,
+            country: res.country,
+            region: res.region,
+            latlong: res.loc,
+            ip: res.ip,
+            zipCode: res.postal
+          });
+        }
+      },
+      (err) => {
+        // save data without location details
+        subscribersCollection.set({
+          email: data,
+          dateSubscribed: this.date,
+        });
+      }
+    );
+  }
+
   dateDifference(actualDate, returnType = 'string') {
     // Calculate time between two dates:
     const date1 = actualDate;

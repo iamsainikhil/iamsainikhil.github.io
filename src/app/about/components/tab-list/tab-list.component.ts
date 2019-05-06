@@ -22,7 +22,7 @@ export class TabListComponent implements OnInit {
 
   timeCounter: any;
 
-  subscriberEmail: string;
+  subscriberEmail = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -44,14 +44,20 @@ export class TabListComponent implements OnInit {
 
   getTimeCounter() {
     this.timeCounter = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
-    // to update content every one second
+    // to update timeCounter every one second
     setInterval(() => {
       this.timeCounter = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
     }, 1000);
   }
 
   emailSubscribe() {
-    console.log(this.subscriberEmail);
+    this.likesCommentsService.addSubscribersData(this.subscriberEmail);
+    this.subscriberEmail = '';
+  }
+
+  // expand the subscribe email field
+  updateWidth() {
+    return `${400 + (this.subscriberEmail.trim().length * 5)}px`
   }
 
   activeCondition(data) {

@@ -78,13 +78,11 @@
 
 .subscribe-email {
   font-size: 18px;
-  width: 300px;
   height: 40px;
   border-radius: 20px;
   padding: 5px 15px;
   border: 1px solid #808080;
 }
-
 .subscribe-button {
   margin-left: -140px;
   width: 140px;
@@ -106,6 +104,22 @@
 .subscribe-button:hover {
   box-shadow: none;
   color: #353637;
+}
+
+.subscribe-button:disabled {
+  cursor: not-allowed;
+}
+
+.error {
+  font-family: "Poppins", sans-serif;
+  padding-left: 10px;
+  color: #f54000;
+}
+
+@media only screen and (max-width: 767px) {
+  .subscribe-email {
+    max-width: 300px;
+  }
 }
 
 @media only screen and (max-width: 1179px) {
