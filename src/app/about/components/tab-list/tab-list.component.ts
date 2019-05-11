@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { GAService } from './../../../shared/services/ga.service';
 import { ModalService } from './../../../shared/services/modal.service';
-import { LikesCommentsService } from './../../../shared/services/likes-comments.service';
 
 @Component({
   selector: 'app-tab-list',
@@ -20,16 +19,11 @@ export class TabListComponent implements OnInit {
 
   routeUrl: string;
 
-  timeCounter: any;
-
-  subscriberEmail = '';
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private modalService: ModalService,
-    private gaService: GAService,
-    private likesCommentsService: LikesCommentsService
+    private gaService: GAService
   ) {
   }
 
@@ -39,25 +33,6 @@ export class TabListComponent implements OnInit {
       this.routeUrl = segments[1].path;
       this.activeCondition(this.routeUrl);
     }
-    this.getTimeCounter()
-  }
-
-  getTimeCounter() {
-    this.timeCounter = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
-    // to update timeCounter every one second
-    setInterval(() => {
-      this.timeCounter = this.likesCommentsService.dateDifference(new Date('2019-06-12'), 'object');
-    }, 1000);
-  }
-
-  emailSubscribe() {
-    this.likesCommentsService.addSubscribersData(this.subscriberEmail);
-    this.subscriberEmail = '';
-  }
-
-  // expand the subscribe email field
-  updateWidth() {
-    return `${400 + (this.subscriberEmail.trim().length * 5)}px`
   }
 
   activeCondition(data) {

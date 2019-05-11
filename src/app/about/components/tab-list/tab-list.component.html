@@ -24,46 +24,11 @@
     <!-- <app-image-gallery></app-image-gallery> -->
     <h2 class="text-center page-title">Photos are coming soon...</h2>
     <p class="text-center page-subtitle">Stay Connected and Updated.</p>
+    <app-email-subscription tabName="'photos'"></app-email-subscription>
   </div>
   <div *ngIf="videoActive">
     <h2 class="text-center page-title">Videos are coming soon...</h2>
     <p class="text-center page-subtitle">Stay Connected and Updated.</p>
-  </div>
-  <!-- counter -->
-  <div *ngIf="photoActive || videoActive">
-    <div class="puc-wrapper">
-      <div class="puc-image"></div>
-      <div class="puc-content">
-        <div class="puc-data">
-          <div class="time-counter">
-            <p class="time-title">{{ timeCounter.days }}</p>
-            <p class="time-caption">Days</p>
-          </div>
-          <div class="time-counter">
-            <p class="time-title">{{ timeCounter.hours }}</p>
-            <p class="time-caption">Hours</p>
-          </div>
-          <div class="time-counter">
-            <p class="time-title">{{ timeCounter.minutes }}</p>
-            <p class="time-caption">Minutes</p>
-          </div>
-          <div class="time-counter">
-            <p class="time-title">{{ timeCounter.seconds }}</p>
-            <p class="time-caption">Seconds</p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="subscribe">
-          <h3 class="subscribe-title">Get Updates!</h3>
-          <input type="email" [(ngModel)]="subscriberEmail" name="email" placeholder="Email Adress"
-            class="subscribe-email" required email #subscriber="ngModel" [ngStyle]="{'width': updateWidth()}">
-          <button type="submit" class="subscribe-button" (click)="emailSubscribe()"
-            [disabled]="!subscriber.valid">Subscribe</button>
-          <div *ngIf="subscriber.errors?.email" class="error">
-            Email Address not valid.
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-email-subscription tabName="'videos'"></app-email-subscription>
   </div>
 </div>

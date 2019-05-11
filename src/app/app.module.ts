@@ -66,6 +66,7 @@ import { SkillsPageComponent } from "./skills-page/skills-page.component";
 import { SliceStringPipe } from "./shared/pipes/slice-string.pipe";
 import { UrlNameExtractPipe } from "./shared/pipes/url-name-extract.pipe";
 import { GithubLinkPipe } from "./shared/pipes/github-link.pipe";
+import { EmailSubscriptionComponent } from './shared/components/email-subscription/email-subscription.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +113,8 @@ import { GithubLinkPipe } from "./shared/pipes/github-link.pipe";
     SkillsPageComponent,
     SliceStringPipe,
     UrlNameExtractPipe,
-    GithubLinkPipe
+    GithubLinkPipe,
+    EmailSubscriptionComponent
   ],
   imports: [
     BrowserModule,
