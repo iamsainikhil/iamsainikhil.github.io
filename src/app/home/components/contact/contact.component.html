@@ -1,99 +1,168 @@
 <div class="contact-section">
-    <div class="container">
-        <div class="columns">
-            <div class="column">
-                <h2 class="section-title text-center">Contact</h2>
-            </div>
-        </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h2 class="section-title text-center">Contact</h2>
+      </div>
     </div>
-    <div class="container-fluid">
-        <div class="columns">
-            <div class="column">
-                <div class="element gradient">
-                    <div class="section-content contact-content wow fade-in-bottom">
-                        <h2 class="contact-caption caption">
-                            Whether you’d like to discuss a project, ask me about my website or simply say “hello”,&nbsp;I’d love to hear from you.
-                        </h2>
-                        <div class="contact-form" *ngIf="!successMessage">
-                            <form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
-                                <div class="columns">
-                                    <div class="column col-sm-10 col-md-8 col-6 centered">
-                                        <div class="form-group">
-                                            <label class="form-label" for="name">Name</label>
-                                            <input class="form-input" type="text" id="name" placeholder="Name" autocomplete='name' ngModel required name="name" #name="ngModel">
-                                        </div>
-                                        <div [hidden]="name.valid || !name.touched">
-                                            <span class="error" [hidden]="!name.hasError('required')">Name is required!</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column col-sm-10 col-md-8 col-6 centered">
-                                        <div class="form-group">
-                                            <label class="form-label" for="email">Email</label>
-                                            <input class="form-input" type="email" id="email" placeholder="Email" autocomplete='email' ngModel required name="email" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
-                                        </div>
-                                        <div [hidden]="email.valid || !email.touched" class="text-right">
-                                            <span class="error" *ngIf="email.hasError('pattern') || email.dirty">Please, enter a valid email address!</span>
-                                            <span class="error" [hidden]="!email.hasError('required')">Email is required!</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="columns">
-                                    <div class="column col-sm-10 col-md-8 col-6 centered">
-                                        <div class="form-group">
-                                            <label class="form-label" for="message">Message</label>
-                                            <textarea class="form-input" id="message" placeholder="Type your message..." rows="3" ngModel required name="message" #message="ngModel"></textarea>
-                                        </div>
-                                        <div [hidden]="message.valid || !message.touched">
-                                            <span class="error" [hidden]="!message.hasError('required')">Message is required!</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="columns">
-                                    <div class="column col-sm-10 col-md-8 col-6 centered">
-                                        <div class="accept-checkbox">
-                                            <input type="checkbox" name="accepted" id="accepted" ngModel required>
-                                            <label for="accepted">I have read and accept the
-                                                <!-- <a href="https://iamsainikhil.github.io/terms-and-conditions" target="_blank" (click)="legalItemsClick('terms')">Terms</a>&nbsp;&&nbsp; -->
-                                                <a href="https://iamsainikhil.github.io/privacy-policy" target="_blank" (click)="legalItemsClick('privacy')">Privacy Policy</a>.
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="columns">
-                                    <div class="column contact-form-button-group">
-                                        <button type="submit" class="submit-button wow zoomIn" [disabled]="!f.valid">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- success message -->
-                        <div class="container success-message fade-in-bottom" *ngIf="successMessage">
-                            <div class="columns">
-                                <div class="column col-sm-12 col-md-10 col-8 centered">
-                                    <div class="empty">
-                                        <div class="empty-icon">
-                                            <p class="email-success"></p>
-                                        </div>
-                                        <p class="empty-title h5">Message has been sent successfully!</p>
-                                        <div class="empty-action centered">
-                                            <button class="submit-button" (click)="sendMessage()">Send&nbsp;another&nbsp;message</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  </div>
+  <div class="container-fluid">
+    <div class="columns">
+      <div class="column">
+        <div class="element gradient">
+          <div class="section-content contact-content wow fade-in-bottom">
+            <h2 class="contact-caption caption">
+              Whether you’d like to discuss a project, ask me about my website
+              or simply say “hello”,&nbsp;I’d love to hear from you.
+            </h2>
+            <div class="contact-form" *ngIf="!successMessage">
+              <form (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+                <div class="columns">
+                  <div class="column col-sm-10 col-md-8 col-6 centered">
+                    <div class="form-group">
+                      <label class="form-label" for="name">Name</label>
+                      <input
+                        class="form-input"
+                        type="text"
+                        id="name"
+                        placeholder="Name"
+                        autocomplete="name"
+                        ngModel
+                        required
+                        name="name"
+                        #name="ngModel"
+                      />
                     </div>
+                    <div [hidden]="name.valid || !name.touched">
+                      <span class="error" [hidden]="!name.hasError('required')"
+                        >Name is required!</span
+                      >
+                    </div>
+                  </div>
                 </div>
+
+                <div class="columns">
+                  <div class="column col-sm-10 col-md-8 col-6 centered">
+                    <div class="form-group">
+                      <label class="form-label" for="email">Email</label>
+                      <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        placeholder="Email"
+                        autocomplete="email"
+                        ngModel
+                        required
+                        name="email"
+                        #email="ngModel"
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                      />
+                    </div>
+                    <div
+                      [hidden]="email.valid || !email.touched"
+                      class="text-right"
+                    >
+                      <span
+                        class="error"
+                        *ngIf="email.hasError('pattern') || email.dirty"
+                        >Please, enter a valid email address!</span
+                      >
+                      <span class="error" [hidden]="!email.hasError('required')"
+                        >Email is required!</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="columns">
+                  <div class="column col-sm-10 col-md-8 col-6 centered">
+                    <div class="form-group">
+                      <label class="form-label" for="message">Message</label>
+                      <textarea
+                        class="form-input"
+                        id="message"
+                        placeholder="Type your message..."
+                        rows="3"
+                        ngModel
+                        required
+                        name="message"
+                        #message="ngModel"
+                      ></textarea>
+                    </div>
+                    <div [hidden]="message.valid || !message.touched">
+                      <span
+                        class="error"
+                        [hidden]="!message.hasError('required')"
+                        >Message is required!</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="columns">
+                  <div class="column col-sm-10 col-md-8 col-6 centered">
+                    <div class="accept-checkbox">
+                      <input
+                        type="checkbox"
+                        name="accepted"
+                        id="accepted"
+                        ngModel
+                        required
+                      />
+                      <label for="accepted"
+                        >I have read and accept the
+                        <a
+                          href="https://iamsainikhil.github.io/privacy-policy"
+                          target="_blank"
+                          (click)="legalItemsClick('privacy')"
+                          rel="noopener noreferrer"
+                          >Privacy Policy</a
+                        >.
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="columns">
+                  <div class="column contact-form-button-group">
+                    <button
+                      type="submit"
+                      class="submit-button wow zoomIn"
+                      [disabled]="!f.valid"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
+
+            <!-- success message -->
+            <div
+              class="container success-message fade-in-bottom"
+              *ngIf="successMessage"
+            >
+              <div class="columns">
+                <div class="column col-sm-12 col-md-10 col-8 centered">
+                  <div class="empty">
+                    <div class="empty-icon">
+                      <p class="email-success"></p>
+                    </div>
+                    <p class="empty-title h5">
+                      Message has been sent successfully!
+                    </p>
+                    <div class="empty-action centered">
+                      <button class="submit-button" (click)="sendMessage()">
+                        Send&nbsp;another&nbsp;message
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
