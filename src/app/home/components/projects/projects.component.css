@@ -20,7 +20,7 @@
 
 .project-title {
   color: #000;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 20px;
   padding: 10px 0;
@@ -28,7 +28,7 @@
 
 .project-info {
   color: #808080;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
 }
@@ -191,10 +191,10 @@
   }
   .content-section {
     display: grid;
-    grid-template-rows: 50px 150px;
+    grid-template-rows: 50px 175px;
   }
   .project-info {
     display: grid;
-    grid-template-rows: 100px 50px;
+    grid-template-rows: 100px 75px;
   }
 }
