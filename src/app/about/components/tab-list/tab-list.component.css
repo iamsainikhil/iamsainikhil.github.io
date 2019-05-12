@@ -25,16 +25,3 @@
 .tab-content {
     padding: 20px 0px;
 }
-
-
-/* temporary css  */
-
-p {
-    font-family: 'Poppins', sans-serif;
-    padding-top: 40px;
-    font-size: 48px;
-}
-
-.puc-image {
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/iamsainikhil-portfolio.appspot.com/o/errors%2Fpage_under_construction.svg?alt=media&token=52ccaefb-f21d-4364-bcd5-531686a1e65f');
-}

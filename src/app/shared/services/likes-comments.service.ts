@@ -33,9 +33,9 @@ export class LikesCommentsService {
   // required to set document id in contact collection
   id = `${this.monthNames[this.month]}-${this.day}-${this.year}-${this.hours}-${
     this.minutes
-  }`;
+    }`;
 
-  constructor(private afs: AngularFirestore, private http: HttpClient) {}
+  constructor(private afs: AngularFirestore, private http: HttpClient) { }
 
   /**
    * get likes data
@@ -169,7 +169,42 @@ export class LikesCommentsService {
     return comments;
   }
 
-  dateDifference(actualDate) {
+  /**
+   * add subscribers data
+   */
+  addSubscribersData(date: Date, email: string, name: string) {
+    const subscribersCollection = this.afs
+      .collection<any>('subscribers')
+      .doc(date.toISOString());
+    // get location details
+    this.http.get("https://ipinfo.io").subscribe(
+      (res: Ip) => {
+        if (res !== null) {
+          subscribersCollection.set({
+            email: email,
+            productSubscribed: name,
+            dateSubscribed: date,
+            city: res.city,
+            country: res.country,
+            region: res.region,
+            latlong: res.loc,
+            ip: res.ip,
+            zipCode: res.postal
+          });
+        }
+      },
+      (err) => {
+        // save data without location details
+        subscribersCollection.set({
+          email: email,
+          productSubscribed: name,
+          dateSubscribed: date,
+        });
+      }
+    );
+  }
+
+  dateDifference(actualDate, returnType = 'string') {
     // Calculate time between two dates:
     const date1 = actualDate;
     const date2: any = new Date();
@@ -238,6 +273,6 @@ export class LikesCommentsService {
       }
     }
 
-    return `Posted ${message} ago`;
+    return returnType === 'string' ? `Posted ${message} ago` : r;
   }
 }

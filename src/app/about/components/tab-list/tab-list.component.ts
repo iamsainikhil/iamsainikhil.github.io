@@ -67,8 +67,8 @@ export class TabListComponent implements OnInit {
     // to not make biography load under other sub-pages of about
     // instead re-direct to about and usual tab behavior follows
     if (this.routeUrl === undefined) {
-        this.activeCondition('biography');
-        this.gaService.emitEvent('bio-active-about-page', 'about-page', 'tab-button');
+      this.activeCondition('biography');
+      this.gaService.emitEvent('bio-active-about-page', 'about-page', 'tab-button');
     } else {
       this.router.navigateByUrl('/about');
     }
@@ -76,8 +76,8 @@ export class TabListComponent implements OnInit {
 
   blogClick() {
     if (this.routeUrl === undefined) {
-        this.activeCondition('blog');
-        this.gaService.emitEvent('blog-active-about-page', 'about-page', 'tab-button');
+      this.activeCondition('blog');
+      this.gaService.emitEvent('blog-active-about-page', 'about-page', 'tab-button');
     } else if (this.routeUrl === 'blog') {
       this.activeCondition('blog');
       this.gaService.emitEvent('blog-active-blog-page', 'blog-page', 'tab-button');
@@ -88,8 +88,8 @@ export class TabListComponent implements OnInit {
 
   photoClick() {
     if (this.routeUrl === undefined) {
-        this.activeCondition('photos');
-        this.gaService.emitEvent('photos-active-about-page', 'about-page', 'tab-button');
+      this.activeCondition('photos');
+      this.gaService.emitEvent('photos-active-about-page', 'about-page', 'tab-button');
     } else if (this.routeUrl === 'photos') {
       this.activeCondition('photos');
       this.gaService.emitEvent('photos-active-photos-page', 'photos-page', 'tab-button');
@@ -100,8 +100,8 @@ export class TabListComponent implements OnInit {
 
   videoClick() {
     if (this.routeUrl === undefined) {
-        this.activeCondition('videos');
-        this.gaService.emitEvent('videos-active-about-page', 'about-page', 'tab-button');
+      this.activeCondition('videos');
+      this.gaService.emitEvent('videos-active-about-page', 'about-page', 'tab-button');
     } else if (this.routeUrl === 'videos') {
       this.activeCondition('videos');
       this.gaService.emitEvent('videos-active-videos-page', 'videos-page', 'tab-button');
