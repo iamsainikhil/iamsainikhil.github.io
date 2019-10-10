@@ -22,54 +22,25 @@
     <div class="divider"></div>
     <div class="subscribe">
       <h3 class="subscribe-title">Get Updates!</h3>
-      <input
-        type="email"
-        [(ngModel)]="subscriberEmail"
-        name="email"
-        placeholder="Email Adress"
-        class="subscribe-email"
-        required
-        email
-        #subscriber="ngModel"
-        [ngStyle]="{ width: updateWidth() }"
-      />
-      <button
-        type="submit"
-        class="subscribe-button"
-        (click)="emailSubscribe()"
-        [disabled]="!subscriber.valid || !accepted"
-      >
+      <input type="email" [(ngModel)]="subscriberEmail" name="email" placeholder="Email Adress" class="subscribe-email"
+        required email #subscriber="ngModel" [ngStyle]="{ width: updateWidth() }" />
+      <button type="submit" class="subscribe-button" (click)="emailSubscribe()"
+        [disabled]="!subscriber.valid || !accepted">
         Subscribe
       </button>
       <div *ngIf="subscriber.errors?.email" class="error">
         Email Address not valid.
       </div>
       <div class="accept-checkbox">
-        <input
-          type="checkbox"
-          name="accepted"
-          id="accepted"
-          [(ngModel)]="accepted"
-          required
-        />
+        <input type="checkbox" name="accepted" id="accepted" [(ngModel)]="accepted" required />
         <label for="accepted">
           I have read and accept the
-          <a
-            href="https://iamsainikhil.github.io/privacy-policy"
-            target="_blank"
-            >Privacy Policy</a
-          >.
+          <a href="https://iamsainikhil.github.io/privacy-policy" target="_blank">Privacy Policy</a>.
         </label>
       </div>
       <!-- success message -->
-      <div
-        class="success-message toast toast-success fade-in-top"
-        *ngIf="successMessage"
-      >
-        <button
-          class="btn btn-lg btn-clear float-right"
-          (click)="dismissToast()"
-        ></button>
+      <div class="success-message toast toast-success fade-in-top" *ngIf="successMessage">
+        <button class="btn btn-lg btn-clear float-right" (click)="dismissToast()"></button>
         You've successfully subscribed to the updates!
       </div>
     </div>

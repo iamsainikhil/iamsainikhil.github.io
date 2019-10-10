@@ -12,10 +12,11 @@ export class EmailSubscriptionComponent implements OnInit {
   date = new Date();
   subscriberEmail = '';
   successMessage = false;
-
   accepted = false;
 
-  constructor(private likesCommentsService: LikesCommentsService) {}
+  constructor(
+    private likesCommentsService: LikesCommentsService
+  ) { }
 
   ngOnInit() {
     this.getTimeCounter();
@@ -23,13 +24,13 @@ export class EmailSubscriptionComponent implements OnInit {
 
   getTimeCounter() {
     this.timeCounter = this.likesCommentsService.dateDifference(
-      new Date('2019-08-12'),
+      new Date('2019-11-10'),
       'object'
     );
     // to update timeCounter every one second
     setInterval(() => {
       this.timeCounter = this.likesCommentsService.dateDifference(
-        new Date('2019-08-12'),
+        new Date('2019-11-10'),
         'object'
       );
     }, 1000);
