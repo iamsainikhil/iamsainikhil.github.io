@@ -54,6 +54,11 @@
 .name {
   padding-bottom: 20px;
 }
+
+.parallax-content {
+  z-index: 10;
+}
+
 /* scroll mouse */
 
 @-webkit-keyframes ani-mouse {
@@ -61,14 +66,17 @@
     opacity: 1;
     top: 29%;
   }
+
   15% {
     opacity: 1;
     top: 50%;
   }
+
   50% {
     opacity: 0;
     top: 50%;
   }
+
   100% {
     opacity: 0;
     top: 29%;
@@ -80,14 +88,17 @@
     opacity: 1;
     top: 29%;
   }
+
   15% {
     opacity: 1;
     top: 50%;
   }
+
   50% {
     opacity: 0;
     top: 50%;
   }
+
   100% {
     opacity: 0;
     top: 29%;
@@ -99,14 +110,17 @@
     opacity: 1;
     top: 29%;
   }
+
   15% {
     opacity: 1;
     top: 50%;
   }
+
   50% {
     opacity: 0;
     top: 50%;
   }
+
   100% {
     opacity: 0;
     top: 29%;
@@ -121,7 +135,7 @@
   text-align: center;
 }
 
-.scroll-btn > * {
+.scroll-btn>* {
   display: inline-block;
   line-height: 18px;
   font-size: 13px;
@@ -132,17 +146,17 @@
   letter-spacing: 2px;
 }
 
-.scroll-btn > *:hover,
-.scroll-btn > *:focus,
-.scroll-btn > *.active {
+.scroll-btn>*:hover,
+.scroll-btn>*:focus,
+.scroll-btn>*.active {
   color: #ffffff;
   cursor: pointer;
 }
 
-.scroll-btn > *:hover,
-.scroll-btn > *:focus,
-.scroll-btn > *:active,
-.scroll-btn > *.active {
+.scroll-btn>*:hover,
+.scroll-btn>*:focus,
+.scroll-btn>*:active,
+.scroll-btn>*.active {
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
@@ -160,7 +174,7 @@
   border-radius: 23px;
 }
 
-.scroll-btn .mouse > * {
+.scroll-btn .mouse>* {
   position: absolute;
   display: block;
   top: 29%;
@@ -179,6 +193,7 @@
   left: 15px;
   top: 23px;
 }
+
 /* desktop */
 
 .desktop-menu {
@@ -215,6 +230,7 @@
   font-size: 22px;
   text-transform: capitalize;
 }
+
 /* to display better menu when hover on parallax banner [ desktop ] */
 /* .navbar:hover .desktop-items-container a {
      background-color: rgba(0, 0, 0, 0.5);
@@ -250,6 +266,7 @@
   font-size: 22px;
   letter-spacing: 1px;
 }
+
 /* mobile menu */
 
 .mobile-menu {
@@ -267,11 +284,12 @@
 
 .mobile-icon {
   position: absolute;
-  z-index: 999;
+  z-index: 9999;
   top: 5px;
   padding-right: 10px;
   right: 0;
 }
+
 /* mobile menu items */
 
 .mobile-items-container {
@@ -280,7 +298,7 @@
   width: 100%;
   height: 100%;
   min-height: 200vh;
-  z-index: 99;
+  z-index: 999;
   overflow-y: auto;
 }
 
@@ -298,6 +316,7 @@
   text-transform: capitalize;
   padding-top: 50px;
 }
+
 /* icon  */
 
 .menu-icon {
@@ -343,6 +362,7 @@
 .menu-icon:hover span:after {
   transform: translateY(8px);
 }
+
 /* icon cross animation */
 
 .menu-icon-cross {
@@ -394,55 +414,68 @@
 }
 
 @media only screen and (max-width: 991px) {
+
   .desktop-logo,
   .desktop-menu,
   .desktop-banner {
     display: none;
     /* hide desktop menu on mobile devices */
   }
+
   .mobile-banner {
     width: 100%;
     height: auto;
   }
+
   .parallax-front {
     background: rgba(0, 0, 0, 0.5);
   }
+
   .parallax-front p {
     font-size: 20px;
   }
+
   .parallax-back {
     background-position: center center;
   }
+
   .scroll-btn {
     bottom: 25px;
   }
 }
 
 @media only screen and (min-width: 992px) {
+
   .mobile-logo,
   .mobile-menu,
   .mobile-banner {
     display: none;
   }
+
   .desktop-banner {
     width: 100%;
     height: auto;
   }
+
   .scroll-btn {
     z-index: 999;
   }
+
   /* To increase contrast on text when hover on parallax banner */
   .parallax:hover .parallax-front {
     background: rgba(0, 0, 0, 0.5);
   }
+
   .parallax-front .sub-title {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
   }
+
   .sub-title p {
     width: 33.33%;
   }
+
   .scroll-btn {
     bottom: 0;
   }
