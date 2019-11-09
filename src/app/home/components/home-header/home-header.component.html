@@ -4,47 +4,20 @@
     <div class="logo"></div>
   </div>
   <!-- desktop menu & banner -->
-  <div
-    class="desktop-menu"
-    [ngClass]="{
+  <div class="desktop-menu" [ngClass]="{
       sticky: !showHeader,
       'non-sticky slide-bottom': animateHeader
-    }"
-  >
+    }">
     <div class="desktop-logo" routerLink="/" (click)="linksClick('logo')"></div>
     <div class="desktop-items-container">
-      <a
-        pageScroll
-        [pageScrollDuration]="1500"
-        href="#about"
-        (click)="linksClick('about')"
-        rel="noreferrer noopener"
-        >About</a
-      >
-      <a
-        pageScroll
-        [pageScrollDuration]="1500"
-        href="#skills"
-        (click)="linksClick('skills')"
-        rel="noreferrer noopener"
-        >Skills</a
-      >
-      <a
-        pageScroll
-        [pageScrollDuration]="2000"
-        href="#projects"
-        (click)="linksClick('projects')"
-        rel="noreferrer noopener"
-        >Projects</a
-      >
-      <a
-        pageScroll
-        [pageScrollDuration]="2000"
-        href="#achievements"
-        (click)="linksClick('achievements')"
-        rel="noreferrer noopener"
-        >Achievements</a
-      >
+      <a pageScroll [pageScrollDuration]="1500" href="#about" (click)="linksClick('about')"
+        rel="noreferrer noopener">About</a>
+      <a pageScroll [pageScrollDuration]="1500" href="#skills" (click)="linksClick('skills')"
+        rel="noreferrer noopener">Skills</a>
+      <a pageScroll [pageScrollDuration]="2000" href="#projects" (click)="linksClick('projects')"
+        rel="noreferrer noopener">Projects</a>
+      <a pageScroll [pageScrollDuration]="2000" href="#achievements" (click)="linksClick('achievements')"
+        rel="noreferrer noopener">Achievements</a>
     </div>
   </div>
   <div class="parallax desktop-banner">
@@ -64,13 +37,7 @@
       <div class="parallax-back"></div>
     </div>
     <span class="scroll-btn">
-      <a
-        pageScroll
-        href="#about"
-        class="tip"
-        (click)="linksClick('scroll-down-desktop')"
-        rel="noreferrer noopener"
-      >
+      <a pageScroll href="#about" class="tip" (click)="linksClick('scroll-down-desktop')" rel="noreferrer noopener">
         <span class="message">Scroll Down</span>
         <span class="mouse">
           <span></span>
@@ -81,20 +48,13 @@
 
   <!-- desktop menu & banner end -->
   <!-- mobile menu & banner -->
-  <div
-    class="mobile-menu"
-    [ngClass]="{
+  <div class="mobile-menu" [ngClass]="{
       sticky: !showHeader,
       'non-sticky slide-bottom': animateHeader
-    }"
-  >
+    }">
     <div class="mobile-logo" routerLink="/"></div>
     <div class="mobile-icon">
-      <div
-        class="menu-icon menu-icon-cross"
-        [ngClass]="{ isOpen: !menuIcon }"
-        (click)="menuIconClick('menu')"
-      >
+      <div class="menu-icon menu-icon-cross" [ngClass]="{ isOpen: !menuIcon }" (click)="menuIconClick('menu')">
         <span></span>
         <svg x="0" y="0" width="54px" height="54px" viewbox="0 0 54 54">
           <circle cx="27" cy="27" r="26"></circle>
@@ -103,42 +63,18 @@
     </div>
     <div class="mobile-items-container" *ngIf="!menuIcon">
       <div class="mobile-nav-links">
-        <a
-          pageScroll
-          [pageScrollDuration]="0"
-          href="#about"
-          (pageScrollFinish)="menuIconClick('about')"
-          rel="noreferrer noopener"
-          >About</a
-        >
-        <a
-          pageScroll
-          [pageScrollDuration]="0"
-          href="#skills"
-          (pageScrollFinish)="menuIconClick('skills')"
-          rel="noreferrer noopener"
-          >Skills</a
-        >
-        <a
-          pageScroll
-          [pageScrollDuration]="0"
-          href="#projects"
-          (pageScrollFinish)="menuIconClick('projects')"
-          rel="noreferrer noopener"
-          >Projects</a
-        >
-        <a
-          pageScroll
-          [pageScrollDuration]="0"
-          href="#achievements"
-          (pageScrollFinish)="menuIconClick('achievements')"
-          rel="noreferrer noopener"
-          >Achievements</a
-        >
+        <a pageScroll [pageScrollDuration]="0" href="#about" (pageScrollFinish)="menuIconClick('about')"
+          rel="noreferrer noopener">About</a>
+        <a pageScroll [pageScrollDuration]="0" href="#skills" (pageScrollFinish)="menuIconClick('skills')"
+          rel="noreferrer noopener">Skills</a>
+        <a pageScroll [pageScrollDuration]="0" href="#projects" (pageScrollFinish)="menuIconClick('projects')"
+          rel="noreferrer noopener">Projects</a>
+        <a pageScroll [pageScrollDuration]="0" href="#achievements" (pageScrollFinish)="menuIconClick('achievements')"
+          rel="noreferrer noopener">Achievements</a>
       </div>
     </div>
   </div>
-  <div class="parallax mobile-banner">
+  <div class="parallax mobile-banner" *ngIf="menuIcon">
     <div class="parallax-content">
       <div class="parallax-front">
         <h1 class="wow tracking-in-expand">Sai Nikhil</h1>
@@ -157,12 +93,7 @@
       </div>
     </div>
     <span class="scroll-btn">
-      <a
-        pageScroll
-        href="#about"
-        (click)="linksClick('scroll-down-mobile')"
-        rel="noreferrer noopener"
-      >
+      <a pageScroll href="#about" (click)="linksClick('scroll-down-mobile')" rel="noreferrer noopener">
         <span class="mouse">
           <span></span>
         </span>
