@@ -4,6 +4,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 30px;
 }
+
 .page-subtitle {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -55,6 +56,7 @@
   padding: 5px 15px;
   border: 1px solid #808080;
 }
+
 .subscribe-button {
   position: relative;
   z-index: 1;
@@ -65,14 +67,12 @@
   border: none;
   color: #fff;
   background: rgb(214, 41, 116);
-  background: linear-gradient(
-    to right bottom,
-    #d62974,
-    #e43c6a,
-    #ef5061,
-    #f66459,
-    #fb7853
-  );
+  background: linear-gradient(to right bottom,
+      #d62974,
+      #e43c6a,
+      #ef5061,
+      #f66459,
+      #fb7853);
 }
 
 .subscribe-button:hover {
@@ -113,21 +113,26 @@
     display: grid;
     grid-template-columns: 1fr;
   }
+
   .puc-content {
     padding: 0 20px;
   }
+
   .puc-data {
     justify-content: space-around;
     margin: 0 auto;
   }
+
   .time-title {
     font-size: 25px;
     font-size: 5vw;
   }
+
   .time-caption {
     font-size: 20px;
     font-size: 4vw;
   }
+
   .subscribe {
     text-align: center;
   }
@@ -140,19 +145,24 @@
     justify-content: center;
     align-items: center;
   }
+
   .puc-content {
     width: 90%;
   }
+
   .puc-image {
     min-height: 60vh;
   }
+
   .puc-data {
     justify-content: space-between;
   }
+
   .time-title {
     font-size: 32px;
     font-size: 3vw;
   }
+
   .time-caption {
     font-size: 24px;
     font-size: 2vw;

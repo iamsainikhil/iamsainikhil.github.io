@@ -55,10 +55,6 @@
   padding-bottom: 20px;
 }
 
-.parallax-content {
-  z-index: 10;
-}
-
 /* scroll mouse */
 
 @-webkit-keyframes ani-mouse {
@@ -268,6 +264,9 @@
 }
 
 /* mobile menu */
+.mobile-banner .parallax-front {
+  z-index: 0;
+}
 
 .mobile-menu {
   display: flex;
