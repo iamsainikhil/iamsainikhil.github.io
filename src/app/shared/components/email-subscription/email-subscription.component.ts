@@ -24,13 +24,13 @@ export class EmailSubscriptionComponent implements OnInit {
 
   getTimeCounter() {
     this.timeCounter = this.likesCommentsService.dateDifference(
-      new Date('2019-11-17'),
+      new Date('2019-12-27'),
       'object'
     );
     // to update timeCounter every one second
     setInterval(() => {
       this.timeCounter = this.likesCommentsService.dateDifference(
-        new Date('2019-11-17'),
+        new Date('2019-12-27'),
         'object'
       );
     }, 1000);
