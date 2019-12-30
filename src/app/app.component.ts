@@ -113,7 +113,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     lloHe   Hello  lloHell Hell HelloHelloH  loHelloHell    loHelloH
     lloHe   Hello  lloHelloHell HelloHelloH  loHelloHell     oHello
 
-    %c Interested in the code behind this website? Well you're in luck - this site is open source! Come say hi, tell me what you're debugging, or even lend a hand in my repo - https://github.com/iamsainikhil/iamsainikhil.github.io    `,
+    %c Interested in the code behind this website? Well you're in luck - this site is open source! Come say hi, tell me what you're debugging, or if interested in the codebase, check out my repo - https://github.com/iamsainikhil/iamsainikhil.github.io    `,
       'font-size: 1vmin',
       'margin-bottom: 15px; line-height: 1.5'
     );

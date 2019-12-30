@@ -172,6 +172,14 @@ export class LikesCommentsService {
   /**
    * add subscribers data
    */
+  savePlainSubscriberData(collection: any, email: string, name: string, date: Date) {
+    // save data without location details
+    collection.set({
+      email: email,
+      productSubscribed: name,
+      dateSubscribed: date,
+    });
+  }
   addSubscribersData(date: Date, email: string, name: string) {
     const subscribersCollection = this.afs
       .collection<any>('subscribers')
@@ -191,15 +199,12 @@ export class LikesCommentsService {
             ip: res.ip,
             zipCode: res.postal
           });
+        } else {
+          this.savePlainSubscriberData(subscribersCollection, email, name, date);
         }
       },
       (err) => {
-        // save data without location details
-        subscribersCollection.set({
-          email: email,
-          productSubscribed: name,
-          dateSubscribed: date,
-        });
+        this.savePlainSubscriberData(subscribersCollection, email, name, date);
       }
     );
   }
