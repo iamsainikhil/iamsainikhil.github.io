@@ -13,6 +13,9 @@ export class EmailSubscriptionComponent implements OnInit {
   subscriberEmail = '';
   successMessage = false;
   accepted = false;
+  tempDate = new Date();
+  expectedLaunchDate = new Date('2020-01-20');
+  nonExpiryDate = this.tempDate.setTime(this.expectedLaunchDate.getTime() + 7 * 86400000);
 
   constructor(
     private likesCommentsService: LikesCommentsService
@@ -24,13 +27,13 @@ export class EmailSubscriptionComponent implements OnInit {
 
   getTimeCounter() {
     this.timeCounter = this.likesCommentsService.dateDifference(
-      new Date('2019-12-27'),
+      new Date(this.nonExpiryDate),
       'object'
     );
     // to update timeCounter every one second
     setInterval(() => {
       this.timeCounter = this.likesCommentsService.dateDifference(
-        new Date('2019-12-27'),
+        new Date(this.nonExpiryDate),
         'object'
       );
     }, 1000);
