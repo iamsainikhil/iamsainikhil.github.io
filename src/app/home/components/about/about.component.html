@@ -15,14 +15,8 @@
               <app-site-loader></app-site-loader>
             </div>
             <div *ngIf="!showLoader">
-              <div
-                class="wow fade-in-bottom"
-                *ngFor="let about of (aboutData | async)"
-              >
-                <h2
-                  class="about-caption caption"
-                  [innerHTML]="about.caption"
-                ></h2>
+              <div class="wow fade-in-bottom" *ngFor="let about of (aboutData | async)">
+                <h2 class="about-caption caption" [innerHTML]="about.caption"></h2>
                 <!-- about card, info, and timeline -->
                 <div class="wrapper" *ngIf="!showLoader">
                   <div class="side-content">
@@ -30,12 +24,9 @@
                       <div *ngFor="let data of (aboutCardData | async)">
                         <div class="card text-center">
                           <div class="card-image">
-                            <div
-                              class="card-avatar"
-                              [ngStyle]="{
+                            <div class="card-avatar" [ngStyle]="{
                                 'background-image': 'url(' + data.avatar + ')'
-                              }"
-                            ></div>
+                              }"></div>
                           </div>
                           <div class="card-content">
                             <div class="card-header">
@@ -54,43 +45,26 @@
                               </p>
                               <p>{{ data.city }}, {{ data.state }}</p>
                               <p>
-                                <a routerLink="/contact"
-                                  ><button
-                                    class="contact-button"
-                                    (click)="cardItemClick('contact')"
-                                  >
+                                <a routerLink="/contact"><button class="contact-button"
+                                    (click)="cardItemClick('contact')">
                                     Contact
-                                  </button></a
-                                >
+                                  </button></a>
                               </p>
                             </div>
                             <div class="card-footer">
-                              <a
-                                href="https://www.linkedin.com/in/iamsainikhil"
-                                target="_blank"
-                                (click)="cardItemClick('linkedin')"
-                              >
+                              <a href="https://www.linkedin.com/in/iamsainikhil" target="_blank"
+                                (click)="cardItemClick('linkedin')">
                                 <p class="icon-svg linkedin"></p>
                               </a>
-                              <a
-                                href="https://codepen.io/iamsainikhil"
-                                target="_blank"
-                                (click)="cardItemClick('codepen')"
-                              >
+                              <a href="https://codepen.io/iamsainikhil" target="_blank"
+                                (click)="cardItemClick('codepen')">
                                 <p class="icon-svg codepen"></p>
                               </a>
-                              <a
-                                href="https://github.com/iamsainikhil"
-                                target="_blank"
-                                (click)="cardItemClick('github')"
-                              >
+                              <a href="https://github.com/iamsainikhil" target="_blank"
+                                (click)="cardItemClick('github')">
                                 <p class="icon-svg github"></p>
                               </a>
-                              <button
-                                class="about-card-button"
-                                routerLink="/resume"
-                                (click)="cardItemClick('resume')"
-                              >
+                              <button class="about-card-button" routerLink="/resume" (click)="cardItemClick('resume')">
                                 Resume
                               </button>
                             </div>
@@ -100,16 +74,12 @@
                     </div>
                   </div>
                   <div class="main-content">
-                    <div
-                      class="mobile-about-info wow fade-in-bottom"
-                      [innerHTML]="getSanitizedHtml(about.mobileInfo)"
-                    ></div>
-                    <div
-                      class="desktop-about-info wow fade-in-bottom"
-                      [innerHTML]="getSanitizedHtml(about.desktopInfo)"
-                    ></div>
+                    <div class="mobile-about-info wow fade-in-bottom" [innerHTML]="getSanitizedHtml(about.mobileInfo)">
+                    </div>
+                    <div class="desktop-about-info wow fade-in-bottom"
+                      [innerHTML]="getSanitizedHtml(about.desktopInfo)"></div>
                     <!-- links to other products -->
-                    <div class="buttons-group">
+                    <!-- <div class="buttons-group">
                       <div *ngFor="let product of productsData">
                         <button
                           class="about-button wow zoomIn"
@@ -119,7 +89,7 @@
                           View {{ product.name }}
                         </button>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
