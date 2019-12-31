@@ -4,6 +4,7 @@
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
 }
+
 .gradient {
   display: grid;
   grid-template-columns: 1fr;
@@ -144,14 +145,17 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
   }
+
   /* about section */
   .about-content {
     padding: 50px 0 150px 0;
     text-align: left;
   }
+
   .about-caption {
     font-size: 24px;
   }
+
   .mobile-about-info {
     display: grid;
     grid-template-columns: 0.75fr;
@@ -159,15 +163,18 @@
     grid-gap: 10px;
     justify-content: center;
   }
+
   .desktop-about-info {
     display: none;
   }
+
   .buttons-group {
     display: grid;
     grid-template-rows: repeat(3, 0.3fr);
     grid-gap: 35px;
     justify-content: center;
   }
+
   /* about card & main content*/
   .wrapper {
     display: grid;
@@ -189,36 +196,43 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
   }
+
   /* about section */
   .about-content {
     padding: 100px 0px 150px 0px;
   }
+
   .mobile-about-info {
     display: none;
   }
+
   /* about card & main content */
   .wrapper {
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "side main";
     grid-gap: 20px;
     padding: 20px;
   }
+
   .side-content {
     grid-area: side;
     max-width: 400px;
   }
-  .side-content > div {
+
+  .side-content>div {
     top: 0;
     position: sticky;
   }
+
   .main-content {
     grid-area: main;
     min-height: 50vh;
     overflow: auto;
     padding-top: 25px;
   }
+
   .desktop-about-info {
     display: grid;
     grid-template-columns: 1fr;
@@ -247,6 +261,7 @@
     justify-content: center;
   }
 }
+
 @media only screen and (min-width: 1280px) and (max-width: 1679px) {
   .wrapper {
     grid-template-columns: 0.4fr 1fr;
@@ -257,9 +272,11 @@
   .about-content {
     padding: 100px 50px 150px 50px;
   }
+
   .wrapper {
-   grid-template-columns: 450px auto;
+    grid-template-columns: 450px auto;
   }
+
   .desktop-about-info {
     font-size: 1.2vw;
     line-height: 1.5;
