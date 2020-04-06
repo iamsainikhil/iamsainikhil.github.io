@@ -7,6 +7,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { ChartsModule } from "ng2-charts";
 import { NgwWowModule } from "ngx-wow";
+import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
 import { NgxPageScrollModule } from "ngx-page-scroll";
 import { environment } from "../environments/environment";
 import { BlogPostComponent } from "./about/components/blog-post/blog-post.component";
@@ -66,7 +67,7 @@ import { SkillsPageComponent } from "./skills-page/skills-page.component";
 import { SliceStringPipe } from "./shared/pipes/slice-string.pipe";
 import { UrlNameExtractPipe } from "./shared/pipes/url-name-extract.pipe";
 import { GithubLinkPipe } from "./shared/pipes/github-link.pipe";
-import { EmailSubscriptionComponent } from './shared/components/email-subscription/email-subscription.component';
+import { EmailSubscriptionComponent } from "./shared/components/email-subscription/email-subscription.component";
 
 @NgModule({
   declarations: [
@@ -114,7 +115,7 @@ import { EmailSubscriptionComponent } from './shared/components/email-subscripti
     SliceStringPipe,
     UrlNameExtractPipe,
     GithubLinkPipe,
-    EmailSubscriptionComponent
+    EmailSubscriptionComponent,
   ],
   imports: [
     BrowserModule,
@@ -124,9 +125,10 @@ import { EmailSubscriptionComponent } from './shared/components/email-subscripti
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    NgxPageScrollCoreModule.forRoot(),
     NgxPageScrollModule,
     ChartsModule,
-    NgwWowModule.forRoot()
+    NgwWowModule,
   ],
   providers: [
     AboutService,
@@ -140,8 +142,8 @@ import { EmailSubscriptionComponent } from './shared/components/email-subscripti
     CommonService,
     ModalService,
     GAService,
-    FilterService
+    FilterService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
