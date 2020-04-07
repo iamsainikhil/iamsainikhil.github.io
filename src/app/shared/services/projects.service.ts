@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import {
   AngularFirestore,
   AngularFirestoreCollection,
-  AngularFirestoreDocument
+  AngularFirestoreDocument,
 } from "@angular/fire/firestore";
 import { Observable } from "rxjs/Observable";
 import { map } from "rxjs/operators";
@@ -45,11 +45,13 @@ export class ProjectsService {
    */
   getProjectsData() {
     this.projects = this.afs
-      .collection("projects", ref => ref.orderBy("dateAdded", "desc"))
+      .collection("projects", (ref) =>
+        ref.where("display", "==", true).orderBy("dateAdded", "desc")
+      )
       .snapshotChanges()
       .pipe(
-        map(changes => {
-          return changes.map(a => {
+        map((changes) => {
+          return changes.map((a) => {
             const data = a.payload.doc.data() as Project;
             const id = a.payload.doc.id;
             return { id, data };
@@ -65,12 +67,12 @@ export class ProjectsService {
    * Get limited data from projects collection in firestore
    */
   getLimitedProjectsData(number) {
-    const projectCollection = this.afs.collection<Project>("projects", ref =>
+    const projectCollection = this.afs.collection<Project>("projects", (ref) =>
       ref.limit(number)
     );
     this.projects = projectCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(a => {
+      map((changes) => {
+        return changes.map((a) => {
           const data = a.payload.doc.data() as Project;
           const id = a.payload.doc.id;
           return { id, data };
@@ -84,12 +86,12 @@ export class ProjectsService {
    * Get data from projects collection based on 'where' query
    */
   getQueriedProjectsData(field: string, operator: any, value: any) {
-    const projectCollection = this.afs.collection<Project>("projects", ref =>
-      ref.where(field, operator, value)
+    const projectCollection = this.afs.collection<Project>("projects", (ref) =>
+      ref.where(field, operator, value).where("display", "==", true)
     );
     this.projects = projectCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(a => {
+      map((changes) => {
+        return changes.map((a) => {
           const data = a.payload.doc.data() as Project;
           const id = a.payload.doc.id;
           return { id, data };
@@ -103,12 +105,12 @@ export class ProjectsService {
    * Get data from projects collection based on 'orderBy' query
    */
   getOrderedProjectsData(field: string) {
-    this.projectCollection = this.afs.collection<Project>("projects", ref =>
-      ref.orderBy(field)
+    this.projectCollection = this.afs.collection<Project>("projects", (ref) =>
+      ref.where("display", "==", true).orderBy(field)
     );
     this.projects = this.projectCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(a => {
+      map((changes) => {
+        return changes.map((a) => {
           const data = a.payload.doc.data() as Project;
           const id = a.payload.doc.id;
           return { id, data };
@@ -136,8 +138,8 @@ export class ProjectsService {
   getStoryData(Id: string) {
     this.storyCollection = this.afs.collection("projects/" + Id + "/story");
     this.story = this.storyCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(a => {
+      map((changes) => {
+        return changes.map((a) => {
           const data = a.payload.doc.data() as Story;
           const id = a.payload.doc.id;
           // // new timestamp sent from firestore need to be converted to date

@@ -1,18 +1,18 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { PageScrollConfig } from 'ngx-page-scroll';
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/distinctUntilChanged';
-import { environment } from '../environments/environment';
-import { GAService } from './shared/services/ga.service';
-import { ModalService } from './shared/services/modal.service';
-import { NgwWowService } from 'ngx-wow';
+import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
+import { AngularFirestore } from "@angular/fire/firestore";
+import { Subscription } from "rxjs/Subscription";
+import "rxjs/add/operator/distinctUntilChanged";
+import { environment } from "../environments/environment";
+import { GAService } from "./shared/services/ga.service";
+import { ModalService } from "./shared/services/modal.service";
+import { NgwWowService } from "ngx-wow";
+import { EasingLogic } from "ngx-page-scroll-core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit, AfterViewInit {
   analyticsId = environment.analyticsId;
@@ -29,6 +29,29 @@ export class AppComponent implements OnInit, AfterViewInit {
    */
   showIcon = false;
 
+  /**
+   * overriding default options for ng-page-scroll
+   */
+  public myEasing: EasingLogic = (
+    t: number,
+    b: number,
+    c: number,
+    d: number
+  ): number => {
+    // easeInOutExpo easing
+    if (t === 0) {
+      return b;
+    }
+    if (t === d) {
+      return b + c;
+    }
+    if ((t /= d / 2) < 1) {
+      return (c / 2) * Math.pow(2, 10 * (t - 1)) + b;
+    }
+
+    return (c / 2) * (-Math.pow(2, -10 * --t) + 2) + b;
+  };
+
   constructor(
     private afs: AngularFirestore,
     private modalService: ModalService,
@@ -39,37 +62,17 @@ export class AppComponent implements OnInit, AfterViewInit {
     /**
      * To detect web status
      */
-    window.addEventListener('online', () => {
+    window.addEventListener("online", () => {
       this.isConnected = true;
     });
-    window.addEventListener('offline', () => {
+    window.addEventListener("offline", () => {
       this.isConnected = false;
     });
-
-    /**
-     * overriding default options for ng-page-scroll
-     */
-    PageScrollConfig.defaultScrollOffset = 0;
-    PageScrollConfig.defaultEasingLogic = {
-      ease: (t: number, b: number, c: number, d: number): number => {
-        // easeInOutExpo easing
-        if (t === 0) {
-          return b;
-        }
-        if (t === d) {
-          return b + c;
-        }
-        if ((t /= d / 2) < 1) {
-          return (c / 2) * Math.pow(2, 10 * (t - 1)) + b;
-        }
-        return (c / 2) * (-Math.pow(2, -10 * --t) + 2) + b;
-      }
-    };
   }
 
   getPosition(e) {
-    if (e === 'bottom') {
-      this.modalService.showModal.subscribe(res => {
+    if (e === "bottom") {
+      this.modalService.showModal.subscribe((res) => {
         if (res) {
           this.showIcon = false;
         } else {
@@ -82,7 +85,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   trackST() {
-    this.gaService.emitEvent('scrollTop', 'click', 'scollToTop', 10);
+    this.gaService.emitEvent("scrollTop", "click", "scollToTop", 10);
   }
 
   ngOnInit() {
@@ -95,7 +98,7 @@ export class AppComponent implements OnInit, AfterViewInit {
         return true;
       })
       .subscribe((x: any) => {
-        gtag('config', this.analyticsId, { page_path: x.url });
+        gtag("config", this.analyticsId, { page_path: x.url });
       });
     console.clear();
     console.log(
@@ -114,8 +117,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     lloHe   Hello  lloHelloHell HelloHelloH  loHelloHell     oHello
 
     %c Interested in the code behind this website? Well you're in luck - this site is open source! Come say hi, tell me what you're debugging, or if interested in the codebase, check out my repo - https://github.com/iamsainikhil/iamsainikhil.github.io    `,
-      'font-size: 1vmin',
-      'margin-bottom: 15px; line-height: 1.5'
+      "font-size: 1vmin",
+      "margin-bottom: 15px; line-height: 1.5"
     );
   }
 
