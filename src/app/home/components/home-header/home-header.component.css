@@ -131,7 +131,7 @@
   text-align: center;
 }
 
-.scroll-btn>* {
+.scroll-btn > * {
   display: inline-block;
   line-height: 18px;
   font-size: 13px;
@@ -142,17 +142,17 @@
   letter-spacing: 2px;
 }
 
-.scroll-btn>*:hover,
-.scroll-btn>*:focus,
-.scroll-btn>*.active {
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
   color: #ffffff;
   cursor: pointer;
 }
 
-.scroll-btn>*:hover,
-.scroll-btn>*:focus,
-.scroll-btn>*:active,
-.scroll-btn>*.active {
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
@@ -170,7 +170,7 @@
   border-radius: 23px;
 }
 
-.scroll-btn .mouse>* {
+.scroll-btn .mouse > * {
   position: absolute;
   display: block;
   top: 29%;
@@ -411,7 +411,6 @@
 }
 
 @media only screen and (max-width: 991px) {
-
   .desktop-logo,
   .desktop-menu,
   .desktop-banner {
@@ -442,7 +441,6 @@
 }
 
 @media only screen and (min-width: 992px) {
-
   .mobile-logo,
   .mobile-menu,
   .mobile-banner {
