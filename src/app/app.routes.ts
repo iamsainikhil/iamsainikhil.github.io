@@ -38,7 +38,11 @@ export const appRoutes: Routes = [
     pathMatch: "full",
   },
   // {path: 'terms-and-conditions', component: TermsComponent, pathMatch: 'full'},
-  // { path: 'privacy-policy', component: PrivacyPolicyComponent, pathMatch: 'full' },
+  {
+    path: "privacy-policy",
+    component: PrivacyPolicyComponent,
+    pathMatch: "full",
+  },
   // { path: 'disclaimer', component: DisclaimerComponent, pathMatch: 'full' },
   // {path: 'frequently-asked-questions', component: FaqComponent, pathMatch: 'full'},
   // {path: 'sitemap', component: FaqComponent, pathMatch: 'full'},
