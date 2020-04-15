@@ -1,199 +1,185 @@
- /* footer section */
- 
- .footer {
-     background-color: #353839;
-     color: #fff;
-     padding: 25px;
- }
- 
- .footer p {
-     text-align: center;
-     letter-spacing: 1px;
- }
- 
- .footer a {
-     color: #fff;
- }
- 
- .footer ul {
-     list-style-type: none;
-     font-family: 'Poppins', sans-serif;
-     letter-spacing: 1px;
- }
- 
- .footer ul:hover {
-     cursor: pointer;
- }
- 
- .first-row li a:hover {
-     color: #585C5D;
- }
- 
- .notes,
- .copyrights {
-     font-family: 'Poppins', sans-serif;
- }
- 
- .notes {
-     display: flex;
-     flex-flow: row wrap;
-     justify-content: center;
- }
- 
- .image {
-     background-size: contain;
-     background-repeat: no-repeat;
-     width: 50px;
-     height: 50px;
-     z-index: 999;
- }
- 
- .image:hover {
-     cursor: pointer;
- }
- 
- .sololearn {
-     background-image: url('../../../../assets/icons/social-icons/sololearn.png');
- }
- 
- .hackerrank {
-     background-image: url('../../../../assets/icons/social-icons/hacker-rank.svg');
- }
- 
- .hackerearth {
-     background-image: url('../../../../assets/icons/social-icons/hacker-earth.jpeg');
-     border-radius: 15px;
- }
- 
- .codepen {
-     background-image: url('../../../../assets/icons/social-icons/codepen-color.svg');
- }
- 
- .github {
-     background-image: url('../../../../assets/icons/social-icons/github-square.svg');
- }
- 
- .linkedin {
-     background-image: url('../../../../assets/icons/social-icons/linkedin.svg');
- }
- 
- .stack {
-     background-image: url('../../../../assets/icons/social-icons/stack-overflow-color.svg');
- }
- 
- .icon-svg {
-     display: inline-block;
-     background-size: contain;
-     background-repeat: no-repeat;
-     width: 20px;
-     height: 20px;
-     margin: 0 5px;
- }
- 
- .icon-svg:hover {
-     cursor: help;
- }
- 
- .icon-svg.tip .message {
-     margin-left: -6px;
- }
- 
- .love {
-     background-image: url('../../../../assets/icons/love.svg');
- }
- 
- .angular {
-     background-image: url('../../../../assets/icons/skills/angular-icon.svg');
-     margin-left: 10px;
- }
- 
- .firebase {
-     background-image: url('../../../../assets/icons/skills/firebase.svg');
-     width: 34px;
-     height: 28px;
-     margin-top: -5px;
- }
- 
- .vcs {
-     background-image: url('../../../../assets/icons/skills/visual-studio-code.svg');
- }
- 
- .github-svg {
-     background-image: url('../../../../assets/icons/social-icons/github-color.svg');
- }
- /* media queries */
- 
- @media only screen and (max-width: 767px) {
-     .social-icons {
-         display: flex;
-         flex-flow: row wrap;
-         justify-content: space-around;
-         align-items: center;
-     }
-     .social-icons a p.image {
-         width: 35px;
-         height: 35px;
-     }
-     .notes p {
-         margin-bottom: 2px;
-     }
-     .second-row {
-         padding: 25px 10px 10px 10px;
-     }
-     .notes {
-         padding: 10px 10px 15px 10px;
-     }
-     .copyrights {
-         padding-top: 15px;
-         margin-bottom: 0px;
-         margin-left: -8px;
-     }
- }
- 
- @media only screen and (max-width: 399px) {
-     .first-row {
-         display: flex;
-         flex-direction: column;
-         padding-left: 30%;
-     }
- }
- 
- @media only screen and (min-width: 400px) and (max-width: 767px) {
-     .first-row {
-         display: flex;
-         flex-flow: row nowrap;
-         justify-content: center;
-         text-align: left;
-     }
-     .first-row .second-column {
-         padding-right: 15px;
-     }
- }
- 
- @media only screen and (min-width: 768px) {
-     .first-row,
-     .second-row {
-         display: flex;
-         flex-flow: row nowrap;
-         justify-content: space-around;
-     }
-     .first-row .second-column {
-         margin-left: -20px;
-     }
-     .second-row {
-         padding: 25px 10px 15px 10px;
-     }
-     .notes {
-         padding: 5px;
-     }
-     .social-icons {
-         display: grid;
-         grid-template-columns: repeat(7, 1fr);
-         grid-template-rows: none;
-         grid-column-gap: 20px;
-     }
-     .copyrights {
-         padding-top: 5px;
-         margin-bottom: 0;
-     }
- }
+/* footer section */
+
+.footer {
+  background-color: #353839;
+  color: #fff;
+  padding: 25px;
+}
+
+.footer p {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.first-row a {
+  list-style-type: none;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.first-row a:hover {
+  cursor: pointer;
+  color: #585c5d;
+}
+
+.notes,
+.copyrights {
+  font-family: "Poppins", sans-serif;
+}
+
+.notes {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+}
+
+.image:hover {
+  cursor: pointer;
+}
+
+.sololearn {
+  background-image: url("../../../../assets/icons/social-icons/sololearn.png");
+}
+
+.hackerrank {
+  background-image: url("../../../../assets/icons/social-icons/hacker-rank.svg");
+}
+
+.codepen {
+  background-image: url("../../../../assets/icons/social-icons/codepen-color.svg");
+}
+
+.github {
+  background-image: url("../../../../assets/icons/social-icons/github-square.svg");
+}
+
+.linkedin {
+  background-image: url("../../../../assets/icons/social-icons/linkedin.svg");
+}
+
+.stack {
+  background-image: url("../../../../assets/icons/social-icons/stack-overflow-color.svg");
+}
+
+.icon-svg {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+.icon-svg:hover {
+  cursor: help;
+}
+
+.icon-svg.tip .message {
+  margin-left: -6px;
+}
+
+.love {
+  background-image: url("../../../../assets/icons/love.svg");
+}
+
+.angular {
+  background-image: url("../../../../assets/icons/skills/angular-icon.svg");
+  margin-left: 10px;
+}
+
+.firebase {
+  background-image: url("../../../../assets/icons/skills/firebase.svg");
+  width: 34px;
+  height: 28px;
+  margin-top: -5px;
+}
+
+.vcs {
+  background-image: url("../../../../assets/icons/skills/visual-studio-code.svg");
+}
+
+.github-svg {
+  background-image: url("../../../../assets/icons/social-icons/github-color.svg");
+}
+/* media queries */
+
+@media only screen and (max-width: 767px) {
+  .social-icons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .social-icons a p.image {
+    width: 35px;
+    height: 35px;
+  }
+  .notes p {
+    margin-bottom: 2px;
+  }
+  .second-row {
+    padding: 25px 10px 10px 10px;
+  }
+  .notes {
+    padding: 10px 10px 15px 10px;
+  }
+  .copyrights {
+    padding-top: 15px;
+    margin-bottom: 0px;
+    margin-left: -8px;
+  }
+}
+
+@media only screen and (max-width: 399px) {
+  .first-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+  .first-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .first-row,
+  .second-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  .first-row a {
+    margin: 0 10px;
+  }
+  .second-row {
+    padding: 25px 5px 15px 10px;
+  }
+  .notes {
+    padding: 5px;
+  }
+  .social-icons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: none;
+    grid-column-gap: 20px;
+  }
+  .copyrights {
+    padding-top: 5px;
+    margin-bottom: 0;
+  }
+}

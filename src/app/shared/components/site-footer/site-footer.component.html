@@ -1,94 +1,76 @@
 <section class="footer">
   <div class="first-row">
-    <ul class="first-column">
-      <!-- <li>
-                <a routerLink="/terms-and-conditions" (click)="footerLinksClick('terms')">Terms</a>
-            </li> -->
-      <li>
-        <a routerLink="/privacy-policy" (click)="footerLinksClick('privacy')">Privacy&nbsp;Policy</a>
-      </li>
-      <li>
-        <a routerLink="/disclaimer" (click)="footerLinksClick('disclaimer')">Disclaimer</a>
-      </li>
-      <li>
-        <a href="https://github.com/iamsainikhil/iamsainikhil.github.io" target="_blank"
-          (click)="footerLinksClick('source-code')">Source&nbsp;Code</a>
-      </li>
-    </ul>
-    <ul class="second-column">
-      <li>
-        <a routerLink="/resume" (click)="footerLinksClick('resume')">Resume</a>
-      </li>
-      <!-- <li>
-                <a routerLink="/skills" (click)="footerLinksClick('skills')">Skills</a>
-            </li> -->
-      <li>
-        <a routerLink="/projects" (click)="footerLinksClick('projects')">Projects</a>
-      </li>
-      <li>
-        <a routerLink="/achievements" (click)="footerLinksClick('achievements')">Achievements</a>
-      </li>
-      <!-- <li>
-                <a routerLink="/contact" (click)="footerLinksClick('contact')">Contact</a>
-            </li> -->
-    </ul>
-    <!-- <ul class="third-column">
-      <li>
-        <a routerLink="/about" (click)="footerLinksClick('about')">About</a>
-      </li>
-      <li>
-        <a routerLink="/about/blog" (click)="footerLinksClick('blog')">Blog</a>
-      </li>
-      <li>
-        <a routerLink="/about/photos" (click)="footerLinksClick('photos')"
-          >Photos</a
-        >
-      </li>
-      <li>
-                <a routerLink="/about/videos" (click)="footerLinksClick('videos')">Videos</a>
-            </li>
-    </ul> -->
+    <a
+      href="https://github.com/iamsainikhil/iamsainikhil.github.io"
+      target="_blank"
+      (click)="footerLinksClick('source-code')"
+      >GitHub</a
+    >
+    <a routerLink="/resume" (click)="footerLinksClick('resume')">Resume</a>
+    <a routerLink="/projects" (click)="footerLinksClick('projects')"
+      >Projects</a
+    >
+    <a routerLink="/achievements" (click)="footerLinksClick('achievements')"
+      >Achievements</a
+    >
   </div>
   <div class="second-row">
     <div class="social-icons">
-      <a href="https://www.sololearn.com/Profile/9954326" target="_blank" (click)="footerLinksClick('sololearn')">
+      <a
+        href="https://www.sololearn.com/Profile/9954326"
+        target="_blank"
+        (click)="footerLinksClick('sololearn')"
+      >
         <p class="image sololearn tip">
           <span class="message">SoloLearn</span>
         </p>
       </a>
 
-      <a href="https://www.hackerrank.com/iamsainikhil" target="_blank" (click)="footerLinksClick('hackerrank')">
+      <a
+        href="https://www.hackerrank.com/iamsainikhil"
+        target="_blank"
+        (click)="footerLinksClick('hackerrank')"
+      >
         <p class="image hackerrank tip">
           <span class="message">HackerRank</span>
         </p>
       </a>
 
-      <a href="https://www.hackerearth.com/@sainikhil12" target="_blank" (click)="footerLinksClick('hackerearth')">
-        <p class="image hackerearth tip">
-          <span class="message">HackerEarth</span>
-        </p>
-      </a>
-
-      <a href="https://codepen.io/iamsainikhil" target="_blank" (click)="footerLinksClick('codepen')">
+      <a
+        href="https://codepen.io/iamsainikhil"
+        target="_blank"
+        (click)="footerLinksClick('codepen')"
+      >
         <p class="image codepen tip">
           <span class="message">codepen</span>
         </p>
       </a>
 
-      <a href="https://github.com/iamsainikhil" target="_blank" (click)="footerLinksClick('github')">
+      <a
+        href="https://github.com/iamsainikhil"
+        target="_blank"
+        (click)="footerLinksClick('github')"
+      >
         <p class="image github tip">
           <span class="message">GitHub</span>
         </p>
       </a>
 
-      <a href="https://www.linkedin.com/in/iamsainikhil" target="_blank" (click)="footerLinksClick('linkedin')">
+      <a
+        href="https://www.linkedin.com/in/iamsainikhil"
+        target="_blank"
+        (click)="footerLinksClick('linkedin')"
+      >
         <p class="image linkedin tip">
           <span class="message">LinkedIn</span>
         </p>
       </a>
 
-      <a href="https://stackoverflow.com/story/iamsainikhil" target="_blank"
-        (click)="footerLinksClick('stack-overflow')">
+      <a
+        href="https://stackoverflow.com/story/iamsainikhil"
+        target="_blank"
+        (click)="footerLinksClick('stack-overflow')"
+      >
         <p class="image stack tip">
           <span class="message">Stack Overflow</span>
         </p>
@@ -108,6 +90,8 @@
     <p class="icon-svg github-svg tip"><span class="message">GitHub</span></p>
   </div>
   <p class="copyrights">
-    &copy;&nbsp;2017&nbsp;-&nbsp;{{ date | date: "y" }}&nbsp;<a routerLink="/">Sai&nbsp;Nikhil&nbsp;Bheemanathini</a>
+    &copy;&nbsp;2017&nbsp;-&nbsp;{{ date | date: "y" }}&nbsp;<a routerLink="/"
+      >Sai&nbsp;Nikhil&nbsp;Bheemanathini</a
+    >
   </p>
 </section>
