@@ -7,7 +7,7 @@ import { GAService } from "../../../shared/services/ga.service";
 @Component({
   selector: "app-achievements",
   templateUrl: "./achievements.component.html",
-  styleUrls: ["./achievements.component.css"]
+  styleUrls: ["./achievements.component.css"],
 })
 export class AchievementsComponent implements OnInit, OnDestroy {
   @Input() page: string;
@@ -19,20 +19,20 @@ export class AchievementsComponent implements OnInit, OnDestroy {
   @Output() chipData = [
     {
       name: "show all",
-      selected: true
+      selected: true,
     },
     {
       name: "awards",
-      selected: false
+      selected: false,
     },
-    {
-      name: "testdome",
-      selected: false
-    },
+    // {
+    //   name: "testdome",
+    //   selected: false
+    // },
     {
       name: "certificates",
-      selected: false
-    }
+      selected: false,
+    },
   ];
 
   private subscription: Subscription;
@@ -44,7 +44,7 @@ export class AchievementsComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.filterService.chipName.subscribe(name => {
+    this.filterService.chipName.subscribe((name) => {
       this.chipName = name;
       this.chipCondition(this.chipName);
     });
@@ -58,11 +58,12 @@ export class AchievementsComponent implements OnInit, OnDestroy {
       this.defaultClick();
     } else if (data === "awards") {
       this.awardsClick();
-    } else if (data === "testdome") {
-      this.testDomeClick();
     } else if (data === "certificates") {
       this.certificatesClick();
     }
+    // else if (data === "testdome") {
+    //   this.testDomeClick();
+    // }
   }
 
   defaultClick() {
@@ -107,21 +108,21 @@ export class AchievementsComponent implements OnInit, OnDestroy {
     this.subscription.add(subscription);
   }
 
-  testDomeClick() {
-    this.showLoader = true;
-    const subscription = this.achievementsService
-      .getQueriedAchievementsData("testdome", "==", true)
-      .subscribe(() => {
-        this.achievementsData = this.achievementsService.getQueriedAchievementsData(
-          "testdome",
-          "==",
-          true
-        );
-        this.loaderOff();
-      });
-    // adding child subscription to the parent
-    this.subscription.add(subscription);
-  }
+  // testDomeClick() {
+  //   this.showLoader = true;
+  //   const subscription = this.achievementsService
+  //     .getQueriedAchievementsData("testdome", "==", true)
+  //     .subscribe(() => {
+  //       this.achievementsData = this.achievementsService.getQueriedAchievementsData(
+  //         "testdome",
+  //         "==",
+  //         true
+  //       );
+  //       this.loaderOff();
+  //     });
+  //   // adding child subscription to the parent
+  //   this.subscription.add(subscription);
+  // }
 
   loaderOff() {
     setTimeout(() => {

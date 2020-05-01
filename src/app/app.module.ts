@@ -125,7 +125,9 @@ import { EmailSubscriptionComponent } from "./shared/components/email-subscripti
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    NgxPageScrollCoreModule.forRoot(),
+    NgxPageScrollCoreModule.forRoot({
+      duration: 250,
+    }),
     NgxPageScrollModule,
     ChartsModule,
     NgwWowModule,

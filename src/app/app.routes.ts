@@ -32,11 +32,11 @@ export const appRoutes: Routes = [
     component: ProjectPageComponent,
     pathMatch: "full",
   },
-  {
-    path: "achievements",
-    component: AchievementsPageComponent,
-    pathMatch: "full",
-  },
+  // {
+  //   path: "achievements",
+  //   component: AchievementsPageComponent,
+  //   pathMatch: "full",
+  // },
   // {path: 'terms-and-conditions', component: TermsComponent, pathMatch: 'full'},
   {
     path: "privacy-policy",

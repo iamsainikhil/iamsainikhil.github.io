@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  background: #e57d3a;
+  background: #ff6654;
 }
 
 .projects-content {
@@ -20,7 +20,7 @@
 
 .project-title {
   color: #000;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 20px;
   padding: 10px 0;
@@ -28,7 +28,7 @@
 
 .project-info {
   color: #808080;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
 }
@@ -38,8 +38,8 @@
 }
 
 .info-button {
-  border: 1px solid #e57d3a;
-  background-color: #e57d3a;
+  border: 1px solid #ff6654;
+  background-color: #ff6654;
   color: #fff;
   margin: 5px;
 }
@@ -47,16 +47,16 @@
 .view-button {
   border: none;
   background-color: #fff;
-  color: #e57d3a;
+  color: #ff6654;
   margin: 5px;
 }
 
 .view-link {
-  color: #e57d3a;
+  color: #ff6654;
 }
 
 .view-button:hover {
-  background-color: #e57d3a;
+  background-color: #ff6654;
   color: #fff;
 }
 
