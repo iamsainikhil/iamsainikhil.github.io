@@ -221,7 +221,7 @@
     max-width: 400px;
   }
 
-  .side-content>div {
+  .side-content > div {
     top: 0;
     position: sticky;
   }
