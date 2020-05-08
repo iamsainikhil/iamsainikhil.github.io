@@ -5,24 +5,12 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
-import { ChartsModule } from "ng2-charts";
 import { NgwWowModule } from "ngx-wow";
-import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
 import { NgxPageScrollModule } from "ngx-page-scroll";
 import { environment } from "../environments/environment";
-import { BlogPostComponent } from "./about/components/blog-post/blog-post.component";
-import { BlogComponent } from "./about/components/blog/blog.component";
-import { ImageGalleryComponent } from "./about/components/image-gallery/image-gallery.component";
-import { PhotoComponent } from "./about/components/photo/photo.component";
-import { TabListComponent } from "./about/components/tab-list/tab-list.component";
-import { TimelineComponent } from "./about/components/timeline/timeline.component";
-import { AboutPageComponent } from "./about/pages/about-page/about-page.component";
-import { AchievementsPageComponent } from "./achievements-page/achievements-page.component";
 import { AppComponent } from "./app.component";
 import { appRoutes } from "./app.routes";
 import { ContactPageComponent } from "./contact-page/contact-page.component";
-import { DisclaimerComponent } from "./disclaimer/disclaimer.component";
-import { FaqComponent } from "./faq/faq.component";
 import { AboutComponent } from "./home/components/about/about.component";
 import { AchievementsComponent } from "./home/components/achievements/achievements.component";
 import { ContactComponent } from "./home/components/contact/contact.component";
@@ -62,12 +50,9 @@ import { ModalService } from "./shared/services/modal.service";
 import { PaginationService } from "./shared/services/pagination.service";
 import { ProjectsService } from "./shared/services/projects.service";
 import { SkillsService } from "./shared/services/skills.service";
-import { TermsComponent } from "./terms/terms.component";
-import { SkillsPageComponent } from "./skills-page/skills-page.component";
 import { SliceStringPipe } from "./shared/pipes/slice-string.pipe";
 import { UrlNameExtractPipe } from "./shared/pipes/url-name-extract.pipe";
 import { GithubLinkPipe } from "./shared/pipes/github-link.pipe";
-import { EmailSubscriptionComponent } from "./shared/components/email-subscription/email-subscription.component";
 
 @NgModule({
   declarations: [
@@ -85,37 +70,24 @@ import { EmailSubscriptionComponent } from "./shared/components/email-subscripti
     ProjectPageComponent,
     ProjectsPageComponent,
     SiteHeaderComponent,
-    AboutPageComponent,
-    AchievementsPageComponent,
     ContentCardComponent,
     LikesComponent,
     CommentsComponent,
     AvatarComponent,
     CommentFormComponent,
     ContactPageComponent,
-    TabListComponent,
     HomeHeaderComponent,
     PageNotFoundComponent,
-    TimelineComponent,
-    ImageGalleryComponent,
     ScrollableDirective,
-    BlogComponent,
-    BlogPostComponent,
     GistComponent,
     SafePipe,
-    PhotoComponent,
     SiteModalComponent,
     DisableScrollDirective,
-    TermsComponent,
     PrivacyPolicyComponent,
-    DisclaimerComponent,
-    FaqComponent,
     FilterComponent,
-    SkillsPageComponent,
     SliceStringPipe,
     UrlNameExtractPipe,
     GithubLinkPipe,
-    EmailSubscriptionComponent,
   ],
   imports: [
     BrowserModule,
@@ -125,11 +97,7 @@ import { EmailSubscriptionComponent } from "./shared/components/email-subscripti
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    NgxPageScrollCoreModule.forRoot({
-      duration: 250,
-    }),
     NgxPageScrollModule,
-    ChartsModule,
     NgwWowModule,
   ],
   providers: [

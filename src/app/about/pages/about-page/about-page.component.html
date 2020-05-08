@@ -1,9 +1,0 @@
-<div [ngStyle]="{ position: modalVisible ? 'fixed' : 'relative' }">
-  <app-site-header> </app-site-header>
-  <div class="centered" *ngIf="showLoader">
-    <app-site-loader></app-site-loader>
-  </div>
-  <div class="wrapper" *ngIf="!showLoader">
-    <app-tab-list></app-tab-list>
-  </div>
-</div>
