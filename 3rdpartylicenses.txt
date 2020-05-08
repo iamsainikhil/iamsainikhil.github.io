@@ -86,6 +86,9 @@ firebase/app
 
 firebase/firestore
 
+ngx-page-scroll
+MIT
+
 ngx-page-scroll-core
 MIT
 

@@ -236,7 +236,7 @@
   */
 
 .parallax-back {
-  background-image: url("../../../../assets/icons/banner.svg");
+  background-image: url("../../../../assets/icons/banner.svg") !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

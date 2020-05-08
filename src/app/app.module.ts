@@ -6,7 +6,7 @@ import { RouterModule } from "@angular/router";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { NgwWowModule } from "ngx-wow";
-import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
+import { NgxPageScrollModule } from "ngx-page-scroll";
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { appRoutes } from "./app.routes";
@@ -97,9 +97,7 @@ import { GithubLinkPipe } from "./shared/pipes/github-link.pipe";
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    NgxPageScrollCoreModule.forRoot({
-      duration: 250,
-    }),
+    NgxPageScrollModule,
     NgwWowModule,
   ],
   providers: [

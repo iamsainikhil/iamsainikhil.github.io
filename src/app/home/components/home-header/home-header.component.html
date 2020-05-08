@@ -15,6 +15,7 @@
     <div class="desktop-items-container">
       <a
         pageScroll
+        [pageScrollDuration]="500"
         href="#about"
         (click)="linksClick('about')"
         rel="noreferrer noopener"
@@ -22,6 +23,7 @@
       >
       <a
         pageScroll
+        [pageScrollDuration]="500"
         href="#projects"
         (click)="linksClick('projects')"
         rel="noreferrer noopener"
@@ -87,6 +89,7 @@
       <div class="mobile-nav-links">
         <a
           pageScroll
+          [pageScrollDuration]="500"
           href="#about"
           (pageScrollFinish)="menuIconClick('about')"
           rel="noreferrer noopener"
@@ -94,6 +97,7 @@
         >
         <a
           pageScroll
+          [pageScrollDuration]="500"
           href="#projects"
           (pageScrollFinish)="menuIconClick('projects')"
           rel="noreferrer noopener"
