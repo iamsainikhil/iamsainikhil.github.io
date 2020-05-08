@@ -92,23 +92,23 @@
 }
 
 .angular {
-  background-image: url("../../../../assets/icons/skills/angular-icon.svg");
+  background-image: url("../../../../assets/icons/social-icons/angular.svg");
   margin-left: 10px;
 }
 
 .firebase {
-  background-image: url("../../../../assets/icons/skills/firebase.svg");
+  background-image: url("../../../../assets/icons/social-icons/firebase.svg");
   width: 34px;
   height: 28px;
   margin-top: -5px;
 }
 
 .vcs {
-  background-image: url("../../../../assets/icons/skills/visual-studio-code.svg");
+  background-image: url("../../../../assets/icons/social-icons/visual-studio-code.svg");
 }
 
 .github-svg {
-  background-image: url("../../../../assets/icons/social-icons/github-color.svg");
+  background-image: url("../../../../assets/icons/social-icons/github-square.svg");
 }
 /* media queries */
 
