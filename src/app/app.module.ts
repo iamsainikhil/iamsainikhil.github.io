@@ -52,7 +52,6 @@ import { ProjectsService } from "./shared/services/projects.service";
 import { SkillsService } from "./shared/services/skills.service";
 import { SliceStringPipe } from "./shared/pipes/slice-string.pipe";
 import { UrlNameExtractPipe } from "./shared/pipes/url-name-extract.pipe";
-import { GithubLinkPipe } from "./shared/pipes/github-link.pipe";
 
 @NgModule({
   declarations: [
@@ -87,7 +86,6 @@ import { GithubLinkPipe } from "./shared/pipes/github-link.pipe";
     FilterComponent,
     SliceStringPipe,
     UrlNameExtractPipe,
-    GithubLinkPipe,
   ],
   imports: [
     BrowserModule,

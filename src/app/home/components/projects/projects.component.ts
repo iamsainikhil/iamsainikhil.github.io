@@ -7,7 +7,7 @@ import { FilterService } from "./../../../shared/services/filter.service";
 @Component({
   selector: "app-projects",
   templateUrl: "./projects.component.html",
-  styleUrls: ["./projects.component.css"]
+  styleUrls: ["./projects.component.css"],
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   @Input() page: string;
@@ -21,20 +21,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   @Output() chipData = [
     {
       name: "latest",
-      selected: true
+      selected: true,
     },
     {
       name: "oldest",
-      selected: false
+      selected: false,
     },
-    {
-      name: "websites",
-      selected: false
-    },
-    {
-      name: "web applications",
-      selected: false
-    }
   ];
 
   constructor(
@@ -44,7 +36,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.filterService.chipName.subscribe(name => {
+    this.filterService.chipName.subscribe((name) => {
       this.chipName = name;
       this.chipCondition(this.chipName);
     });
