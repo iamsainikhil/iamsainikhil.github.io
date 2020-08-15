@@ -6,7 +6,7 @@ import { LikesCommentsService } from "./../../services/likes-comments.service";
 @Component({
   selector: "app-comments",
   templateUrl: "./comments.component.html",
-  styleUrls: ["./comments.component.css"]
+  styleUrls: ["./comments.component.css"],
 })
 export class CommentsComponent implements OnInit, OnDestroy {
   @Input() docId: string;
@@ -15,6 +15,8 @@ export class CommentsComponent implements OnInit, OnDestroy {
   commentsData: any;
 
   commentsLoader = true;
+
+  noComments = false;
 
   private subscription: Subscription;
 
@@ -42,16 +44,21 @@ export class CommentsComponent implements OnInit, OnDestroy {
 
   getLatestComments() {
     this.subscription = this.likesCommentsService
-      .getCommentsData(this.collectionName, this.docId, "approved", "==", true)
-      .subscribe(() => {
-        this.commentsData = this.likesCommentsService.getCommentsData(
+      .getOrderedCommentsData(
+        this.collectionName,
+        this.docId,
+        "dateAdded",
+        "desc"
+      )
+      .subscribe((data) => {
+        this.commentsData = this.likesCommentsService.getOrderedCommentsData(
           this.collectionName,
           this.docId,
-          "approved",
-          "==",
-          true
+          "dateAdded",
+          "desc"
         );
         this.commentsLoader = false;
+        this.noComments = data.length === 0;
       });
     // this.gaService.emitEvent(`${this.docId}-latest-comments`, 'filter-click', 'filter');
   }
@@ -61,12 +68,18 @@ export class CommentsComponent implements OnInit, OnDestroy {
     this.oldestChip = true;
     this.commentsLoader = true;
     const subscription = this.likesCommentsService
-      .getOrderedCommentsData(this.collectionName, this.docId, "dateAdded")
+      .getOrderedCommentsData(
+        this.collectionName,
+        this.docId,
+        "dateAdded",
+        "asc"
+      )
       .subscribe(() => {
         this.commentsData = this.likesCommentsService.getOrderedCommentsData(
           this.collectionName,
           this.docId,
-          "dateAdded"
+          "dateAdded",
+          "asc"
         );
         this.commentsLoader = false;
       });

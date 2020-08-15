@@ -1,60 +1,68 @@
 .title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    padding: 20px;
-    color: #808080;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  padding: 20px;
+  color: #808080;
+}
+
+.comment {
+  margin: 0.5rem auto;
 }
 
 .tile-title {
-    color: #808080;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 18px;
+  color: #808080;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 18px;
 }
 
 .second-row {
-    margin-top: -15px;
+  margin-top: -15px;
 }
 
 .message {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .date {
-    color: #000;
-    font-size: 14px;
+  color: #000;
+  font-size: 14px;
 }
 
 .chip,
 .message,
 .date {
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
 }
 
+/* .chip {
+  background: #dedede;
+} */
+
 figure img {
-    background: #808080;
+  background: #808080;
 }
 
 .selected-chip {
-    color: #f5f5f5;
-    background: #808080;
+  color: #f5f5f5 !important;
+  background: #808080 !important;
 }
 
 .chip:hover {
-    color: #f5f5f5;
-    background: #808080;
-    cursor: pointer;
+  color: #f5f5f5 !important;
+  background: #808080 !important;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 992px) {
-    .comments {
-        padding: 0px 10px;
-    }
-    .first-row {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-    }
+  .comments {
+    padding: 0px 10px;
+  }
+  .first-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
 }

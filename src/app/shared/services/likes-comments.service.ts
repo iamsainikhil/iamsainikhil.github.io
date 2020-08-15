@@ -22,7 +22,7 @@ export class LikesCommentsService {
     "September",
     "October",
     "November",
-    "December"
+    "December",
   ];
   hours = this.date.getHours();
   minutes = this.date.getMinutes();
@@ -33,9 +33,9 @@ export class LikesCommentsService {
   // required to set document id in contact collection
   id = `${this.monthNames[this.month]}-${this.day}-${this.year}-${this.hours}-${
     this.minutes
-    }`;
+  }`;
 
-  constructor(private afs: AngularFirestore, private http: HttpClient) { }
+  constructor(private afs: AngularFirestore, private http: HttpClient) {}
 
   /**
    * get likes data
@@ -45,8 +45,8 @@ export class LikesCommentsService {
       collection + "/" + docId + "/likes"
     );
     const likes = likesCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(a => {
+      map((changes) => {
+        return changes.map((a) => {
           const data = a.payload.doc.data() as Like;
           const id = a.payload.doc.id;
           return { id, data };
@@ -64,7 +64,7 @@ export class LikesCommentsService {
       collection + "/" + docId + "/likes"
     );
     const data = {
-      count: count + 1
+      count: count + 1,
     };
     likesCollection.doc(id).update(data);
   }
@@ -77,7 +77,7 @@ export class LikesCommentsService {
       collection + "/" + docId + "/likes"
     );
     const data = {
-      count: count - 1
+      count: count - 1,
     };
     likesCollection.doc(id).update(data);
   }
@@ -105,10 +105,10 @@ export class LikesCommentsService {
           region: res.region,
           latlong: res.loc,
           ip: res.ip,
-          zipCode: res.postal
+          zipCode: res.postal,
         });
       },
-      err => {
+      (err) => {
         // save data without location details
         commentsCollection.set(data);
       }
@@ -127,11 +127,11 @@ export class LikesCommentsService {
   ) {
     const commentsCollection = this.afs.collection<Comment>(
       collection + "/" + docId + "/comments",
-      ref => ref.where(field, operator, value)
+      (ref) => ref.where(field, operator, value)
     );
     const comments = commentsCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(a => {
+      map((changes) => {
+        return changes.map((a) => {
           const data = a.payload.doc.data();
           const id = a.payload.doc.id;
           const timeStamp = data.dateAdded;
@@ -148,14 +148,19 @@ export class LikesCommentsService {
   /**
    * Get data from comments collection based on 'orderBy' query
    */
-  getOrderedCommentsData(collection: string, docId: string, field: string) {
+  getOrderedCommentsData(
+    collection: string,
+    docId: string,
+    field: string,
+    type: any
+  ) {
     const commentsCollection = this.afs.collection<Comment>(
       collection + "/" + docId + "/comments",
-      ref => ref.where("approved", "==", true).orderBy(field)
+      (ref) => ref.where("approved", "==", true).orderBy(field, type)
     );
     const comments = commentsCollection.snapshotChanges().pipe(
-      map(changes => {
-        return changes.map(a => {
+      map((changes) => {
+        return changes.map((a) => {
           const data = a.payload.doc.data();
           const Id = a.payload.doc.id;
           const timeStamp = data.dateAdded;
@@ -172,7 +177,12 @@ export class LikesCommentsService {
   /**
    * add subscribers data
    */
-  savePlainSubscriberData(collection: any, email: string, name: string, date: Date) {
+  savePlainSubscriberData(
+    collection: any,
+    email: string,
+    name: string,
+    date: Date
+  ) {
     // save data without location details
     collection.set({
       email: email,
@@ -182,7 +192,7 @@ export class LikesCommentsService {
   }
   addSubscribersData(date: Date, email: string, name: string) {
     const subscribersCollection = this.afs
-      .collection<any>('subscribers')
+      .collection<any>("subscribers")
       .doc(date.toISOString());
     // get location details
     this.http.get("https://ipinfo.io").subscribe(
@@ -197,10 +207,15 @@ export class LikesCommentsService {
             region: res.region,
             latlong: res.loc,
             ip: res.ip,
-            zipCode: res.postal
+            zipCode: res.postal,
           });
         } else {
-          this.savePlainSubscriberData(subscribersCollection, email, name, date);
+          this.savePlainSubscriberData(
+            subscribersCollection,
+            email,
+            name,
+            date
+          );
         }
       },
       (err) => {
@@ -209,7 +224,7 @@ export class LikesCommentsService {
     );
   }
 
-  dateDifference(actualDate, returnType = 'string') {
+  dateDifference(actualDate, returnType = "string") {
     // Calculate time between two dates:
     const date1 = actualDate;
     const date2: any = new Date();
@@ -236,7 +251,7 @@ export class LikesCommentsService {
       hours: hours,
       minutes: minutes,
       seconds: seconds,
-      milliseconds: milliseconds
+      milliseconds: milliseconds,
     };
 
     // check if difference is in years or months
@@ -278,6 +293,6 @@ export class LikesCommentsService {
       }
     }
 
-    return returnType === 'string' ? `Posted ${message} ago` : r;
+    return returnType === "string" ? `Posted ${message} ago` : r;
   }
 }
