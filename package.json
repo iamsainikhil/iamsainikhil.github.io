@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "build-github": "ng build --prod --base-href \"https://iamsainikhil.github.io/\"",
+    "build-github": "ng build --prod --base-href \"https://iamsainikhil.com/\"",
     "build-firebase": "ng build --prod --base-href \"https://www.iamsainikhil.com/\"",
     "test": "ng test",
     "lint": "ng lint",
