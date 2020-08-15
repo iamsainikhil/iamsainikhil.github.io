@@ -28,10 +28,15 @@
 .about-button:hover {
   background-color: #fff;
   color: #008080;
+  box-shadow: none;
 }
 
 .about-button:hover .link {
   color: #008080;
+}
+
+.about-caption {
+  font-size: 24px;
 }
 
 /* about card */
@@ -42,6 +47,7 @@
 
 .card {
   border-radius: 15px;
+  border: 0 solid transparent;
 }
 
 .card-image {
@@ -150,10 +156,6 @@
   .about-content {
     padding: 50px 0 150px 0;
     text-align: left;
-  }
-
-  .about-caption {
-    font-size: 24px;
   }
 
   .mobile-about-info {

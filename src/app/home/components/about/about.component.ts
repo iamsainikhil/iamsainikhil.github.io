@@ -7,7 +7,7 @@ import { GAService } from "./../../../shared/services/ga.service";
 @Component({
   selector: "app-about",
   templateUrl: "./about.component.html",
-  styleUrls: ["./about.component.css"]
+  styleUrls: ["./about.component.css"],
 })
 export class AboutComponent implements OnInit, OnDestroy {
   aboutData: any;
@@ -17,21 +17,17 @@ export class AboutComponent implements OnInit, OnDestroy {
   // products button data
   productsData = [
     {
-      name: "timeline",
-      link: "/about"
-    },
-    {
       name: "blog",
-      link: "/about/blog"
+      link: "https://blog.iamsainikhil.com",
     },
-    {
-      name: "photos",
-      link: "/about/photos"
-    },
-    {
-      name: "videos",
-      link: "/about/videos"
-    }
+    // {
+    //   name: "photos",
+    //   link: "/about/photos"
+    // },
+    // {
+    //   name: "videos",
+    //   link: "/about/videos"
+    // }
   ];
 
   private subscription: Subscription;
