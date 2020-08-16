@@ -111,13 +111,19 @@
                     <!-- links to other products -->
                     <div class="buttons-group">
                       <div *ngFor="let product of productsData">
-                        <button
-                          class="about-button wow zoomIn"
-                          (click)="buttonClick(product.name)"
-                          [routerLink]="product.link"
+                        <a
+                          [href]="product.link"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          [aria-label]="product.name"
                         >
-                          View {{ product.name }}
-                        </button>
+                          <button
+                            class="about-button wow zoomIn"
+                            (click)="buttonClick(product.name)"
+                          >
+                            View {{ product.name }}
+                          </button>
+                        </a>
                       </div>
                     </div>
                   </div>

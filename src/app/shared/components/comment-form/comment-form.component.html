@@ -103,6 +103,7 @@
               type="checkbox"
               name="accepted"
               id="accepted"
+              aria-label="I have read and accept privacy policy."
               ngModel
               required
             />
@@ -112,6 +113,7 @@
                 href="/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Read Privacy Policy"
                 (click)="legalItemsClick('privacy')"
                 >Privacy Policy</a
               >.
@@ -161,10 +163,10 @@
     </div>
   </div>
   <!-- user comment  -->
-  <div class="chip-message">
-    <span class="chip note"
+  <div class="toast toast-primary text-center">
+    <span
       >Below is your comment which will be publicly posted after
-      <strong>&nbsp;Approval</strong>.</span
+      &nbsp;<strong>Approval</strong>.</span
     >
   </div>
   <div class="columns">
@@ -182,7 +184,7 @@
         <div class="tile-action">
           <p>
             Posted on
-            {{ commentFormData.dateAdded | date: 'MMM dd, y, hh:mm a' }}
+            {{ commentFormData.dateAdded | date: "MMM dd, y, hh:mm a" }}
           </p>
         </div>
       </div>

@@ -175,6 +175,7 @@
     grid-template-rows: repeat(3, 0.3fr);
     grid-gap: 35px;
     justify-content: center;
+    margin-top: 2rem;
   }
 
   /* about card & main content*/
