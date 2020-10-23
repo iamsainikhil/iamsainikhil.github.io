@@ -28,7 +28,7 @@
     "@angular/router": "^9.1.0",
     "@ngu/carousel": "2.0.0",
     "core-js": "^3.6.4",
-    "firebase": "^7.14.3",
+    "firebase": "^7.24.0",
     "intl": "1.2.5",
     "ngx-page-scroll": "7.0.1",
     "ngx-page-scroll-core": "^7.0.1",
