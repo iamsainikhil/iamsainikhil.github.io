@@ -13,6 +13,45 @@ export class SiteFooterComponent implements OnInit {
 
   date = new Date();
 
+  // footer links
+  footerLinks = [
+    {
+      name: 'github',
+      message: 'GitHub',
+      url: 'https://github.com/iamsainikhil'
+    },
+    {
+      name: 'linkedin',
+      message: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/iamsainikhil'
+    },
+    {
+      name: "codepen",
+      message: 'Codepen',
+      url: "https://codepen.io/iamsainikhil",
+    },
+    {
+      name: "hackerrank",
+      message: 'HackerRank',
+      url: "https://www.hackerrank.com/iamsainikhil",
+    },
+    {
+      name: "stack-overflow",
+      message: 'Stack Overflow',
+      url: "https://stackoverflow.com/story/iamsainikhil",
+    },
+    // {
+    //   name: "twitter",
+    //   message: 'Twitter',
+    //   url: "https://twitter.com/iamsainikhil12",
+    // },
+    // {
+    //   name: "codesignal",
+    //   message: 'CodeSignal',
+    //   url: "https://app.codesignal.com/profile/iamsainikhil/",
+    // }
+  ];
+
   constructor(private gaService: GAService) { }
 
   ngOnInit() {

@@ -20,65 +20,17 @@
   </div>
   <div class="second-row">
     <div class="social-icons">
-      <a
-        href="https://www.sololearn.com/Profile/9954326"
-        target="_blank"
-        (click)="footerLinksClick('sololearn')"
-      >
-        <p class="image sololearn tip">
-          <span class="message">SoloLearn</span>
-        </p>
-      </a>
-
-      <a
-        href="https://www.hackerrank.com/iamsainikhil"
-        target="_blank"
-        (click)="footerLinksClick('hackerrank')"
-      >
-        <p class="image hackerrank tip">
-          <span class="message">HackerRank</span>
-        </p>
-      </a>
-
-      <a
-        href="https://codepen.io/iamsainikhil"
-        target="_blank"
-        (click)="footerLinksClick('codepen')"
-      >
-        <p class="image codepen tip">
-          <span class="message">codepen</span>
-        </p>
-      </a>
-
-      <a
-        href="https://github.com/iamsainikhil"
-        target="_blank"
-        (click)="footerLinksClick('github')"
-      >
-        <p class="image github tip">
-          <span class="message">GitHub</span>
-        </p>
-      </a>
-
-      <a
-        href="https://www.linkedin.com/in/iamsainikhil"
-        target="_blank"
-        (click)="footerLinksClick('linkedin')"
-      >
-        <p class="image linkedin tip">
-          <span class="message">LinkedIn</span>
-        </p>
-      </a>
-
-      <a
-        href="https://stackoverflow.com/story/iamsainikhil"
-        target="_blank"
-        (click)="footerLinksClick('stack-overflow')"
-      >
-        <p class="image stack tip">
-          <span class="message">Stack Overflow</span>
-        </p>
-      </a>
+      <p *ngFor="let link of footerLinks">
+        <a
+          [href]="link.url"
+          target="_blank"
+          (click)="footerLinksClick(link.name)"
+        >
+          <p class="image tip" [ngClass]="link.name">
+            <span class="message">{{ link.message }}</span>
+          </p>
+        </a>
+      </p>
     </div>
   </div>
   <div class="notes">

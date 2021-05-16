@@ -17,17 +17,17 @@ export class AboutComponent implements OnInit, OnDestroy {
   // products button data
   productsData = [
     {
-      name: "blog",
+      name: "view blog",
       link: "https://blog.iamsainikhil.com",
     },
-    // {
-    //   name: "photos",
-    //   link: "/about/photos"
-    // },
-    // {
-    //   name: "videos",
-    //   link: "/about/videos"
-    // }
+    {
+      name: "listen music",
+      link: "https://soundcloud.com/iamsainikhil",
+    },
+    {
+      name: "view photos",
+      link: "https://gurushots.com/iamsainikhil/photos",
+    }
   ];
 
   private subscription: Subscription;

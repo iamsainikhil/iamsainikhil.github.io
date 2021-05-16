@@ -24,6 +24,10 @@
         }"
       >
         <div class="section-content projects-content">
+          <h2 class="projects-caption caption">
+            I did several projects but love to showcase some of the cool &
+            challenging projects I built with love.
+          </h2>
           <div>
             <app-filter [chipData]="chipData" [page]="'projects'"></app-filter>
           </div>
@@ -32,7 +36,7 @@
           </div>
           <div *ngIf="!showLoader">
             <div class="projects">
-              <div *ngFor="let project of (projectsData | async)">
+              <div *ngFor="let project of projectsData | async">
                 <div class="project-card wow fade-in-bottom">
                   <div class="image-section">
                     <app-devices
@@ -42,7 +46,7 @@
                   <div class="content-section">
                     <div class="project-title">{{ project.data.title }}</div>
                     <div class="project-info">
-                      <p>{{ project.data.shortInfo }}</p>
+                      <p>{{ truncateText(project.data.shortInfo) }}</p>
                       <p>
                         <span
                           class="chip"

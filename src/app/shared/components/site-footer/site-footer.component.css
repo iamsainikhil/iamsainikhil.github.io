@@ -23,6 +23,18 @@
   color: #585c5d;
 }
 
+.social-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons p {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .notes,
 .copyrights {
   font-family: "Poppins", sans-serif;
@@ -46,8 +58,8 @@
   cursor: pointer;
 }
 
-.sololearn {
-  background-image: url("../../../../assets/icons/social-icons/sololearn.png");
+.twitter {
+  background-image: url("../../../../assets/icons/social-icons/twitter.svg");
 }
 
 .hackerrank {
@@ -66,7 +78,7 @@
   background-image: url("../../../../assets/icons/social-icons/linkedin.svg");
 }
 
-.stack {
+.stack-overflow {
   background-image: url("../../../../assets/icons/social-icons/stack-overflow-color.svg");
 }
 
@@ -113,11 +125,8 @@
 /* media queries */
 
 @media only screen and (max-width: 767px) {
-  .social-icons {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
+  .second-row {
+    padding: 25px 10px 10px 10px;
   }
   .social-icons a p.image {
     width: 35px;
@@ -125,9 +134,6 @@
   }
   .notes p {
     margin-bottom: 2px;
-  }
-  .second-row {
-    padding: 25px 10px 10px 10px;
   }
   .notes {
     padding: 10px 10px 15px 10px;
@@ -141,9 +147,11 @@
 
 @media only screen and (max-width: 399px) {
   .first-row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    place-items: center;
   }
 }
 
@@ -174,12 +182,6 @@
   }
   .notes {
     padding: 5px;
-  }
-  .social-icons {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: none;
-    grid-column-gap: 20px;
   }
   .copyrights {
     padding-top: 5px;
