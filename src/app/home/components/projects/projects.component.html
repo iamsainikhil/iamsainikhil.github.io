@@ -32,7 +32,7 @@
           </div>
           <div *ngIf="!showLoader">
             <div class="projects">
-              <div *ngFor="let project of (projectsData | async)">
+              <div *ngFor="let project of projectsData | async">
                 <div class="project-card wow fade-in-bottom">
                   <div class="image-section">
                     <app-devices
@@ -42,7 +42,7 @@
                   <div class="content-section">
                     <div class="project-title">{{ project.data.title }}</div>
                     <div class="project-info">
-                      <p>{{ project.data.shortInfo }}</p>
+                      <p>{{ truncateText(project.data.shortInfo) }}</p>
                       <p>
                         <span
                           class="chip"

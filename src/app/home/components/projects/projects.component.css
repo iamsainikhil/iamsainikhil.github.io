@@ -34,7 +34,7 @@
 }
 
 .footer-section {
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .info-button {
@@ -130,11 +130,11 @@
   }
   .content-section {
     display: grid;
-    grid-template-rows: 75px 200px;
+    grid-template-rows: 75px 250px;
   }
   .project-info {
     display: grid;
-    grid-template-rows: 125px 75px;
+    grid-template-rows: repeat(2, 1fr);
   }
 }
 
@@ -191,10 +191,10 @@
   }
   .content-section {
     display: grid;
-    grid-template-rows: 50px 175px;
+    grid-template-rows: 50px 250px;
   }
   .project-info {
     display: grid;
-    grid-template-rows: 100px 75px;
+    grid-template-rows: repeat(2, 1fr);
   }
 }

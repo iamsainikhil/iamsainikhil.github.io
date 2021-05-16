@@ -43,6 +43,15 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   }
 
   /**
+   * add ellipsis to text with characters above 140
+   * @param {String} text 
+   * @returns {String}
+   */
+  truncateText(text) {
+    return text.length > 140 ? text.slice(0, 140).concat('...') : text
+  }
+
+  /**
    * conditions to highlight respective chips
    */
   chipCondition(data: string) {
