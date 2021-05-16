@@ -44,7 +44,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   /**
    * add ellipsis to text with characters above 140
-   * @param {String} text 
+   * @param {String} text
    * @returns {String}
    */
   truncateText(text) {
