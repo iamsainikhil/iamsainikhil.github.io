@@ -69,7 +69,7 @@
   font-weight: normal;
 }
 
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 767px) {
   .element {
     -webkit-clip-path: polygon(
       0 0,
@@ -82,6 +82,9 @@
   .projects-element {
     -webkit-clip-path: polygon(0 calc(1% - 1vw), 100% 0, 100% 100%, 0 100%);
     clip-path: polygon(0 calc(1% - 1vw), 100% 0, 100% 100%, 0 100%);
+  }
+  .projects-caption {
+    font-size: 24px;
   }
   .projects-content {
     padding: 100px 10px;
