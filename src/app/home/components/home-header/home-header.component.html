@@ -29,6 +29,14 @@
         rel="noreferrer noopener"
         >Projects</a
       >
+      <a
+        pageScroll
+        [pageScrollDuration]="500"
+        href="#skills"
+        (click)="linksClick('skills')"
+        rel="noreferrer noopener"
+        >Skills</a
+      >
     </div>
   </div>
   <div class="parallax desktop-banner">
@@ -103,6 +111,14 @@
           rel="noreferrer noopener"
           >Projects</a
         >
+        <a
+          pageScroll
+          [pageScrollDuration]="500"
+          href="#skills"
+          (pageScrollFinish)="menuIconClick('skills')"
+          rel="noreferrer noopener"
+          >Skills</a
+        >
       </div>
     </div>
   </div>
@@ -112,12 +128,8 @@
         <h1 class="wow tracking-in-expand">Sai Nikhil</h1>
         <div class="sub-title">
           <p class="wow tracking-in-expand-fwd">UI/UX&nbsp;Designer</p>
-          <p class="wow tracking-in-expand-fwd">
-            Front&nbsp;End&nbsp;Engineer
-          </p>
-          <p class="wow tracking-in-expand-fwd">
-            Software&nbsp;Engineer
-          </p>
+          <p class="wow tracking-in-expand-fwd">Front&nbsp;End&nbsp;Engineer</p>
+          <p class="wow tracking-in-expand-fwd">Software&nbsp;Engineer</p>
         </div>
       </div>
       <div class="parallax-back">
