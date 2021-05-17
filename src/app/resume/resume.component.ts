@@ -8,6 +8,7 @@ import { GAService } from './../shared/services/ga.service';
   styleUrls: ['./resume.component.css']
 })
 export class ResumeComponent implements OnInit {
+  showLoader: boolean = false
   type:string = 'concise'
   conciseSrc: string = "https://firebasestorage.googleapis.com/v0/b/iamsainikhil-portfolio.appspot.com/o/images%2Fresume%2FSaiNikhilBheemanathiniResumeConcise.pdf?alt=media&token=abd4a8e0-69ea-4ba7-9e2d-a17ba0d109d9"
   conciseDriveURL: string = "https://drive.google.com/file/d/1GumjkNd7wd0T0NBlIJ_S2zexzcPgvIav/preview?usp=sharing"
@@ -23,8 +24,16 @@ export class ResumeComponent implements OnInit {
   ngOnInit() {}
 
   updateResumeType(resumeType) {
+    this.showLoader = true
     this.type = resumeType
     this.gaService.emitEvent(`view-${resumeType}-resume`, `${resumeType}-button`, 'button');
+    setTimeout(() => {
+      this.showLoader = false
+    }, 1000);
+  }
+
+  getSrc() {
+    return this.type === 'concise' ? this.conciseSrc : this.detailedSrc
   }
 
   getViewURL() {
