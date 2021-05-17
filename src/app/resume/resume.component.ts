@@ -8,21 +8,20 @@ import { GAService } from './../shared/services/ga.service';
   styleUrls: ['./resume.component.css']
 })
 export class ResumeComponent implements OnInit {
+  type:string = 'concise'
+  conciseSrc: string = "https://firebasestorage.googleapis.com/v0/b/iamsainikhil-portfolio.appspot.com/o/images%2Fresume%2FSaiNikhilBheemanathiniResumeConcise.pdf?alt=media&token=abd4a8e0-69ea-4ba7-9e2d-a17ba0d109d9"
+  detailedSrc: string = "https://firebasestorage.googleapis.com/v0/b/iamsainikhil-portfolio.appspot.com/o/images%2Fresume%2FSaiNikhilBheemanathiniResumeDetailed.pdf?alt=media&token=1424aa38-028b-48f8-8ba2-22438e45901b"
+
 
   constructor(
     private router: Router,
     private gaService: GAService
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  viewResume() {
-    this.gaService.emitEvent(`download-resume`, 'download-resume-button', 'button');
-  }
-
-  backClick() {
-    this.gaService.emitEvent(`back-to-home-on-resume`, 'back-button', 'button');
-    this.router.navigateByUrl('/');
+  updateResumeType(resumeType) {
+    this.type = resumeType
+    this.gaService.emitEvent(`view-${resumeType}-resume`, `${resumeType}-button`, 'button');
   }
 }

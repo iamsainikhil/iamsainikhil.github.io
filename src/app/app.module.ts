@@ -96,7 +96,7 @@ import { UrlNameExtractPipe } from "./shared/pipes/url-name-extract.pipe";
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     NgxPageScrollModule,
-    NgwWowModule,
+    NgwWowModule
   ],
   providers: [
     AboutService,

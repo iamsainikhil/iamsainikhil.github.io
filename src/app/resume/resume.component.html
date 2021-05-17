@@ -1,24 +1,55 @@
 <app-site-header></app-site-header>
 <div class="resume-content" id="noprint">
-  <figure class="figure fade-in-bottom">
+  <h2 class="text-center pa-title">Resume</h2>
+
+  <!-- <figure class="figure fade-in-bottom">
     <img
       class="centered img-responsive"
       src="https://raw.githubusercontent.com/iamsainikhil/iamsainikhil.github.io/master/assets/images/resume/SaiNikhilBheemanathiniResume.png"
       alt="SainikhilBheemanathiniResume"
     />
-  </figure>
+  </figure> -->
+
   <div class="buttons-group">
-    <button class="back-home-button wow zoomIn" (click)="backClick()">
-      Back to home page
-    </button>
-    <a
-      href="https://github.com/iamsainikhil/iamsainikhil.github.io/raw/master/assets/images/resume/SaiNikhilBheemanathiniResume.pdf"
-      target="_blank"
-      ><button class="resume-button wow zoomIn" (click)="viewResume()">
-        Download Resume
-      </button></a
+    <button
+      class="wow zoomIn"
+      [ngClass]="{
+        'primary-button': type === 'concise',
+        'secondary-button': type !== 'concise'
+      }"
+      (click)="updateResumeType('concise')"
     >
+      Concise
+    </button>
+    <button
+      class="wow zoomIn"
+      [ngClass]="{
+        'primary-button': type === 'detailed',
+        'secondary-button': type !== 'detailed'
+      }"
+      (click)="updateResumeType('detailed')"
+    >
+      Detailed
+    </button>
   </div>
+
+  <object
+    *ngIf="type === 'concise'"
+    [data]="conciseSrc | safe: 'resourceUrl'"
+    type="application/pdf"
+    width="100%"
+    height="600px"
+    class="resume-view"
+  ></object>
+
+  <object
+    *ngIf="type === 'detailed'"
+    [data]="detailedSrc | safe: 'resourceUrl'"
+    type="application/pdf"
+    width="100%"
+    height="600px"
+    class="resume-view"
+  ></object>
 </div>
 
 <div id="print">

@@ -1,5 +1,5 @@
-.resume-content {
-  padding-bottom: 50px;
+.resume-view {
+  height: 100vh;
 }
 
 .buttons-group {
@@ -8,23 +8,27 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 25px;
 }
 
-.resume-button {
-  background-color: #2dbcad;
-  color: #fff;
-  border: 1px solid #2dbcad;
+.buttons-group button {
   cursor: pointer;
 }
 
-.back-home-button {
+.primary-button {
+  background-color: #2dbcad;
+  color: #fff;
+  border: 1px solid #2dbcad;
+}
+
+.secondary-button {
   background-color: #fff;
   color: #2dbcad;
   border: none;
   padding: 5px 15px;
 }
 
-.resume-button {
+.buttons-group button:nth-child(2) {
   margin-left: 20px;
 }
 
@@ -37,7 +41,7 @@ img {
 }
 
 @media only screen and (max-width: 767px) {
-  .back-home {
+  .buttons-group button:nth-child(1) {
     margin-top: 15px;
     margin-left: 0px;
   }
