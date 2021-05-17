@@ -57,6 +57,24 @@
       class="resume-view"
     />
   </object>
+
+  <!-- mobile buttons  -->
+  <div class="mobile-buttons buttons-group">
+    <a
+      [href]="getViewURL() | safe: 'resourceUrl'"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <button class="secondary-button wow zoomIn">View</button>
+    </a>
+    <a
+      [href]="getViewURL().replace('preview', 'view') | safe: 'resourceUrl'"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <button class="primary-button wow zoomIn">Download</button>
+    </a>
+  </div>
 </div>
 
 <div id="print">

@@ -26,4 +26,8 @@ export class ResumeComponent implements OnInit {
     this.type = resumeType
     this.gaService.emitEvent(`view-${resumeType}-resume`, `${resumeType}-button`, 'button');
   }
+
+  getViewURL() {
+    return this.type === 'concise' ? this.conciseDriveURL : this.detailedDriveURL
+  }
 }
