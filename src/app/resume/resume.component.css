@@ -32,19 +32,8 @@
   margin-left: 20px;
 }
 
-img {
-  pointer-events: none;
-}
-
 #print {
   display: none;
-}
-
-@media only screen and (max-width: 767px) {
-  .buttons-group button:nth-child(1) {
-    margin-top: 15px;
-    margin-left: 0px;
-  }
 }
 
 @media print {

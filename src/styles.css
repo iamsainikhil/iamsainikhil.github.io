@@ -46,7 +46,7 @@ body {
 /* Track */
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
   height: 0px;
   /*to hide x-axis scroll bar since overflow is visible*/
 }
