@@ -6,8 +6,16 @@
       (click)="footerLinksClick('source-code')"
       >GitHub</a
     >
-    <a routerLink="/resume" (click)="footerLinksClick('resume')">Resume</a>
-    <a routerLink="/projects" (click)="footerLinksClick('projects')"
+    <a
+      routerLink="/resume"
+      routerLinkActive="active"
+      (click)="footerLinksClick('resume')"
+      >Resume</a
+    >
+    <a
+      routerLink="/projects"
+      routerLinkActive="active"
+      (click)="footerLinksClick('projects')"
       >Projects</a
     >
     <a

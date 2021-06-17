@@ -18,7 +18,8 @@
   color: #fff;
 }
 
-.first-row a:hover {
+.first-row a:hover,
+.first-row a.active {
   cursor: pointer;
   color: #585c5d;
 }
