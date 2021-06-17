@@ -126,7 +126,7 @@
 
 @media only screen and (max-width: 767px) {
   .second-row {
-    padding: 25px 10px 10px 10px;
+    padding: 25px 10px 0 10px;
   }
   .social-icons a p.image {
     width: 35px;
@@ -136,7 +136,8 @@
     margin-bottom: 2px;
   }
   .notes {
-    padding: 10px 10px 15px 10px;
+    padding: 0 10px 15px 10px;
+    margin-top: -5px;
   }
   .copyrights {
     padding-top: 15px;
@@ -178,10 +179,11 @@
     margin: 0 10px;
   }
   .second-row {
-    padding: 25px 5px 15px 10px;
+    padding: 25px 5px 0 10px;
   }
   .notes {
-    padding: 5px;
+    padding: 0 5px 5px 5px;
+    margin-top: -10px;
   }
   .copyrights {
     padding-top: 5px;
