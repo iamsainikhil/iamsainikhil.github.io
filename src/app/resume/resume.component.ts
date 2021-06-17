@@ -9,11 +9,7 @@ import { GAService } from './../shared/services/ga.service';
 })
 export class ResumeComponent implements OnInit {
   
-  showLoader: boolean = false
-  type:string = 'concise'
-  conciseDriveURL: string = "https://drive.google.com/file/d/1GumjkNd7wd0T0NBlIJ_S2zexzcPgvIav/preview?usp=sharing"
-  detailedDriveURL: string = "https://drive.google.com/file/d/19yQHp3dik2mEVDHZRE5chh3-eiFhE1EC/preview?usp=sharing"
-
+  driveURL: string = "https://drive.google.com/file/d/1yfQOOcTCF4NoZuL753uUefO7syZEuDrZ/preview?usp=sharing"
 
   constructor(
     private router: Router,
@@ -22,16 +18,7 @@ export class ResumeComponent implements OnInit {
 
   ngOnInit() {}
 
-  updateResumeType(resumeType) {
-    this.showLoader = true
-    this.type = resumeType
-    this.gaService.emitEvent(`view-${resumeType}-resume`, `${resumeType}-button`, 'button');
-    setTimeout(() => {
-      this.showLoader = false
-    }, 1000);
-  }
-
-  getViewURL() {
-    return this.type === 'concise' ? this.conciseDriveURL : this.detailedDriveURL
+  downloadResume() {
+    this.gaService.emitEvent('download-resume', 'download-resume-button', 'button');
   }
 }
