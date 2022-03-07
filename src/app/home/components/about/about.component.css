@@ -46,26 +46,29 @@
 }
 
 .card {
+  background: #007373;
   border-radius: 15px;
   border: 0 solid transparent;
 }
 
 .card-image {
-  background: #b88454;
+  position: relative;
   display: flex;
   justify-content: center;
+  height: 100px;
 }
 
 .card-avatar {
+  position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   border-radius: 50%;
   width: 200px;
   height: 200px;
-  margin-bottom: -75px;
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2),
     0 40px 77px 0 rgba(0, 0, 0, 0.22);
+  z-index: 5;
 }
 
 .card-title {
@@ -80,22 +83,30 @@
   color: #50596d;
 }
 
+.card-caption {
+  font-size: 20px;
+}
+
 .card-body {
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
   color: #50596d;
+  background: #fff;
 }
 
 .card-footer {
   background: #353839;
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-wrap: no-wrap;
   justify-content: space-around;
 }
 
 .card-content {
-  margin-top: 75px;
+  margin-top: 25px;
+  padding-top: 75px;
+  background: #fff;
 }
 
 .contact-button {
@@ -114,6 +125,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  vertical-align: middle;
   width: 35px;
   height: 35px;
 }
