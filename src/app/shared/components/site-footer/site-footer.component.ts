@@ -38,7 +38,7 @@ export class SiteFooterComponent implements OnInit {
     {
       name: "stack-overflow",
       message: 'Stack Overflow',
-      url: "https://stackoverflow.com/story/iamsainikhil",
+      url: "https://stackoverflow.com/users/7508562/sai-nikhil?tab=profile",
     },
     // {
     //   name: "twitter",
