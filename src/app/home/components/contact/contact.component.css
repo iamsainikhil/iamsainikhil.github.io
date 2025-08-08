@@ -25,7 +25,7 @@
 }
 
 .form-label {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
   padding-left: 10px;
@@ -41,7 +41,7 @@
 
 input,
 textarea {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   letter-spacing: 1px;
   color: #808080;
   border: 2px solid #caced7;
@@ -76,7 +76,7 @@ input {
 /* errors */
 
 .error {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   letter-spacing: 1px;
   display: flex;
   justify-content: left;
@@ -102,7 +102,7 @@ input {
 .empty {
   color: #343434;
   background: #f4f5f6;
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
 }

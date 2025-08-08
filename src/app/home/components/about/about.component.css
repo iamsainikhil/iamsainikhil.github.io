@@ -1,7 +1,7 @@
 /* about section */
 
 .about-content {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -72,13 +72,13 @@
 }
 
 .card-title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
   color: #000;
 }
 
 .card-subtitle {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 22px;
   color: #50596d;
 }
@@ -88,7 +88,7 @@
 }
 
 .card-body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   letter-spacing: 1px;
   color: #50596d;
   background: #fff;

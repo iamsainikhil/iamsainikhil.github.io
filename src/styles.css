@@ -76,7 +76,7 @@ body {
 
 .section-title {
   color: #000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -93,19 +93,19 @@ body {
 }
 
 .a-title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
 }
 
 .a-subtitle {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 /* title on projects & achievements page */
 
 .pa-title {
   color: #000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -117,7 +117,7 @@ body {
 }
 
 .caption {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   padding-bottom: 25px;
   font-style: italic;
 }
@@ -154,7 +154,7 @@ body {
 }
 
 .chip {
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Rubik", sans-serif !important;
   letter-spacing: 1px;
   font-size: 16px !important;
   background-color: #dcdcdc !important;
@@ -162,13 +162,13 @@ body {
 }
 
 .card-header {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
   font-size: 24px;
 }
 
 .card-body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 18px;
   letter-spacing: 1px;
 }
@@ -181,7 +181,7 @@ button {
   background-color: transparent;
   text-transform: uppercase !important;
   text-align: center;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Rubik", sans-serif !important;
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -423,7 +423,7 @@ button:hover {
 /* accept terms & privacy on forms */
 
 .accept-checkbox {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   letter-spacing: 1px;
   color: #808080;
   text-align: left;
@@ -445,14 +445,14 @@ button:hover {
 /* terms, privacy, disclaimer */
 
 .legal-title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
 }
 
 .legal-content {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -497,7 +497,7 @@ button:hover {
 /* temporary */
 
 .error-title {
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -551,7 +551,7 @@ button:hover {
   opacity: 0;
   position: absolute;
   z-index: 99;
-  font-family: "Poppins", sans-serif;
+  font-family: "Rubik", sans-serif;
   text-align: center;
   padding: 5px 15px;
   margin-top: -5px;
