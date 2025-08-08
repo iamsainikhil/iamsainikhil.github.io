@@ -32,7 +32,7 @@
 }
 
 .title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: bold;
     font-size: 24px;
     letter-spacing: 1px;
@@ -45,7 +45,7 @@
 .content {
     margin-top: 75px;
     padding: 25px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
     letter-spacing: 1px;
     font-size: 18px;
 }
